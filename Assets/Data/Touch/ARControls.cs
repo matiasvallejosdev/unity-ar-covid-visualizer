@@ -15,30 +15,14 @@ public class @ARControls : IInputActionCollection, IDisposable
     ""name"": ""ARControls"",
     ""maps"": [
         {
-            ""name"": ""Touch"",
+            ""name"": ""Player"",
             ""id"": ""e84e4395-91ca-418e-8653-a56fb9370526"",
             ""actions"": [
                 {
-                    ""name"": ""TouchInput"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""d2ba3301-91a8-4a15-99e8-ca6cf3a51005"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""TouchPress"",
+                    ""name"": ""Toggle Console"",
                     ""type"": ""Button"",
-                    ""id"": ""5c423cf8-04f1-43bb-b794-ed25b4e130a3"",
+                    ""id"": ""97fb96cc-8c62-4533-890c-9b09f4f176bb"",
                     ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""TouchPosition"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""96edc83c-027d-49ab-9539-9772a1f4a9ad"",
-                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -46,34 +30,12 @@ public class @ARControls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""309f746e-e43e-4daf-b7b1-5cc9d72e69f3"",
-                    ""path"": ""<Touchscreen>/primaryTouch"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TouchInput"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e789fe79-dfa9-4a7a-b490-b9f26341dc1c"",
-                    ""path"": ""<Touchscreen>/touch1/press"",
+                    ""id"": ""6835ab99-f0a4-4af9-9064-1f927e8dee70"",
+                    ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""TouchPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f33a0270-105c-4f34-9723-48116d7fed37"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TouchPosition"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Toggle Console"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -91,14 +53,17 @@ public class @ARControls : IInputActionCollection, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": []
         }
     ]
 }");
-        // Touch
-        m_Touch = asset.FindActionMap("Touch", throwIfNotFound: true);
-        m_Touch_TouchInput = m_Touch.FindAction("TouchInput", throwIfNotFound: true);
-        m_Touch_TouchPress = m_Touch.FindAction("TouchPress", throwIfNotFound: true);
-        m_Touch_TouchPosition = m_Touch.FindAction("TouchPosition", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_ToggleConsole = m_Player.FindAction("Toggle Console", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -145,54 +110,38 @@ public class @ARControls : IInputActionCollection, IDisposable
         asset.Disable();
     }
 
-    // Touch
-    private readonly InputActionMap m_Touch;
-    private ITouchActions m_TouchActionsCallbackInterface;
-    private readonly InputAction m_Touch_TouchInput;
-    private readonly InputAction m_Touch_TouchPress;
-    private readonly InputAction m_Touch_TouchPosition;
-    public struct TouchActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_ToggleConsole;
+    public struct PlayerActions
     {
         private @ARControls m_Wrapper;
-        public TouchActions(@ARControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @TouchInput => m_Wrapper.m_Touch_TouchInput;
-        public InputAction @TouchPress => m_Wrapper.m_Touch_TouchPress;
-        public InputAction @TouchPosition => m_Wrapper.m_Touch_TouchPosition;
-        public InputActionMap Get() { return m_Wrapper.m_Touch; }
+        public PlayerActions(@ARControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ToggleConsole => m_Wrapper.m_Player_ToggleConsole;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TouchActions set) { return set.Get(); }
-        public void SetCallbacks(ITouchActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_TouchActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @TouchInput.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchInput;
-                @TouchInput.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchInput;
-                @TouchInput.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchInput;
-                @TouchPress.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPress;
-                @TouchPress.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPress;
-                @TouchPress.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPress;
-                @TouchPosition.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnTouchPosition;
+                @ToggleConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
+                @ToggleConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
             }
-            m_Wrapper.m_TouchActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @TouchInput.started += instance.OnTouchInput;
-                @TouchInput.performed += instance.OnTouchInput;
-                @TouchInput.canceled += instance.OnTouchInput;
-                @TouchPress.started += instance.OnTouchPress;
-                @TouchPress.performed += instance.OnTouchPress;
-                @TouchPress.canceled += instance.OnTouchPress;
-                @TouchPosition.started += instance.OnTouchPosition;
-                @TouchPosition.performed += instance.OnTouchPosition;
-                @TouchPosition.canceled += instance.OnTouchPosition;
+                @ToggleConsole.started += instance.OnToggleConsole;
+                @ToggleConsole.performed += instance.OnToggleConsole;
+                @ToggleConsole.canceled += instance.OnToggleConsole;
             }
         }
     }
-    public TouchActions @Touch => new TouchActions(this);
+    public PlayerActions @Player => new PlayerActions(this);
     private int m_TouchSchemeIndex = -1;
     public InputControlScheme TouchScheme
     {
@@ -202,10 +151,17 @@ public class @ARControls : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_TouchSchemeIndex];
         }
     }
-    public interface ITouchActions
+    private int m_KeyboardSchemeIndex = -1;
+    public InputControlScheme KeyboardScheme
     {
-        void OnTouchInput(InputAction.CallbackContext context);
-        void OnTouchPress(InputAction.CallbackContext context);
-        void OnTouchPosition(InputAction.CallbackContext context);
+        get
+        {
+            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
+            return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
+    public interface IPlayerActions
+    {
+        void OnToggleConsole(InputAction.CallbackContext context);
     }
 }

@@ -1,31 +1,15 @@
 {
-    "name": "TouchControls",
+    "name": "ARControls",
     "maps": [
         {
-            "name": "Touch",
+            "name": "Player",
             "id": "e84e4395-91ca-418e-8653-a56fb9370526",
             "actions": [
                 {
-                    "name": "TouchInput",
-                    "type": "PassThrough",
-                    "id": "d2ba3301-91a8-4a15-99e8-ca6cf3a51005",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPress",
+                    "name": "Toggle Console",
                     "type": "Button",
-                    "id": "5c423cf8-04f1-43bb-b794-ed25b4e130a3",
+                    "id": "97fb96cc-8c62-4533-890c-9b09f4f176bb",
                     "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "TouchPosition",
-                    "type": "PassThrough",
-                    "id": "96edc83c-027d-49ab-9539-9772a1f4a9ad",
-                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 }
@@ -33,34 +17,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "309f746e-e43e-4daf-b7b1-5cc9d72e69f3",
-                    "path": "<Touchscreen>/primaryTouch",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchInput",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e789fe79-dfa9-4a7a-b490-b9f26341dc1c",
-                    "path": "<Touchscreen>/touch1/press",
+                    "id": "6835ab99-f0a4-4af9-9064-1f927e8dee70",
+                    "path": "<Keyboard>/anyKey",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": "Touch",
-                    "action": "TouchPress",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f33a0270-105c-4f34-9723-48116d7fed37",
-                    "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TouchPosition",
+                    "groups": "Keyboard",
+                    "action": "Toggle Console",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -78,6 +40,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
         }
     ]
 }

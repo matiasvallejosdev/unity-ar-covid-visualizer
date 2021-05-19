@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593ded612101f3e439cb42c5e4d9f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countryData: {fileID: 11400000, guid: 8b2d497d023aa454da162d88a80e01ce, type: 2}
-  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
+  countryData: {fileID: 0}
+  cmdFactory: {fileID: 0}
 --- !u!114 &4460657285957461030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,8 +76,6 @@ MonoBehaviour:
   countryData: {fileID: 0}
   countryTransform: {fileID: 0}
   sectionInformation: {fileID: 0}
-  _offset: {x: 0, y: 0.74, z: 0}
-  _maxScaleSection: {x: 3, y: 3, z: 3}
 --- !u!1 &820592983599827448
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Deaths:'
+  m_text: 'Muertes:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -756,9 +754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6b9dd7088563d44a536c0c53dc8537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathLabel: {fileID: 0}
-  positivesLabel: {fileID: 0}
-  testedLabel: {fileID: 0}
+  deathLabel: {fileID: 820592983599827446}
+  positivesLabel: {fileID: 820592984139720670}
+  testedLabel: {fileID: 820592984301636830}
   countryData: {fileID: 0}
 --- !u!1 &820592984494356914
 GameObject:
@@ -987,7 +985,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 18
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1088,7 +1086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Positives:'
+  m_text: 'Positivos:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1222,7 +1220,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tested:'
+  m_text: 'Testeos:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1714,4 +1712,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameLabel: {fileID: 2376422648954581630}
   nickLabel: {fileID: 820592984698895537}
-  countryData: {fileID: 11400000, guid: 8b2d497d023aa454da162d88a80e01ce, type: 2}
+  countryData: {fileID: 0}

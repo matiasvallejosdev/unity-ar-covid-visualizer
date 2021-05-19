@@ -15,4 +15,14 @@ public class GameCmdFactory : ScriptableObject
     {
         return new CountryTurnCmd(countryData, new CountryGateway());
     }
+
+    // Ui Container Rotate&Scale
+    public CountryScaleCmd CountryContainerScale(CountryContainer countryContainer, int scaleFactor)
+    {
+        return new CountryScaleCmd(countryContainer, scaleFactor);
+    }  
+    public CountryRotateCmd CountryContainerRotate(CountryContainer countryContainer, int rotateFactor)
+    {
+        return new CountryRotateCmd(countryContainer, rotateFactor);
+    }
 }

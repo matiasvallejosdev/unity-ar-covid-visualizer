@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using UniRx;
 using System;
 using UnityEngine.XR.ARSubsystems;
+using TouchPhase = UnityEngine.TouchPhase;
 
 public class ARTapToPlace : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class ARTapToPlace : MonoBehaviour
         //controls.Touch.TouchPress.performed += ctx => Touch(ctx);
     }
 
-    public void Touch(InputAction.CallbackContext ctx)
+    public void Touch()
     {
         if(isValidToPlace && placementPoseValid)
         {
@@ -52,6 +53,15 @@ public class ARTapToPlace : MonoBehaviour
     {
         UpdatePlacementPose();
         UpdatePlacementIndicator();
+
+        if(Input.touchCount > 0)
+        {
+            var touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
+            {
+                Touch();
+            }
+        }
     }
 
 
