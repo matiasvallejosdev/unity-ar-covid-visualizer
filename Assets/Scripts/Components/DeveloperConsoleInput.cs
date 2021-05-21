@@ -20,7 +20,7 @@ namespace Components
 
         private static DeveloperConsoleInput instance;
 
-        private void Awake()
+        void Awake()
         {
             if(instance != null && instance != this)
             {
@@ -32,10 +32,15 @@ namespace Components
             DontDestroyOnLoad(gameObject);
         }
 
-        void Toggle()
+        void Start()
+        {
+            ARControlManager.Instance.Controls.Player.ToggleConsole.performed += ctx => Toggle(ctx);
+        }
+
+        public void Toggle(CallbackContext context)
         {
             // Abre la UI accediendo al evento context developer
-            //if(!context.action.triggered){return;}
+            if(!context.action.triggered){return;}
 
             if(uiCanvas.activeSelf)
             {   
@@ -55,18 +60,6 @@ namespace Components
         {
             cmdFactory.PerfomConsole(inputValue, prefix, commands).Execute();
             inputField.text = string.Empty;
-        }
-
-        void Update()
-        {
-            if(Input.touchCount > 2)
-            {
-                var touch = Input.GetTouch(2);
-                if(touch.phase == TouchPhase.Ended)
-                {
-                    Toggle();
-                }
-            }
         }
     }
 

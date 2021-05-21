@@ -6,10 +6,10 @@ using ViewModel;
 public class CountryScaleInput : MonoBehaviour
 {
     public GameCmdFactory factoryCmd;
-    public CountryContainer countryContainer;
+    public GameContainer gameContainer;
     
     public void OnClick(int scaleFactor)
     {
-        factoryCmd.CountryContainerScale(countryContainer, scaleFactor).Execute();
+        factoryCmd.CountryContainerScale(gameContainer, scaleFactor).Execute();
     }
 }

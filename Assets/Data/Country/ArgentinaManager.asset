@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f879c8e358217e4b8f18a395e5703c5, type: 3}
-  m_Name: CountryContainer
+  m_Script: {fileID: 11500000, guid: eb87c4a2977914a488cc211287048f61, type: 3}
+  m_Name: ArgentinaManager
   m_EditorClassIdentifier: 
-  countryPrefab: {fileID: 3832614385264243802, guid: b937e2df828ca6843867142a0248fe8c, type: 3}
-  countryData:
+  countryPrefab: {fileID: 1195747819493674613, guid: ddca69fea6e0d694ba7120df3bcd1845, type: 3}
+  countryDataChildren:
   - {fileID: 11400000, guid: 8b2d497d023aa454da162d88a80e01ce, type: 2}
   - {fileID: 11400000, guid: fd25099e7b2ba7c419a5ed6151c12659, type: 2}
   - {fileID: 11400000, guid: 7d6bcddaa897caa428f538c66e968e88, type: 2}
-  IsActive:
+  isCountryPrefabOnScene:
     value: 0

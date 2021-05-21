@@ -8,60 +8,55 @@ using UniRx;
 using System;
 using UnityEngine.XR.ARSubsystems;
 using TouchPhase = UnityEngine.TouchPhase;
+using static UnityEngine.InputSystem.InputAction;
 
 public class ARTapToPlace : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
-
-    public CountryContainer countryContainer;
+    public GameObject parentFather;
+    public GameContainer gameContainer;
     public GameObject placementIndicator;
     [SerializeField] ARRaycastManager arOriginRaycast;
 
     private Pose placementPose;
     private bool placementPoseValid = false;
 
-    private bool isValidToPlace = true;
+    private bool isActiveCountryManager = false;
 
-    void Awake()
+    void Start()    
     {
-        //controls.Touch.TouchPress.performed += ctx => Touch(ctx);
-    }
+        ARControlManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx);
 
-    public void Touch()
-    {
-        if(isValidToPlace && placementPoseValid)
-        {
-            GameObject objectPlaced = Instantiate(countryContainer.countryPrefab, placementPose.position, placementPose.rotation);
-        }
-    }
-
-    void Start()
-    {
-        countryContainer.IsActive
-            .Subscribe(OnContainerActive)
+        gameContainer.isCountryManagerOnScene
+            .Subscribe(OnManagerStatusChange)
             .AddTo(this);
         
         placementIndicator = Instantiate(placementIndicator, new Vector3(0,0,0), placementIndicator.transform.rotation);
     }
 
-    private void OnContainerActive(bool IsActive)
+    public void Touch(CallbackContext context)
     {
-        bool isValidToPlace = IsActive;
+        if(!context.action.triggered){return;}
+
+        if(placementPoseValid && !isActiveCountryManager)
+        {
+            GameObject objectPlaced = Instantiate(gameContainer.countryManager.countryPrefab, placementPose.position, placementPose.rotation);
+            objectPlaced.transform.SetParent(parentFather.transform);
+        }
+    }
+
+    private void OnManagerStatusChange(bool isManagerActive)
+    {
+        isActiveCountryManager = isManagerActive;
+        placementIndicator.SetActive(!isManagerActive);
     }
 
     void Update()
     {
+        if(isActiveCountryManager)
+            return;
+        
         UpdatePlacementPose();
         UpdatePlacementIndicator();
-
-        if(Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began)
-            {
-                Touch();
-            }
-        }
     }
 
 
@@ -93,14 +88,5 @@ public class ARTapToPlace : MonoBehaviour
             var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
-    }
-
-    void OnEnable()
-    {
-        playerInput.enabled = true;
-    }
-    void OnDisable()
-    {
-        playerInput.enabled = false;
     }
 }

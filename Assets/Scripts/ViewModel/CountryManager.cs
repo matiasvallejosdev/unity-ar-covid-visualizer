@@ -5,12 +5,11 @@ using UnityEngine;
 
 namespace ViewModel
 {
-    [CreateAssetMenu(fileName = "New Country Container", menuName = "Data/Country Container")]
-    public class CountryContainer : ScriptableObject
+    [CreateAssetMenu(fileName = "New Country Manager", menuName = "Data/Country Manager")]
+    public class CountryManager : ScriptableObject
     {
         public GameObject countryPrefab;
-        public CountryData[] countryData;
-        public BoolReactiveProperty IsActive;
+        public CountryData[] countryDataChildren;
         public Subject<CountryData> OnCountryMotion = new Subject<CountryData>();
     }
 }

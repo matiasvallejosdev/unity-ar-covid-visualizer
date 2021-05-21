@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1298096862530326343}
   m_Layer: 2
-  m_Name: Placement Indicator
+  m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1298096862530326343
 Transform:
   m_ObjectHideFlags: 0

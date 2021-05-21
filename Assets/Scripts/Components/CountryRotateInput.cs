@@ -6,10 +6,10 @@ using ViewModel;
 public class CountryRotateInput : MonoBehaviour
 {
     public GameCmdFactory factoryCmd;
-    public CountryContainer countryContainer;
+    public GameContainer gameContainer;
     
     public void OnClick(int rotateFactor)
     {
-        factoryCmd.CountryContainerRotate(countryContainer, rotateFactor).Execute();
+        factoryCmd.CountryContainerRotate(gameContainer, rotateFactor).Execute();
     }
 }

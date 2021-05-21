@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViewModel;
 using Lean.Touch;
+using System;
 
-public class CountryScaleCmd : ICommand
+public class GameScaleCmd : ICommand
 {
-    private CountryContainer countryContainer;
     private int scaleFactor;
+    private GameContainer gameContainer;
 
-    public CountryScaleCmd(CountryContainer countryContainer, int scaleFactor)
+    public GameScaleCmd(GameContainer gameContainer, int scaleFactor)
     {
-        this.countryContainer = countryContainer;
+        this.gameContainer = gameContainer;
         this.scaleFactor = scaleFactor;
     }
 
     public void Execute()
     {
         // Scale Gameobject
-        var scale = GameObject.FindGameObjectWithTag(countryContainer.countryPrefab.tag);
+        var scale = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
         scale.transform.localScale += new Vector3(scaleFactor, scaleFactor, scaleFactor) * 1/6;
-        Debug.Log("Scaling go");
     }
 }

@@ -4,22 +4,20 @@ using UnityEngine;
 using ViewModel;
 using Lean.Touch;
 
-public class CountryRotateCmd : ICommand
+public class GameRotateCmd : ICommand
 {
-    private CountryContainer countryContainer;
     private int rotateFactor;
+    private GameContainer gameContainer;
 
-    public CountryRotateCmd(CountryContainer countryContainer, int rotateFactor)
+    public GameRotateCmd(GameContainer gameContainer, int rotateFactor)
     {
-        this.countryContainer = countryContainer;
+        this.gameContainer = gameContainer;
         this.rotateFactor = rotateFactor;
     }
+
     public void Execute()
     {
-        var rotate = GameObject.FindGameObjectWithTag(countryContainer.countryPrefab.tag);
-        Vector3 desiredRotQ = new Vector3(rotate.transform.eulerAngles.x, rotateFactor, rotate.transform.eulerAngles.z);
-
-        rotate.transform.Rotate(Vector3.up + desiredRotQ);
-        Debug.Log("Rotate go");
+        var rotate = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
+        rotate.transform.RotateAround(rotate.transform.position, Vector3.up, rotateFactor);
     }
 }

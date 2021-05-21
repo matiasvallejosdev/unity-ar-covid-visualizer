@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - GameContainer
+  - CountryManager
   - Country
-  - CountryContainer
+  - State
   layers:
   - Default
   - TransparentFX

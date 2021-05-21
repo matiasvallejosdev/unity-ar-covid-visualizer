@@ -17,12 +17,12 @@ public class GameCmdFactory : ScriptableObject
     }
 
     // Ui Container Rotate&Scale
-    public CountryScaleCmd CountryContainerScale(CountryContainer countryContainer, int scaleFactor)
+    public GameScaleCmd CountryContainerScale(GameContainer gameContainer, int scaleFactor)
     {
-        return new CountryScaleCmd(countryContainer, scaleFactor);
+        return new GameScaleCmd(gameContainer, scaleFactor);
     }  
-    public CountryRotateCmd CountryContainerRotate(CountryContainer countryContainer, int rotateFactor)
+    public GameRotateCmd CountryContainerRotate(GameContainer gameContainer, int rotateFactor)
     {
-        return new CountryRotateCmd(countryContainer, rotateFactor);
+        return new GameRotateCmd(gameContainer, rotateFactor);
     }
 }

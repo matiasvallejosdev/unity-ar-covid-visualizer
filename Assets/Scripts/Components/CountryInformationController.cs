@@ -24,7 +24,8 @@ public class CountryInformationController : MonoBehaviour
 
     void Start()
     {
-        _offsetDirection = countryTransform.position.y;
+        _directionMovement = countryTransform.localPosition;
+
         _maxScaleSection = sectionInformation.localScale;
         _desiredScaleSection = Vector3.zero;
         
@@ -37,22 +38,19 @@ public class CountryInformationController : MonoBehaviour
         if(isSelected)
         { 
             _desiredScaleSection = _maxScaleSection;
-            _directionMovement.y = (countryTransform.localScale.y / 10) + _offsetDirection;
+            _directionMovement.y = (countryTransform.localScale.y / 10);
         }
         else
         {   
             _desiredScaleSection = Vector3.zero;
-            _directionMovement.y = 0 + _offsetDirection;
+            _directionMovement.y = 0;
         }
     }
 
     void Update()
-    {
-        _directionMovement.x = countryTransform.position.x;
-        _directionMovement.z = countryTransform.position.z;
+    {     
+        countryTransform.localPosition = Vector3.Lerp(countryTransform.localPosition, _directionMovement, Time.deltaTime * speed);
         
-        // PROBLEMS HERE WHEN OBJECT SCALE DOWN OR UP!
-        countryTransform.position = Vector3.Lerp(countryTransform.position, _directionMovement, Time.deltaTime * speed);
         sectionInformation.localScale = Vector3.Lerp(sectionInformation.localScale, _desiredScaleSection, 
                                                     Time.deltaTime * speed);
     }

@@ -25,17 +25,47 @@ public class @ARControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Toggle World"",
+                    ""type"": ""Button"",
+                    ""id"": ""e5ea11bb-3d5a-4071-baa4-14a5f1bdb25b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""6835ab99-f0a4-4af9-9064-1f927e8dee70"",
-                    ""path"": ""<Keyboard>/anyKey"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": ""KeyboardMouse"",
                     ""action"": ""Toggle Console"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f77af20-0dd2-4456-98c0-1d6cf0122465"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Toggle World"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""043f6389-e8b7-4277-ab4f-47a0d3ca0448"",
+                    ""path"": ""<Touchscreen>/press"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Toggle World"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -55,15 +85,27 @@ public class @ARControls : IInputActionCollection, IDisposable
             ]
         },
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
-            ""devices"": []
+            ""name"": ""KeyboardMouse"",
+            ""bindingGroup"": ""KeyboardMouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_ToggleConsole = m_Player.FindAction("Toggle Console", throwIfNotFound: true);
+        m_Player_ToggleWorld = m_Player.FindAction("Toggle World", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -114,11 +156,13 @@ public class @ARControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_ToggleConsole;
+    private readonly InputAction m_Player_ToggleWorld;
     public struct PlayerActions
     {
         private @ARControls m_Wrapper;
         public PlayerActions(@ARControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @ToggleConsole => m_Wrapper.m_Player_ToggleConsole;
+        public InputAction @ToggleWorld => m_Wrapper.m_Player_ToggleWorld;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -131,6 +175,9 @@ public class @ARControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
                 @ToggleConsole.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleConsole;
+                @ToggleWorld.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleWorld;
+                @ToggleWorld.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleWorld;
+                @ToggleWorld.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnToggleWorld;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -138,6 +185,9 @@ public class @ARControls : IInputActionCollection, IDisposable
                 @ToggleConsole.started += instance.OnToggleConsole;
                 @ToggleConsole.performed += instance.OnToggleConsole;
                 @ToggleConsole.canceled += instance.OnToggleConsole;
+                @ToggleWorld.started += instance.OnToggleWorld;
+                @ToggleWorld.performed += instance.OnToggleWorld;
+                @ToggleWorld.canceled += instance.OnToggleWorld;
             }
         }
     }
@@ -151,17 +201,18 @@ public class @ARControls : IInputActionCollection, IDisposable
             return asset.controlSchemes[m_TouchSchemeIndex];
         }
     }
-    private int m_KeyboardSchemeIndex = -1;
-    public InputControlScheme KeyboardScheme
+    private int m_KeyboardMouseSchemeIndex = -1;
+    public InputControlScheme KeyboardMouseScheme
     {
         get
         {
-            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-            return asset.controlSchemes[m_KeyboardSchemeIndex];
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("KeyboardMouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
         }
     }
     public interface IPlayerActions
     {
         void OnToggleConsole(InputAction.CallbackContext context);
+        void OnToggleWorld(InputAction.CallbackContext context);
     }
 }
