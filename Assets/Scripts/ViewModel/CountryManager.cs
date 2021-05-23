@@ -10,6 +10,7 @@ namespace ViewModel
     {
         public GameObject countryPrefab;
         public CountryData[] countryDataChildren;
-        public Subject<CountryData> OnCountryMotion = new Subject<CountryData>();
+        public CountryData currentCountrySelected;
+        public Subject<CountryData> OnCountryFocus = new Subject<CountryData>();
     }
 }

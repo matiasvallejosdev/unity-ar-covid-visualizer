@@ -29,9 +29,11 @@ public class CountryInformationController : MonoBehaviour
         _maxScaleSection = sectionInformation.localScale;
         _desiredScaleSection = Vector3.zero;
         
-        countryData.countrySelected
+        countryData.countryFocus
             .Subscribe(OnSelectedChange)
             .AddTo(this);
+        
+        countryData.countryFocus.Value = false;
     }
     private void OnSelectedChange(bool isSelected)
     {

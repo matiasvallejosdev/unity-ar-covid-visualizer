@@ -16,6 +16,12 @@ public class GameCmdFactory : ScriptableObject
         return new CountryTurnCmd(countryData, new CountryGateway());
     }
 
+
+    public PerfomFocusCmd PerfomFocusCmd(CountryManager countryManager, CountryData countryHit, bool focusStatus)
+    {
+        return new PerfomFocusCmd(countryManager, countryHit, focusStatus);
+    }
+
     // Ui Container Rotate&Scale
     public GameScaleCmd CountryContainerScale(GameContainer gameContainer, int scaleFactor)
     {

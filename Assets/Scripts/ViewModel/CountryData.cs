@@ -21,7 +21,7 @@ namespace ViewModel
         public IntReactiveProperty infoTested;
         
         [Space]
-        public BoolReactiveProperty countrySelected;
+        public BoolReactiveProperty countryFocus;
         public ISubject<CountryInformation> OnInformation = new Subject<CountryInformation>();
     }
 

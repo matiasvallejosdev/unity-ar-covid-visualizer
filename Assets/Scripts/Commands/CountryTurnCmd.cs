@@ -20,7 +20,6 @@ public class CountryTurnCmd : ICommand
     {
         gateway.CountryTurn(countryData.countryId)
             .Do(x => countryData.OnInformation.OnNext(x))
-            .Do(_ => countryData.countrySelected.Value = false)
             .Subscribe();
     } 
 }
