@@ -4,6 +4,7 @@ using UnityEngine;
 using ViewModel;
 using UniRx;
 using System;
+using Infrastructure;
 
 public class CountryManagerController : MonoBehaviour
 {
@@ -15,10 +16,27 @@ public class CountryManagerController : MonoBehaviour
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
-
-        Quaternion look = new Quaternion(0, 180, 0, 1);
-        this.gameObject.transform.rotation = look;
+        
+        gameContainer.countryManager.OnDataReceiver
+            .Subscribe(OnDataReceiver)
+            .AddTo(this);
     }
+
+    private void OnDataReceiver(CountryInformation data)
+    {
+        foreach(StateInformation state in data.statesChildren)
+        {
+            foreach(CountryData countryData in gameContainer.countryManager.countryDataChildren)
+            {
+                if(state.stateName == countryData.countryName.Value)
+                {
+                    countryData.OnInformation.OnNext(state);
+                    break;
+                }
+            }
+        }
+    }
+
     void UpdateCountryData()
     {
         foreach(CountryData data in gameContainer.countryManager.countryDataChildren)

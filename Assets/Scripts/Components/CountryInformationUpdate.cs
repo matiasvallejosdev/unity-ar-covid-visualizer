@@ -12,12 +12,12 @@ public class CountryInformationUpdate : MonoBehaviour
 
     void Start()
     {
-        countryData.OnInformation
+       countryData.OnInformation
             .Subscribe(InformationDisplay)
             .AddTo(this);
     }
 
-    private void InformationDisplay(CountryInformation info)
+    private void InformationDisplay(StateInformation info)
     {
         countryData.infoDeaths.Value = info.deaths;
         countryData.infoPositives.Value = info.positives;

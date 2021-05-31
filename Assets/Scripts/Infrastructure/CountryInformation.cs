@@ -5,8 +5,9 @@ namespace Infrastructure
 {
     public class CountryInformation
     {
-        public int deaths {get; set;}
-        public int tested {get; set;}
-        public int positives {get; set;}
+        public StateInformation[] statesChildren{get; set;}
+        public int totalDeaths {get; set;}
+        public int totalTested {get; set;}
+        public int totalPositives {get; set;}
     } 
 }

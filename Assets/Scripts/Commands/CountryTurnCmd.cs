@@ -18,7 +18,7 @@ public class CountryTurnCmd : ICommand
 
     public void Execute()
     {
-        gateway.CountryTurn(countryData.countryId)
+        gateway.StateTurnData(countryData.countryId)
             .Do(x => countryData.OnInformation.OnNext(x))
             .Subscribe();
     } 

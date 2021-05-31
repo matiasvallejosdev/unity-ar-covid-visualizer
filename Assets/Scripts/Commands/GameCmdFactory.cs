@@ -15,7 +15,10 @@ public class GameCmdFactory : ScriptableObject
     {
         return new CountryTurnCmd(countryData, new CountryGateway());
     }
-
+    public CountryVisualizerCmd TurnVirusData(CountryData[] countryData)
+    {
+        return new CountryVisualizerCmd(countryData, new CountryGateway());
+    }
 
     public PerfomFocusCmd PerfomFocusCmd(CountryManager countryManager, CountryData countryHit, bool focusStatus)
     {

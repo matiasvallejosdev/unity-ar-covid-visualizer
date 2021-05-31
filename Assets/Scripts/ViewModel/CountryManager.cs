@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Infrastructure;
 using UniRx;
 using UnityEngine;
 
@@ -12,5 +13,7 @@ namespace ViewModel
         public CountryData[] countryDataChildren;
         public CountryData currentCountrySelected;
         public Subject<CountryData> OnCountryFocus = new Subject<CountryData>();
+        public ISubject<CountryInformation> OnDataReceiver = new Subject<CountryInformation>();
+
     }
 }

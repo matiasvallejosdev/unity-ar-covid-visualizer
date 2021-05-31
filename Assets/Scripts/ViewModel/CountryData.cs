@@ -22,7 +22,7 @@ namespace ViewModel
         
         [Space]
         public BoolReactiveProperty countryFocus;
-        public ISubject<CountryInformation> OnInformation = new Subject<CountryInformation>();
+        public ISubject<StateInformation> OnInformation = new Subject<StateInformation>();
     }
 
     public enum Type

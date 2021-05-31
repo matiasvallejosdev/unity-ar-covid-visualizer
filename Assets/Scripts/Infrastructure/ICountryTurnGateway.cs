@@ -5,6 +5,8 @@ namespace Infrastructure
 {
     public interface ICountryTurnGateway 
     {
-        IObservable<CountryInformation> CountryTurn(int data);
+        IObservable<CountryInformation[]> WorldDataTurn(int idCountry);
+        IObservable<CountryInformation> CountryTurnData(int idCountry);
+        IObservable<StateInformation> StateTurnData(int idState);
     }
 }
