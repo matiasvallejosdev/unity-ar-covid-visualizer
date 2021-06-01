@@ -10,6 +10,7 @@ public class CountryAnimationDisplay : MonoBehaviour
     public GameContainer gameContainer;
     public Rigidbody[] rigidbodyCountry;
     [Range(0,3)] public float startDelay;
+    private System.Random random = new System.Random();
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class CountryAnimationDisplay : MonoBehaviour
         foreach(Rigidbody r in rigidbodyCountry)
         {
             r.isKinematic = false;
+            r.AddForce(Vector3.up * random.Next(20,150), ForceMode.Impulse);
         }
     }
 }
