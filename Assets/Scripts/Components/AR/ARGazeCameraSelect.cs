@@ -33,7 +33,7 @@ public class ARGazeCameraSelect : MonoBehaviour
             Debug.DrawRay(_mainCamera.transform.position, _mainCamera.transform.forward, Color.green); 
 
             CountryData countryHit = hit.transform.GetComponent<CountryHitData>().countryData;    
-            Debug.Log("Gaze in: "+ countryHit.countryName);
+            //Debug.Log("Gaze in: "+ countryHit.countryName);
 
             gameCmdFactory.PerfomFocusCmd(gameContainer.countryManager, countryHit, true).Execute();         
         }

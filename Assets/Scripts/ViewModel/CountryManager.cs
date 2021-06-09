@@ -14,6 +14,5 @@ namespace ViewModel
         public CountryData currentCountrySelected;
         public Subject<CountryData> OnCountryFocus = new Subject<CountryData>();
         public ISubject<CountryInformation> OnDataReceiver = new Subject<CountryInformation>();
-
     }
 }

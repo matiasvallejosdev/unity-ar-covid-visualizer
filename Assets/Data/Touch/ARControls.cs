@@ -49,6 +49,17 @@ public class @ARControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""e90316fb-ea65-461b-917d-a17f4fec51e6"",
+                    ""path"": ""<Touchscreen>/press"",
+                    ""interactions"": ""MultiTap(tapCount=3)"",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Toggle Console"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""4f77af20-0dd2-4456-98c0-1d6cf0122465"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",

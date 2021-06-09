@@ -13,6 +13,8 @@ public class CountryManagerController : MonoBehaviour
     
     void Start()
     {
+        gameContainer.isCountryManagerOnScene.Value = true;
+
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
@@ -62,7 +64,6 @@ public class CountryManagerController : MonoBehaviour
     }
     void OnEnable()
     {
-        gameContainer.isCountryManagerOnScene.Value = true;
         UpdateCountryData();
     }
 }

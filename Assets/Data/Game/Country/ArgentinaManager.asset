@@ -17,5 +17,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8b2d497d023aa454da162d88a80e01ce, type: 2}
   - {fileID: 11400000, guid: fd25099e7b2ba7c419a5ed6151c12659, type: 2}
   - {fileID: 11400000, guid: 7d6bcddaa897caa428f538c66e968e88, type: 2}
-  isCountryPrefabOnScene:
-    value: 0
+  currentCountrySelected: {fileID: 0}
