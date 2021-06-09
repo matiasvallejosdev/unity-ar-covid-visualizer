@@ -7,19 +7,7 @@ namespace Infrastructure
 {
     public class CountryGateway : ICountryTurnGateway
     {
-        public string URL_DATA_COUNTRY = "http";
-        public IObservable<CountryInformation[]> WorldDataTurn(int idCountry)
-        {
-            CountryInformation[] worldData = new CountryInformation[0];
-
-            return Observable.Return(worldData);
-        }
-        public IObservable<CountryInformation> CountryTurnData(int idCountry)
-        {
-            CountryInformation countryData = new CountryInformation();
-
-            return Observable.Return(countryData);
-        }
+        private protected string URL_DATA_COUNTRY = "http";
 
         public IObservable<StateInformation> StateTurnData(int idCountry)
         {

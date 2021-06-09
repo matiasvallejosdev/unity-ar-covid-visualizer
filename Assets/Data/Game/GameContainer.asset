@@ -15,3 +15,4 @@ MonoBehaviour:
   isCountryManagerOnScene:
     value: 0
   countryManager: {fileID: 11400000, guid: 64de78d1277c7f749b147bc28244608c, type: 2}
+  globalManager: {fileID: 11400000, guid: 318c17c9bc60d1742b586d87e88f59ad, type: 2}

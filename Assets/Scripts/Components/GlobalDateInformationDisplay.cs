@@ -7,7 +7,7 @@ using UniRx.Triggers;
 using UniRx;
 using System;
 
-public class DateInformationDisplay : MonoBehaviour
+public class GlobalDateInformationDisplay : MonoBehaviour
 {
     public CountryGlobalData countryGlobalData;
     public TextMeshProUGUI countryLabel, fontHttpLabel;

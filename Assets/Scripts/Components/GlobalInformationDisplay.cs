@@ -7,7 +7,7 @@ using TMPro;
 
 public class GlobalInformationDisplay : MonoBehaviour
 {
-    public GlobalData globalData; 
+    public WorldGlobalData globalData; 
     public TextMeshProUGUI deathLabel, testedLabel, casesLabel;
     public TextMeshProUGUI fontHttpLabel;
 
@@ -19,7 +19,7 @@ public class GlobalInformationDisplay : MonoBehaviour
             .Subscribe(OnChangeDeaths)
             .AddTo(this);
         
-        globalData.casesGlobal
+        globalData.positivesGlobal
             .Subscribe(OnChangeCases)
             .AddTo(this);
         

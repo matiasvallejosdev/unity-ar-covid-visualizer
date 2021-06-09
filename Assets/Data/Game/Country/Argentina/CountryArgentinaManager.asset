@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb87c4a2977914a488cc211287048f61, type: 3}
-  m_Name: ArgentinaManager
+  m_Name: CountryArgentinaManager
   m_EditorClassIdentifier: 
   countryPrefab: {fileID: 1195747819493674613, guid: ddca69fea6e0d694ba7120df3bcd1845, type: 3}
   countryDataChildren:

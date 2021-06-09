@@ -9,24 +9,24 @@ using Infrastructure;
 public class CountryManagerController : MonoBehaviour
 {
     public GameContainer gameContainer;
-    public GameCmdFactory cmdFactory;
     
     void Start()
     {
         gameContainer.isCountryManagerOnScene.Value = true;
-
+        gameContainer.OnUpdate.OnNext(true);
+        
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
         
-        gameContainer.countryManager.OnDataReceiver
+        /*gameContainer.countryManager.OnDataReceiver
             .Subscribe(OnDataReceiver)
-            .AddTo(this);
+            .AddTo(this);*/
     }
 
-    private void OnDataReceiver(CountryInformation data)
+   /*private void OnDataReceiver(CountryInformation countryDataReceiver)
     {
-        foreach(StateInformation state in data.statesChildren)
+        foreach(StateInformation state in countryDataReceiver.statesChildren)
         {
             foreach(CountryData countryData in gameContainer.countryManager.countryDataChildren)
             {
@@ -37,13 +37,7 @@ public class CountryManagerController : MonoBehaviour
                 }
             }
         }
-    }
-
-    void UpdateCountryData()
-    {
-        foreach(CountryData data in gameContainer.countryManager.countryDataChildren)
-            cmdFactory.CountryTurn(data).Execute();
-    }
+    }*/
 
     private void OnCountryFocus(CountryData countrySelected)
     {
@@ -61,9 +55,5 @@ public class CountryManagerController : MonoBehaviour
     void OnDisable()
     {
         gameContainer.isCountryManagerOnScene.Value = false;
-    }
-    void OnEnable()
-    {
-        UpdateCountryData();
     }
 }

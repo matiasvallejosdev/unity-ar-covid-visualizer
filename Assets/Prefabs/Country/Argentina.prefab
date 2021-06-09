@@ -4192,6 +4192,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7739404125877771410}
   - component: {fileID: 560363840796062189}
+  - component: {fileID: 2034090792}
+  - component: {fileID: 2034090795}
+  - component: {fileID: 28999481447700983}
   m_Layer: 0
   m_Name: Argentina
   m_TagString: CountryManager
@@ -4225,6 +4228,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e265b9f857908db40ac0f7460834056d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+--- !u!114 &2034090792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195747819493674613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe2dbbd524b1b047ac8b4f1fde361ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
+--- !u!114 &2034090795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195747819493674613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd86fe6b9f794b84f972f5d46bec981a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
+--- !u!114 &28999481447700983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195747819493674613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afcd5a428a322f459d61c3c41c8dd4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}

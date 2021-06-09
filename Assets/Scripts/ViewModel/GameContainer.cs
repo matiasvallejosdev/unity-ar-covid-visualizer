@@ -10,5 +10,7 @@ namespace ViewModel
     {
         public BoolReactiveProperty isCountryManagerOnScene;
         public CountryManager countryManager;
+        public GlobalManager globalManager;
+        public ISubject<bool> OnUpdate = new Subject<bool>();
     }
 }

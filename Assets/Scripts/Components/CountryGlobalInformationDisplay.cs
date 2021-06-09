@@ -22,7 +22,7 @@ public class CountryGlobalInformationDisplay : MonoBehaviour
             .Subscribe(OnChangeDeaths)
             .AddTo(this);
         
-        countryGlobalData.cases
+        countryGlobalData.positives
             .Subscribe(OnChangeCases)
             .AddTo(this);
         
