@@ -18,8 +18,11 @@ public class GameScaleCmd : ICommand
 
     public void Execute()
     {
-        // Scale Gameobject
         var scale = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
+        if(scale == null)
+            return;
+
+        // Scale country
         scale.transform.localScale += new Vector3(scaleFactor, scaleFactor, scaleFactor) * 1/6;
     }
 }

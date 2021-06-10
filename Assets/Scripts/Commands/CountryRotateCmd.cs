@@ -18,6 +18,10 @@ public class GameRotateCmd : ICommand
     public void Execute()
     {
         var rotate = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
+        if(rotate == null)
+            return;
+        
+        // Rotate country
         rotate.transform.RotateAround(rotate.transform.position, Vector3.up, rotateFactor);
     }
 }
