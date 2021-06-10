@@ -7,7 +7,7 @@ namespace Infrastructure
 {
     public class CountryGateway : ICountryTurnGateway
     {
-        private protected string URL_DATA_COUNTRY = "http";
+        private protected string URL_DATA_COUNTRY = "http://www.coronavirus.api/";
 
         public IObservable<StateInformation> StateTurnData(int idCountry)
         {
@@ -19,7 +19,7 @@ namespace Infrastructure
             
             return Observable.Return(c)
                     .Delay(TimeSpan.FromMilliseconds(1000))
-                    .Do(_ => Debug.Log("Get country("+idCountry+") data!"));
+                    .Do(_ => Debug.Log("Get country data in " + URL_DATA_COUNTRY));
         }
     }
 }

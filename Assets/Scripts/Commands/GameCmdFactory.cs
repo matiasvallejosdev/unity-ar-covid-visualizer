@@ -36,4 +36,9 @@ public class GameCmdFactory : ScriptableObject
     {
         return new PerfomConsoleCmd(input, prefix, commands);
     }
+    // Refresh data
+    public RefreshDataCmd TurnRefreshData(GameContainer gameContainer)
+    {
+        return new RefreshDataCmd(gameContainer);
+    }
 }

@@ -703,8 +703,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 539877740}
+  - component: {fileID: 6916062629148541787}
+  - component: {fileID: 4592435933244101613}
   m_Layer: 0
-  m_Name: Information
+  m_Name: Global
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,6 +731,34 @@ Transform:
   m_Father: {fileID: 7739404125877771410}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6916062629148541787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539877739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe2dbbd524b1b047ac8b4f1fde361ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
+--- !u!114 &4592435933244101613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539877739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afcd5a428a322f459d61c3c41c8dd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
 --- !u!1 &569227334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3740,8 +3770,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509364763889362027}
+  - component: {fileID: 2099614442893679552}
   m_Layer: 3
-  m_Name: States
+  m_Name: StatesChildren
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3784,6 +3815,20 @@ Transform:
   m_Father: {fileID: 7739404125877771410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2099614442893679552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509364763889362026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd86fe6b9f794b84f972f5d46bec981a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
 --- !u!1 &538082327483542702
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,9 +4237,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7739404125877771410}
   - component: {fileID: 560363840796062189}
-  - component: {fileID: 2034090792}
-  - component: {fileID: 2034090795}
-  - component: {fileID: 28999481447700983}
   m_Layer: 0
   m_Name: Argentina
   m_TagString: CountryManager
@@ -4228,47 +4270,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e265b9f857908db40ac0f7460834056d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
---- !u!114 &2034090792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195747819493674613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe2dbbd524b1b047ac8b4f1fde361ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
-  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
---- !u!114 &2034090795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195747819493674613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd86fe6b9f794b84f972f5d46bec981a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
-  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
---- !u!114 &28999481447700983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195747819493674613}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0afcd5a428a322f459d61c3c41c8dd4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}

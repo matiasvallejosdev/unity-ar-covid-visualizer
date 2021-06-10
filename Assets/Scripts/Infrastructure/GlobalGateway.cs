@@ -8,7 +8,7 @@ namespace Infrastructure
 {
     public class GlobalGateway : IGlobalTurnGateway
     {
-        private protected string URL_DATA_COUNTRY = "http";
+        private protected string URL_DATA_COUNTRY = "http://www.coronavirus.api/";
 
         public IObservable<GlobalInformation> GlobalTurnData(GlobalManager globalManager)        
         {
@@ -22,8 +22,7 @@ namespace Infrastructure
             
             return Observable.Return(global)
                     .Delay(TimeSpan.FromMilliseconds(1000))
-                    .Do(_ => Debug.Log("Get country("+globalManager.countryGlobalData.idCountry.ToString()+") data!"))
-                    .Do(_ => Debug.Log("Get global world data!"));
+                    .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA_COUNTRY));
         }
     }
 }

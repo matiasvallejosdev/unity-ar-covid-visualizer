@@ -9,16 +9,17 @@ using Infrastructure;
 public class CountryManagerController : MonoBehaviour
 {
     public GameContainer gameContainer;
+    public GameCmdFactory cmdFactory;
     
     void Start()
     {
         gameContainer.isCountryManagerOnScene.Value = true;
-        gameContainer.OnUpdate.OnNext(true);
-        
+        cmdFactory.TurnRefreshData(gameContainer).Execute();
+
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
-        
+
         /*gameContainer.countryManager.OnDataReceiver
             .Subscribe(OnDataReceiver)
             .AddTo(this);*/
