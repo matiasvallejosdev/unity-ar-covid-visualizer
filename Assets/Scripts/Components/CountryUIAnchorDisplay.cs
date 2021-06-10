@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UniRx;
+using ViewModel;
+using UnityEngine;
+
+public class CountryUIAnchorDisplay : MonoBehaviour
+{
+    public GameContainer gameContainer;
+    public GameObject countryUIAnchor;
+    
+    void Start()
+    {
+        gameContainer.isCountryManagerOnScene
+            .Subscribe(OnCountryManagerOnScene)
+            .AddTo(this);   
+    }
+
+    private void OnCountryManagerOnScene(bool countryOnScene)
+    {
+        countryUIAnchor.SetActive(countryOnScene);
+    }
+}
