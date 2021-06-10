@@ -13,9 +13,6 @@ public class CountryManagerController : MonoBehaviour
     
     void Start()
     {
-        gameContainer.isCountryManagerOnScene.Value = true;
-        cmdFactory.TurnRefreshData(gameContainer).Execute();
-
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
@@ -53,8 +50,18 @@ public class CountryManagerController : MonoBehaviour
         }
     }
 
+    private void RefreshData()
+    {
+        cmdFactory.TurnRefreshData(gameContainer).Execute();
+    }
+    
     void OnDisable()
     {
         gameContainer.isCountryManagerOnScene.Value = false;
+    }
+    void OnEnable()
+    {
+        gameContainer.isCountryManagerOnScene.Value = true;
+        Invoke("RefreshData", 0.3f);
     }
 }
