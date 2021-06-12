@@ -3,12 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameContainer
+  - CountryManager
+  - State
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Gaze
   - Water
   - UI
   - 
