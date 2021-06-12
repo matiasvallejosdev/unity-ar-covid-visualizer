@@ -57,6 +57,9 @@ public class CountryManagerController : MonoBehaviour
     
     void OnDisable()
     {
+        if(gameContainer == null)
+            return;
+            
         gameContainer.isCountryManagerOnScene.Value = false;
     }
     void OnEnable()

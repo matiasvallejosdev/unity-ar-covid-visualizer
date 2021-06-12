@@ -15,36 +15,54 @@ public class ARTapToPlace : MonoBehaviour
     public GameContainer gameContainer;
 
     [Header("AR References")]
-    public GameObject placementIndicator;
+    public GameObject placeAnchor;
+    //public GameObject placementIndicator;
     public Camera arCamera;
     public ARRaycastManager arOriginRaycast;
 
-
     private Pose placementPose;
-    private bool placementPoseValid = false;
+    private BoolReactiveProperty placementPoseValid = new BoolReactiveProperty();
     private bool isActiveCountryManager = false;
 
     void Start()    
     {
         ARControlManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx);
-        placementIndicator = Instantiate(placementIndicator, new Vector3(0,0,0), placementIndicator.transform.rotation);
+        placementPoseValid.Value = false;
+        //placementIndicator = Instantiate(placementIndicator, new Vector3(0,0,0), placementIndicator.transform.rotation);
 
         gameContainer.isCountryManagerOnScene
             .Subscribe(OnManagerStatusChange)
             .AddTo(this);
+        
+        placementPoseValid
+            .Subscribe(OnChangePoseValid)
+            .AddTo(this);
+    }
+
+    private void OnChangePoseValid(bool poseValid)
+    {
+        if (poseValid)
+        {
+            placeAnchor.SetActive(true);
+            //placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
+        }
+        else 
+        {
+            placeAnchor.SetActive(false);
+        }    
     }
 
     private void OnManagerStatusChange(bool isManagerActive)
     {
         isActiveCountryManager = isManagerActive;
-        placementIndicator.SetActive(!isManagerActive);
+        placeAnchor.SetActive(!isManagerActive);
     }
     
     public void Touch(CallbackContext context)
     {
         if(!context.action.triggered){return;}
 
-        if(placementPoseValid && !isActiveCountryManager)
+        if(placementPoseValid.Value && !isActiveCountryManager)
         {
             GameObject objectPlaced = Instantiate(gameContainer.countryManager.countryPrefab, placementPose.position, placementPose.rotation);
             objectPlaced.transform.SetParent(parentFather.transform);
@@ -57,21 +75,7 @@ public class ARTapToPlace : MonoBehaviour
             return;
         
         UpdatePlacementPose();
-        UpdatePlacementIndicator();
-    }
-
-
-    private void UpdatePlacementIndicator()
-    {
-        if (placementPoseValid) 
-        {
-            placementIndicator.SetActive(true);
-            placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
-        }
-        else 
-        {
-            placementIndicator.SetActive(false);
-        }
+        //UpdatePlacementIndicator();
     }
 
     private void UpdatePlacementPose()
@@ -80,8 +84,8 @@ public class ARTapToPlace : MonoBehaviour
         var hits = new List<ARRaycastHit>();
         arOriginRaycast.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon);
 
-        placementPoseValid = hits.Count > 0;
-        if (placementPoseValid) 
+        placementPoseValid.Value = hits.Count > 0;
+        if (placementPoseValid.Value) 
         {
             placementPose = hits[0].pose;
 
