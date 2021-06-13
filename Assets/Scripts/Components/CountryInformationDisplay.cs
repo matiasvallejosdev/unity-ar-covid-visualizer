@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UniRx;
 using ViewModel;
+using System.Globalization;
 
 namespace Components
 {

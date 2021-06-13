@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GlobalWorldData
   m_EditorClassIdentifier: 
   fontHttp: http//:coronavirusapi.com
-  testedGlobal:
+  recoveredGlobal:
     value: 0
   deathsGlobal:
     value: 0

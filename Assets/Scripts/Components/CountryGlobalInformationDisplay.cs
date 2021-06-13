@@ -5,6 +5,7 @@ using UniRx;
 using TMPro;
 using ViewModel;
 using System;
+using Utilities;
 
 public class CountryGlobalInformationDisplay : MonoBehaviour
 {
@@ -33,14 +34,14 @@ public class CountryGlobalInformationDisplay : MonoBehaviour
 
     private void OnChangeTested(int tested)
     {
-        testedLabel.text = "Tested: " + tested.ToString();
+        testedLabel.text = "Recovered: " + Utility.GetNumberFormat(tested);
     }
     private void OnChangeCases(int cases)
     {
-        casesLabel.text = "Cases: " + cases.ToString();
+        casesLabel.text = "Cases: " + Utility.GetNumberFormat(cases);
     }
     private void OnChangeDeaths(int deaths)
     {
-        deathLabel.text = "Deaths: " + deaths.ToString();
+        deathLabel.text = "Deaths: " + Utility.GetNumberFormat(deaths);
     }
 }

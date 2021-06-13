@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GlobalArgentinaData
   m_EditorClassIdentifier: 
   idCountry: 1
+  codeCountry: AR
   nameCountry: Argentina
   fontHttp: http//:coronavirusapi.com
   deaths:

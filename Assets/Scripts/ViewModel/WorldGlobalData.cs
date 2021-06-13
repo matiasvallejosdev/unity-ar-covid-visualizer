@@ -13,7 +13,7 @@ namespace ViewModel
         public string fontHttp;
         
         [Header("Reactive")]
-        public IntReactiveProperty testedGlobal;
+        public IntReactiveProperty recoveredGlobal;
         public IntReactiveProperty deathsGlobal;
         public IntReactiveProperty positivesGlobal;       
     }   

@@ -11,6 +11,7 @@ namespace ViewModel
     {
         [Header("Properties")]
         public int idCountry;
+        public string codeCountry;
         public string nameCountry;
         public string fontHttp;
 

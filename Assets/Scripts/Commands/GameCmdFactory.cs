@@ -8,9 +8,9 @@ using Infrastructure;
 public class GameCmdFactory : ScriptableObject
 {
     // Global Update Data
-    public GlobalVisualizerCmd TurnGlobalData(GlobalManager globalManager)
+    public GlobalVisualizerCmd TurnGlobalData(GlobalManager globalManager, MonoBehaviour handlerInput)
     {
-        return new GlobalVisualizerCmd(globalManager, new GlobalGateway());
+        return new GlobalVisualizerCmd(globalManager, new GlobalGateway(), handlerInput);
     }
     // Country Update Data
     public CountryVisualizerCmd TurnCountryData(CountryData countryData)

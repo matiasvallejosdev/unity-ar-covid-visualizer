@@ -55,7 +55,9 @@ public class ARTapToPlace : MonoBehaviour
     private void OnManagerStatusChange(bool isManagerActive)
     {
         isActiveCountryManager = isManagerActive;
-        placeAnchor.SetActive(!isManagerActive);
+        
+        if(placeAnchor.gameObject != null)
+            placeAnchor.SetActive(!isManagerActive);
     }
     
     public void Touch(CallbackContext context)

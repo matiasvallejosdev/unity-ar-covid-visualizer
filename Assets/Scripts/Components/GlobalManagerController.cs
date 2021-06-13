@@ -28,7 +28,7 @@ public class GlobalManagerController : MonoBehaviour
         gameContainer.globalManager.countryGlobalData.deaths.Value = globalInformation.countryGlobalInformation.totalDeaths;
 
         gameContainer.globalManager.worldData.positivesGlobal.Value = globalInformation.worldInformation.totalPositives;
-        gameContainer.globalManager.worldData.testedGlobal.Value = globalInformation.worldInformation.totalTested;
+        gameContainer.globalManager.worldData.recoveredGlobal.Value = globalInformation.worldInformation.totalRecovered;
         gameContainer.globalManager.worldData.deathsGlobal.Value = globalInformation.worldInformation.totalDeaths;
     }
 }

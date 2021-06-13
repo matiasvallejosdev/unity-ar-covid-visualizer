@@ -8,17 +8,19 @@ using ViewModel;
 public class GlobalVisualizerCmd : ICommand
 {
     private GlobalGateway globalGateway;
+    private readonly MonoBehaviour handlerInput;
     private GlobalManager globalManager;
 
-    public GlobalVisualizerCmd(GlobalManager globalManager, GlobalGateway globalGateway)
+    public GlobalVisualizerCmd(GlobalManager globalManager, GlobalGateway globalGateway, MonoBehaviour handlerInput)
     {
         this.globalManager = globalManager;
         this.globalGateway = globalGateway;
+        this.handlerInput = handlerInput;
     }
 
     public void Execute()
     {
-        globalGateway.GlobalTurnData(globalManager)
+        globalGateway.GlobalTurnData(globalManager, handlerInput)
             .Do(x => globalManager.OnDataReceiver.OnNext(x))
             .Subscribe();;
     }

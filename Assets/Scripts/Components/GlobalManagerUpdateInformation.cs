@@ -26,6 +26,6 @@ public class GlobalManagerUpdateInformation : MonoBehaviour
     void UpdateGlobalData()
     {
         Debug.Log("Update Global data");
-        cmdFactory.TurnGlobalData(gameContainer.globalManager).Execute();
+        cmdFactory.TurnGlobalData(gameContainer.globalManager, this).Execute();
     }
 }

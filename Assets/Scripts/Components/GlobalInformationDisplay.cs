@@ -4,6 +4,7 @@ using UnityEngine;
 using UniRx;
 using ViewModel;
 using TMPro;
+using Utilities;
 
 public class GlobalInformationDisplay : MonoBehaviour
 {
@@ -23,21 +24,21 @@ public class GlobalInformationDisplay : MonoBehaviour
             .Subscribe(OnChangeCases)
             .AddTo(this);
         
-        globalData.testedGlobal
+        globalData.recoveredGlobal
             .Subscribe(OnChangeTested)
             .AddTo(this);
     }
   
-    private void OnChangeTested(int tested)
+    private void OnChangeTested(int recovered)
     {
-        testedLabel.text = "Tested: " + tested.ToString();
+        testedLabel.text = "Recovered: " + Utility.GetNumberFormat(recovered);
     }
     private void OnChangeCases(int cases)
     {
-        casesLabel.text = "Cases: " + cases.ToString();
+        casesLabel.text = "Cases: " + Utility.GetNumberFormat(cases);
     }
     private void OnChangeDeaths(int deaths)
     {
-        deathLabel.text = "Deaths: " + deaths.ToString();
+        deathLabel.text = "Deaths: " + Utility.GetNumberFormat(deaths);
     }
 }
