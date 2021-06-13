@@ -15,10 +15,10 @@ MonoBehaviour:
   idCountry: 1
   codeCountry: AR
   nameCountry: Argentina
-  fontHttp: http//:coronavirusapi.com
+  fontHttp: https://coronavirus-tracker-api.com/
   deaths:
-    value: 10000
+    value: 0
   positives:
-    value: 20
+    value: 0
   tested:
-    value: 3000
+    value: 0

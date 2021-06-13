@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd7e4a4424ec59468c7493cb95767d3, type: 3}
   m_Name: GlobalWorldData
   m_EditorClassIdentifier: 
-  fontHttp: http//:coronavirusapi.com
+  fontHttp: https://coronavirus-tracker-api.com/
   recoveredGlobal:
     value: 0
   deathsGlobal:

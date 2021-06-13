@@ -16,13 +16,21 @@ namespace Infrastructure
         
         public IObservable<GlobalInformation> GlobalTurnData(GlobalManager globalManager, MonoBehaviour handlerInput)        
         { 
+            return Observable.Return(GetGlobalInformation(handlerInput, globalManager))
+                    .Delay(TimeSpan.FromMilliseconds(1000))
+                    .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA_COUNTRY));
+        }
+
+        GlobalInformation GetGlobalInformation(MonoBehaviour handlerInput, GlobalManager globalManager)
+        {
             global = new GlobalInformation();
+            global.worldInformation = new WorldInformation();
+            global.countryGlobalInformation = new CountryGlobalInformation();
+
             handlerInput.StartCoroutine(GetGlobalWorldInformation());
             handlerInput.StartCoroutine(GetGlobalCountryInformation(globalManager.countryGlobalData.codeCountry));
 
-            return Observable.Return(global)
-                    .Delay(TimeSpan.FromMilliseconds(1000))
-                    .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA_COUNTRY));
+            return global;
         }
 
         IEnumerator GetGlobalWorldInformation()
@@ -38,11 +46,9 @@ namespace Infrastructure
                 yield break;
             }
 
-            global.worldInformation = new WorldInformation();
-
             var jSONNode = JSON.Parse(coronavirusInfoRequest.downloadHandler.text);
             var jsoNN = jSONNode["latest"];
-
+            
             global.worldInformation.totalDeaths = jsoNN["deaths"].AsInt;
             global.worldInformation.totalPositives = jsoNN["confirmed"].AsInt;
             global.worldInformation.totalRecovered = jsoNN["recovered"].AsInt;
@@ -60,8 +66,6 @@ namespace Infrastructure
                 Debug.LogError("(GlobalCountryInformation)UnityWebRequest: " + coronavirusInfoRequest.error);
                 yield break;
             }
-
-            global.countryGlobalInformation = new CountryGlobalInformation();
 
             var jSONNode = JSON.Parse(coronavirusInfoRequest.downloadHandler.text);
             var jsoNN = jSONNode["latest"];

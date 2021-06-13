@@ -19,10 +19,7 @@ public class GlobalManagerController : MonoBehaviour
     }
 
     private void OnDataReceiver(GlobalInformation globalInformation)
-    {
-        if(globalInformation == null)
-            return;
-        
+    {       
         gameContainer.globalManager.countryGlobalData.positives.Value = globalInformation.countryGlobalInformation.totalPositives;
         gameContainer.globalManager.countryGlobalData.tested.Value = globalInformation.countryGlobalInformation.totalTested;
         gameContainer.globalManager.countryGlobalData.deaths.Value = globalInformation.countryGlobalInformation.totalDeaths;

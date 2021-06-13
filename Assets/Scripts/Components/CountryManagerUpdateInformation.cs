@@ -25,7 +25,6 @@ public class CountryManagerUpdateInformation : MonoBehaviour
 
     void UpdateCountryData()
     {
-        Debug.Log("Update Country data");
         foreach(CountryData data in gameContainer.countryManager.countryDataChildren)
             cmdFactory.TurnCountryData(data).Execute();
     }
