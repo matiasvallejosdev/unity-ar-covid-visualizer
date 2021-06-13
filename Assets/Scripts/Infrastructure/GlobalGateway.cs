@@ -72,7 +72,7 @@ namespace Infrastructure
             
             global.countryGlobalInformation.totalDeaths = jsoNN["deaths"].AsInt;
             global.countryGlobalInformation.totalPositives =  jsoNN["confirmed"].AsInt;
-            global.countryGlobalInformation.totalTested = jsoNN["recovered"].AsInt;
+            global.countryGlobalInformation.totalRecovered = jsoNN["recovered"].AsInt;
         }
     }
 }

@@ -21,7 +21,7 @@ public class GlobalManagerController : MonoBehaviour
     private void OnDataReceiver(GlobalInformation globalInformation)
     {       
         gameContainer.globalManager.countryGlobalData.positives.Value = globalInformation.countryGlobalInformation.totalPositives;
-        gameContainer.globalManager.countryGlobalData.tested.Value = globalInformation.countryGlobalInformation.totalTested;
+        gameContainer.globalManager.countryGlobalData.tested.Value = globalInformation.countryGlobalInformation.totalRecovered;
         gameContainer.globalManager.countryGlobalData.deaths.Value = globalInformation.countryGlobalInformation.totalDeaths;
 
         gameContainer.globalManager.worldData.positivesGlobal.Value = globalInformation.worldInformation.totalPositives;
