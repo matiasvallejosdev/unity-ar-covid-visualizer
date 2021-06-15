@@ -20,8 +20,9 @@ public class GlobalVisualizerCmd : ICommand
 
     public void Execute()
     {
-        globalGateway.GlobalTurnData(globalManager, handlerInput)
-            .Do(x => globalManager.OnDataReceiver.OnNext(x))
-            .Subscribe();;
+        globalGateway.GlobalSequentialLoad(globalManager)
+            .Do(_ => Debug.Log("Sequential load completed"))
+            .Do(_ => globalManager.OnDataReceiver.OnNext(globalGateway.global))
+            .Subscribe();
     }
 }

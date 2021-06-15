@@ -9,17 +9,28 @@ using Infrastructure;
 public class CountryManagerController : MonoBehaviour
 {
     public GameContainer gameContainer;
-    public GameCmdFactory cmdFactory;
-    
+    public GameCmdFactory cmdFactory;   
+
     void Start()
-    {
+    {               
+        gameContainer.isCountryManagerOnScene
+            .Subscribe(OnCountryIsOnScene)
+            .AddTo(this);
+
         gameContainer.countryManager.OnCountryFocus
             .Subscribe(OnCountryFocus)
             .AddTo(this);
-
         /*gameContainer.countryManager.OnDataReceiver
             .Subscribe(OnDataReceiver)
             .AddTo(this);*/
+    }
+
+    private void OnCountryIsOnScene(bool isOnScene)
+    {
+        if(!isOnScene)
+           return;
+        
+        cmdFactory.TurnRefreshData(gameContainer).Execute();
     }
 
    /*private void OnDataReceiver(CountryInformation countryDataReceiver)
@@ -50,11 +61,6 @@ public class CountryManagerController : MonoBehaviour
         }
     }
 
-    private void RefreshData()
-    {
-        cmdFactory.TurnRefreshData(gameContainer).Execute();
-    }
-    
     void OnDisable()
     {
         if(gameContainer == null)
@@ -65,6 +71,5 @@ public class CountryManagerController : MonoBehaviour
     void OnEnable()
     {
         gameContainer.isCountryManagerOnScene.Value = true;
-        Invoke("RefreshData", 0.3f);
-    }
+    }   
 }

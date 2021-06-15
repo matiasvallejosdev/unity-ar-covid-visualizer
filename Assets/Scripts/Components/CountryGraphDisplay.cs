@@ -33,7 +33,7 @@ public class CountryGraphDisplay : MonoBehaviour
 
         if(globalInformation.countryGlobalInformation.totalPositives <= 0)
         {
-            Debug.LogError("(CountryGraphDisplay) Global information is null or zero");
+            Debug.Log("(CountryGraphDisplay) Global information is null or zero");
             yield break;
         }
         float maxNum = globalInformation.countryGlobalInformation.totalPositives;
