@@ -15,13 +15,13 @@ namespace Infrastructure
         {
             StateInformation c = new StateInformation();
             
-            c.deaths = r.Next(0,10000000);
-            c.tested = r.Next(0,10000000);
-            c.positives = r.Next(0,10000000);
+            //c.deaths = r.Next(0,10000000);
+            //c.tested = r.Next(0,10000000);
+            //c.positives = r.Next(0,10000000);
             
             return Observable.Return(c)
-                    .Delay(TimeSpan.FromMilliseconds(1000));
-                    //.Do(_ => Debug.Log("Get country data in " + URL_DATA_COUNTRY));
+                    .Delay(TimeSpan.FromMilliseconds(1000))
+                    .Do(_ => Debug.Log("Option country states are disable" + URL_DATA_COUNTRY));
         }
     }
 }
