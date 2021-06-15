@@ -1153,6 +1153,7 @@ GameObject:
   - component: {fileID: 426044859}
   - component: {fileID: 426044858}
   - component: {fileID: 426044857}
+  - component: {fileID: 426044856}
   m_Layer: 5
   m_Name: Home
   m_TagString: Untagged
@@ -1179,6 +1180,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 55.0234, y: 55.0234}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &426044856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426044854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8cab147f6e76094ca87868433446fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getStartedButton: {fileID: 426044857}
+  sceneToCharge: MainMenu
 --- !u!114 &426044857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,19 +1237,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426044858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 18580507}
-        m_TargetAssemblyTypeName: ARTapToPlace, Assembly-CSharp
-        m_MethodName: TouchClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &426044858
 MonoBehaviour:
   m_ObjectHideFlags: 0
