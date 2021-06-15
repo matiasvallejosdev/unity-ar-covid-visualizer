@@ -20,8 +20,8 @@ public class ARTapToPlace : MonoBehaviour
     public Camera arCamera;
     public ARRaycastManager arOriginRaycast;
 
+    public BoolReactiveProperty placementPoseValid = new BoolReactiveProperty();
     private Pose placementPose;
-    private BoolReactiveProperty placementPoseValid = new BoolReactiveProperty();
     private bool isActiveCountryManager = false;
 
     void Start()    
@@ -33,31 +33,11 @@ public class ARTapToPlace : MonoBehaviour
         gameContainer.isCountryManagerOnScene
             .Subscribe(OnManagerStatusChange)
             .AddTo(this);
-        
-        placementPoseValid
-            .Subscribe(OnChangePoseValid)
-            .AddTo(this);
-    }
-
-    private void OnChangePoseValid(bool poseValid)
-    {
-        if (poseValid)
-        {
-            placeAnchor.SetActive(true);
-            //placementIndicator.transform.SetPositionAndRotation(placementPose.position, placementPose.rotation);
-        }
-        else 
-        {
-            placeAnchor.SetActive(false);
-        }    
     }
 
     private void OnManagerStatusChange(bool isManagerActive)
     {
-        isActiveCountryManager = isManagerActive;
-        
-        if(placeAnchor.gameObject != null)
-            placeAnchor.SetActive(!isManagerActive);
+        isActiveCountryManager = isManagerActive;      
     }
     
     public void Touch(CallbackContext context)
