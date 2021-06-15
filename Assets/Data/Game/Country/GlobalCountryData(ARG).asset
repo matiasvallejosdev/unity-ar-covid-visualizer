@@ -9,13 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd7e4a4424ec59468c7493cb95767d3, type: 3}
-  m_Name: GlobalWorldData
+  m_Script: {fileID: 11500000, guid: 4a47e75a1542796478613d8accb675b5, type: 3}
+  m_Name: GlobalCountryData(ARG)
   m_EditorClassIdentifier: 
+  idCountry: 1
+  codeCountry: AR
+  nameCountry: Argentina
   fontHttp: https://coronavirus-tracker-api.com/
-  recoveredGlobal:
-    value: 23348112
-  deathsGlobal:
-    value: 3812043
-  positivesGlobal:
-    value: 176268431
+  deaths:
+    value: 86029
+  positives:
+    value: 4145482
+  tested:
+    value: 3748794

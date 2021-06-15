@@ -9,16 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a47e75a1542796478613d8accb675b5, type: 3}
-  m_Name: GlobalCountryData
+  m_Script: {fileID: 11500000, guid: 1991a3ddcbeed484b93e6881d9f83178, type: 3}
+  m_Name: LPP
   m_EditorClassIdentifier: 
-  idCountry: 1
-  codeCountry: AR
-  nameCountry: Argentina
-  fontHttp: https://coronavirus-tracker-api.com/
-  deaths:
+  countryId: 9
+  countryNick:
+    value: LPP
+  countryName:
+    value: La Pampa
+  type: 1
+  infoDeaths:
     value: 0
-  positives:
+  infoPositives:
     value: 0
-  tested:
+  infoTested:
+    value: 0
+  countryFocus:
     value: 0

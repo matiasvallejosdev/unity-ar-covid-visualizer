@@ -19,10 +19,10 @@ MonoBehaviour:
     value: Santa Fe
   type: 1
   infoDeaths:
-    value: 1000
+    value: 0
   infoPositives:
-    value: 2000
+    value: 0
   infoTested:
-    value: 10
+    value: 0
   countryFocus:
     value: 0

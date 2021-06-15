@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1991a3ddcbeed484b93e6881d9f83178, type: 3}
-  m_Name: MDZ
+  m_Name: CBA
   m_EditorClassIdentifier: 
-  countryId: 2
+  countryId: 12
   countryNick:
-    value: MDZ
+    value: CBA
   countryName:
-    value: Mendoza
+    value: Cordoba
   type: 1
   infoDeaths:
     value: 0
