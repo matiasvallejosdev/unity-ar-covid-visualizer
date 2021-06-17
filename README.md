@@ -31,8 +31,7 @@ Development of a mobile application to visualize covid19 data using AR Foundatio
 
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
-- [Important links](#important-links)
-  - [Lastet release](#lastet-release)
+- [Installation](#installation)
 - [Arquitecture](#arquitecture)
   - [Introduction](#introduction)
   - [Diagram](#diagram)
@@ -60,9 +59,13 @@ Development of a mobile application to visualize covid19 data using AR Foundatio
 * TextMeshPro 3.0.6
 * Input System 1.0.2
   
-## Important links
-### Lastet release 
-[Download APK for android device]("")
+## Installation
+　1. Clone a repository or download it as zip.
+```
+    git clone https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer
+```
+　2. Importing dependences<br />
+　　(You can use ARFoundation(ARkit, ARcore)) <br />
 
 ## Arquitecture
 ### Introduction 
@@ -89,29 +92,25 @@ I use as tool Unirx library. [Download UniRx](https://assetstore.unity.com/packa
 
 ## Screenshoot
 Game Screenshoot on Android Device.
-
+<p>
  <p align="center">
-   <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_01.png?raw=true" alt="Demo Video" style="max-width:30%;">
+  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
+  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_06.png?raw=true" alt="Demo Video" style="max-width:15%;">
   </a>
   <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_06.png?raw=true" alt="Demo Video" style="max-width:30%;">
-  </a>
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_08.png?raw=true" alt="Demo Video" style="max-width:30%;">
+  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_08.png?raw=true" alt="Demo Video" style="max-width:15%;">
   </a>
  </p>
   <p align="center">
    <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_12.png?raw=true" alt="Demo Video" style="max-width:30%;">
+  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_12.png?raw=true" alt="Demo Video" style="max-width:15%;">
   </a>
   <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_13.png?raw=true" alt="Demo Video" style="max-width:30%;">
-  </a>
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_05.png?raw=true" alt="Demo Video" style="max-width:30%;">
+  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_13.png?raw=true" alt="Demo Video" style="max-width:15%;">
+
   </a>
  </p>
+</p>
 
 ## Release
 | Version | New Features | Date (AAAA-MM-dd) |
