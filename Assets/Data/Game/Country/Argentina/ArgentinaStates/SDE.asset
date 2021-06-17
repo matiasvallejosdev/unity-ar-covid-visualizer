@@ -21,7 +21,7 @@ MonoBehaviour:
   infoDeaths:
     value: 0
   infoPositives:
-    value: 0
+    value: 52360
   infoTested:
     value: 0
   countryFocus:

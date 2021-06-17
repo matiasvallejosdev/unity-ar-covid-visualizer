@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Cordoba
   type: 1
   infoDeaths:
-    value: 0
+    value: 9644
   infoPositives:
-    value: 0
+    value: 446227
   infoTested:
     value: 0
   countryFocus:

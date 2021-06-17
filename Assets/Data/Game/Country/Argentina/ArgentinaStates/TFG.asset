@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Tierra del fuego
   type: 1
   infoDeaths:
-    value: 0
+    value: 432
   infoPositives:
-    value: 0
+    value: 29179
   infoTested:
     value: 0
   countryFocus:

@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Chaco
   type: 1
   infoDeaths:
-    value: 0
+    value: 1462
   infoPositives:
-    value: 0
+    value: 69434
   infoTested:
     value: 0
   countryFocus:

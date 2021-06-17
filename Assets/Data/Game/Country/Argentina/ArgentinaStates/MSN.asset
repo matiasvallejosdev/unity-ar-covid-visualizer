@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Misiones
   type: 1
   infoDeaths:
-    value: 0
+    value: 362
   infoPositives:
-    value: 0
+    value: 23235
   infoTested:
     value: 0
   countryFocus:

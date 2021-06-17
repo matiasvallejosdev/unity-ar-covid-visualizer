@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Buenos Aires
   type: 1
   infoDeaths:
-    value: 0
+    value: 44657
   infoPositives:
-    value: 0
+    value: 1754162
   infoTested:
     value: 0
   countryFocus:

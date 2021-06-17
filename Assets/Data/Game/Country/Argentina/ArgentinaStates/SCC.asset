@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Santa Cruz
   type: 1
   infoDeaths:
-    value: 0
+    value: 835
   infoPositives:
-    value: 0
+    value: 54030
   infoTested:
     value: 0
   countryFocus:

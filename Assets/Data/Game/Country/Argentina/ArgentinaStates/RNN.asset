@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Rio Negro
   type: 1
   infoDeaths:
-    value: 0
+    value: 1818
   infoPositives:
-    value: 0
+    value: 80598
   infoTested:
     value: 0
   countryFocus:

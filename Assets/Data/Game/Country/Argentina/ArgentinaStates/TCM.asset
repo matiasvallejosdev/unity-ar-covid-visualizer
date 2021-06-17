@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Tucuman
   type: 1
   infoDeaths:
-    value: 0
+    value: 2126
   infoPositives:
-    value: 0
+    value: 143994
   infoTested:
     value: 0
   countryFocus:

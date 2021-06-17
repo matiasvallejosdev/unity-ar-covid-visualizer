@@ -19,9 +19,9 @@ MonoBehaviour:
     value: La Pampa
   type: 1
   infoDeaths:
-    value: 0
+    value: 671
   infoPositives:
-    value: 0
+    value: 48266
   infoTested:
     value: 0
   countryFocus:

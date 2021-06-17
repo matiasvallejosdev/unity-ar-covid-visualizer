@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Salta
   type: 1
   infoDeaths:
-    value: 0
+    value: 1588
   infoPositives:
-    value: 0
+    value: 54435
   infoTested:
     value: 0
   countryFocus:

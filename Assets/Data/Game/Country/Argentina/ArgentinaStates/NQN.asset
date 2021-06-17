@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Neuquen
   type: 1
   infoDeaths:
-    value: 0
+    value: 1567
   infoPositives:
-    value: 0
+    value: 98039
   infoTested:
     value: 0
   countryFocus:

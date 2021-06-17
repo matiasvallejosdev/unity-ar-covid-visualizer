@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Jujuy
   type: 1
   infoDeaths:
-    value: 0
+    value: 1111
   infoPositives:
-    value: 0
+    value: 32397
   infoTested:
     value: 0
   countryFocus:

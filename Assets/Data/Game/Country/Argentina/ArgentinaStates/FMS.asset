@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Formosa
   type: 1
   infoDeaths:
-    value: 0
+    value: 685
   infoPositives:
-    value: 0
+    value: 39540
   infoTested:
     value: 0
   countryFocus:

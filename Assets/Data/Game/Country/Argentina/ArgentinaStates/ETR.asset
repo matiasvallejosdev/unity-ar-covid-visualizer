@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Entre Rios
   type: 1
   infoDeaths:
-    value: 0
+    value: 1581
   infoPositives:
-    value: 0
+    value: 100385
   infoTested:
     value: 0
   countryFocus:

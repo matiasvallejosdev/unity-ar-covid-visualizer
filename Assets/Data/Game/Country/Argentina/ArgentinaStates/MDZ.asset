@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Mendoza
   type: 1
   infoDeaths:
-    value: 0
+    value: 2974
   infoPositives:
-    value: 0
+    value: 132016
   infoTested:
     value: 0
   countryFocus:

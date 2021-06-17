@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Corrientes
   type: 1
   infoDeaths:
-    value: 0
+    value: 695
   infoPositives:
-    value: 0
+    value: 58612
   infoTested:
     value: 0
   countryFocus:

@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Santa Fe
   type: 1
   infoDeaths:
-    value: 0
+    value: 6188
   infoPositives:
-    value: 0
+    value: 383275
   infoTested:
     value: 0
   countryFocus:

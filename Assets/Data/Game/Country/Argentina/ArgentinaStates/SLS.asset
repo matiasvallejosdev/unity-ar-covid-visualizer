@@ -19,9 +19,9 @@ MonoBehaviour:
     value: San Luis
   type: 1
   infoDeaths:
-    value: 0
+    value: 860
   infoPositives:
-    value: 0
+    value: 60602
   infoTested:
     value: 0
   countryFocus:

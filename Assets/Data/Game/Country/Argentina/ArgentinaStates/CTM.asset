@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Catamarca
   type: 1
   infoDeaths:
-    value: 0
+    value: 256
   infoPositives:
-    value: 0
+    value: 30058
   infoTested:
     value: 0
   countryFocus:

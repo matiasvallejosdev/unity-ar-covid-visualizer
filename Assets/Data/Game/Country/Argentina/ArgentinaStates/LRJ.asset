@@ -19,9 +19,9 @@ MonoBehaviour:
     value: La Rioja
   type: 1
   infoDeaths:
-    value: 0
+    value: 578
   infoPositives:
-    value: 0
+    value: 19999
   infoTested:
     value: 0
   countryFocus:

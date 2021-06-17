@@ -19,9 +19,9 @@ MonoBehaviour:
     value: Chubut
   type: 1
   infoDeaths:
-    value: 0
+    value: 1179
   infoPositives:
-    value: 0
+    value: 67721
   infoTested:
     value: 0
   countryFocus:
