@@ -34,7 +34,7 @@ public class UIPlaceAnchorAnimationDisplay : MonoBehaviour
     private void OnCountryScene(bool countryOnScene)
     {
         videoRawImage.gameObject.SetActive(!countryOnScene);
-        tittleLabel.gameObject.SetActive(!countryOnScene);
+        tittleLabel.gameObject.transform.parent.gameObject.SetActive(!countryOnScene);
     }
 
     private void OnPlacementValid(bool poseValid)

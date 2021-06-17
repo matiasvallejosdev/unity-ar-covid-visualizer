@@ -19,7 +19,7 @@ public class CountryVisualizerCmd : ICommand
     public void Execute()
     {
         gateway.StateTurnData(countryData.countryId)
-            .Do(x => countryData.OnInformation.OnNext(x))
+            //.Do(x => countryData.OnInformation.OnNext(x))
             .Subscribe();
     } 
 }
