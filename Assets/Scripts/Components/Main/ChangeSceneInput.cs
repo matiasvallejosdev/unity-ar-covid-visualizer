@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UniRx;
 using UnityEngine.SceneManagement;
 
-public class GetStartedInput : MonoBehaviour
+public class ChangeSceneInput : MonoBehaviour
 {
     public Button getStartedButton;
     public string sceneToCharge;

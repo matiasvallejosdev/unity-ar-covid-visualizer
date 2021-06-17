@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 32900000, guid: 38ecff9554fce4bb2ab7fdb7a18e813b, type: 3}
   - {fileID: 32900000, guid: f4f1a546efb674ffb8679f1e2ca2231b, type: 3}
   instructionsClips:
-  - Finda a plane
-  - Tap to place visualizer
+  - Find a place to put the interactive visualizer
+  - Tap to place interactive visualizer realtime

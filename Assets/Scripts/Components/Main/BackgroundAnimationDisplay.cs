@@ -15,7 +15,7 @@ public class BackgroundAnimationDisplay : MonoBehaviour
 
     void Start()
     {
-        _desiredScale = minScale;
+        _desiredScale = maxScale;
 
         this.gameObject.AddComponent<ObservableUpdateTrigger>()
             .LateUpdateAsObservable()
