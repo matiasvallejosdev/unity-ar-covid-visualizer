@@ -115,7 +115,7 @@ Game Screenshoot on Android Device.
 ## Release
 | Version | New Features | Date (AAAA-MM-dd) |
 |:---:|---|:---:|
-| v1.0.0 | [Initial features with only Argentina country]() | 2021.06.14 |
+| v1.0.0 | [Initial features with only Argentina country](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/releases/tag/v1.0.0) | 2021.06.14 |
 
 
 ## Future Release
