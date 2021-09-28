@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &18580507
 MonoBehaviour:
@@ -172,8 +172,7 @@ MonoBehaviour:
   placeAnchor: {fileID: 111692722}
   arCamera: {fileID: 40919615}
   arOriginRaycast: {fileID: 223974229}
-  placementPoseValid:
-    value: 0
+  playDevice: 0
 --- !u!114 &18580508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +192,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
+  unselectIntelligent: 0
 --- !u!1 &40919614
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -823,7 +823,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameContainer: {fileID: 11400000, guid: 305eee7831baf0e4984008b482f1b411, type: 2}
   uxExperienceAR: {fileID: 11400000, guid: 3d456965d73a14a439825b1c7fcaacd9, type: 2}
-  arTapToPlace: {fileID: 18580507}
   videoRawImage: {fileID: 1017988561}
   tittleLabel: {fileID: 471262656}
   videoPlayer: {fileID: 1017988560}
@@ -1099,8 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab0e80cee9cc1d44928bfe488dd1e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PointCloudPrefab: {fileID: 5706843430230825157, guid: 2a91e1f16d3bef84eb6c25e4c6a63fdb,
-    type: 3}
+  m_PointCloudPrefab: {fileID: 0}
 --- !u!114 &223974228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,8 +1125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa17d122634046b4a8e23048891fafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RaycastPrefab: {fileID: 5982290779269475313, guid: 5cfc5ed91aa77d2409256d5dde7a1416,
-    type: 3}
+  m_RaycastPrefab: {fileID: 0}
 --- !u!114 &223974230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,14 +1146,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223974226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.6176166, y: -0, z: -0, w: 0.78647935}
+  m_LocalPosition: {x: 0, y: 1.5799999, z: -2.01}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 40919621}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -76.285, y: 0, z: 0}
 --- !u!1 &374355736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,7 +1475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471262654
 GameObject:
@@ -1792,7 +1789,7 @@ Transform:
   m_Children:
   - {fileID: 2134156260}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &659407279
 MonoBehaviour:
@@ -2170,7 +2167,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 53.709, y: -32.888, z: -3.67}
 --- !u!1 &709031957
 GameObject:
@@ -2375,7 +2372,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907528849
 MonoBehaviour:
@@ -3550,7 +3547,7 @@ RectTransform:
   - {fileID: 1301180857}
   - {fileID: 111692723}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3689,7 +3686,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102729273
 GameObject:
@@ -3952,5 +3949,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

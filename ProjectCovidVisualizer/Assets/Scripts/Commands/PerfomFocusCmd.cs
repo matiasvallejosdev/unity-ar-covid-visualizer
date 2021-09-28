@@ -5,30 +5,40 @@ using ViewModel;
 
 public class PerfomFocusCmd : ICommand
 {
-    private CountryManager countryManager;
+    private readonly GameContainer gameContainer;
     private CountryData countryHit;
     private readonly bool focusStatus;
 
-    public PerfomFocusCmd(CountryManager countryManager, CountryData countryHit, bool focusStatus)
+    public PerfomFocusCmd(GameContainer gameContainer, CountryData countryHit, bool focusStatus)
     {
-        this.countryManager = countryManager;
+        this.gameContainer = gameContainer;
         this.countryHit = countryHit;
         this.focusStatus = focusStatus;
     }
 
     public void Execute()
     {
-        if(focusStatus == false)
+        if(!focusStatus)
         {
-            countryManager.OnCountryFocus.OnNext(null);
+            if(gameContainer.countryManager.currentCountrySelected != null)
+            {
+                gameContainer.countryManager.currentCountrySelected.countryFocus.Value = false;
+                Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentCountrySelected.countryName);    
+            }
+            gameContainer.countryManager.currentCountrySelected = null;  
             return;
-        }
-        if(countryManager.currentCountrySelected == countryHit)
-            return;
-           
-        Debug.Log("Execute command: select is " + countryHit.countryName);
-        countryHit.countryFocus.Value = focusStatus;
+        } 
 
-        countryManager.OnCountryFocus.OnNext(countryHit);
+        if(gameContainer.countryManager.currentCountrySelected != countryHit)
+        {
+            if(gameContainer.countryManager.currentCountrySelected != null)
+            {
+                gameContainer.countryManager.currentCountrySelected.countryFocus.Value = false;
+                Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentCountrySelected.countryName);    
+            }
+            Debug.Log("Execute command: select is " + countryHit.countryName);
+            countryHit.countryFocus.Value = focusStatus;       
+            gameContainer.countryManager.currentCountrySelected = countryHit;   
+        }
     }
 }

@@ -27,9 +27,9 @@ public class GameCmdFactory : ScriptableObject
         return new GameRotateCmd(gameContainer, rotateFactor);
     }
     // Focus country
-    public PerfomFocusCmd PerfomFocusCmd(CountryManager countryManager, CountryData countryHit, bool focusStatus)
+    public PerfomFocusCmd PerfomFocusCmd(GameContainer gameContainer, CountryData countryHit, bool focusStatus)
     {
-        return new PerfomFocusCmd(countryManager, countryHit, focusStatus);
+        return new PerfomFocusCmd(gameContainer, countryHit, focusStatus);
     }
     // Console
     public PerfomConsoleCmd PerfomConsole(string input, string prefix, IEnumerable<IConsoleCommand> commands)

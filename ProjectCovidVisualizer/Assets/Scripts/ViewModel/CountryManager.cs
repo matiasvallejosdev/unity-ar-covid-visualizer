@@ -12,7 +12,5 @@ namespace ViewModel
         public GameObject countryPrefab;
         public CountryData[] countryDataChildren;
         public CountryData currentCountrySelected;
-        public Subject<CountryData> OnCountryFocus = new Subject<CountryData>();
-        public ISubject<CountryInformation> OnDataReceiver = new Subject<CountryInformation>();
     }
 }

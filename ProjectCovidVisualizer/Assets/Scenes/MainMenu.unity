@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getStartedButton: {fileID: 59150380}
-  sceneToCharge: Stats
+  sceneToCharge: ARG_CountryStats
 --- !u!1 &60862382
 GameObject:
   m_ObjectHideFlags: 0

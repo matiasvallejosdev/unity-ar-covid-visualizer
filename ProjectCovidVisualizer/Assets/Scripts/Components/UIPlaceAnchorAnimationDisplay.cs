@@ -13,7 +13,6 @@ public class UIPlaceAnchorAnimationDisplay : MonoBehaviour
     [Header("References")]
     public GameContainer gameContainer;
     public UXExperienceAR uxExperienceAR;
-    public ARTapToPlace arTapToPlace;
 
     [Header("Video player")]
     public RawImage videoRawImage;
@@ -26,7 +25,7 @@ public class UIPlaceAnchorAnimationDisplay : MonoBehaviour
             .Subscribe(OnCountryScene)
             .AddTo(this);
 
-        arTapToPlace.placementPoseValid
+        gameContainer.placementPoseValid
             .Subscribe(OnPlacementValid)
             .AddTo(this);
     }
