@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViewModel;
 
-public class CountryHitData : MonoBehaviour
+namespace Components
 {
-    [Header("Data")]
-    public CountryData countryData;    
+    public class CountryHitData : MonoBehaviour
+    {
+        [Header("Data")]
+        public StateData countryData;    
+    }
 }

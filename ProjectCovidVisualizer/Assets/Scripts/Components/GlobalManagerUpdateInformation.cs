@@ -4,27 +4,30 @@ using UnityEngine;
 using ViewModel;
 using UniRx;
 using System;
-using Infrastructure;
+using Commands;
 
-public class GlobalManagerUpdateInformation : MonoBehaviour
+namespace Components
 {
-    public GameContainer gameContainer;
-    public GameCmdFactory cmdFactory;
-    
-    void Start()
+    public class GlobalManagerUpdateInformation : MonoBehaviour
     {
-        gameContainer.OnUpdate
-            .Subscribe(OnUpdate)
-            .AddTo(this);
-    }
+        public GameContainer gameContainer;
+        public GameCmdFactory cmdFactory;
+        
+        void Start()
+        {
+            gameContainer.OnUpdate
+                .Subscribe(OnUpdate)
+                .AddTo(this);
+        }
 
-    private void OnUpdate(bool update)
-    {
-        UpdateGlobalData();
-    }
+        private void OnUpdate(bool update)
+        {
+            UpdateGlobalData();
+        }
 
-    void UpdateGlobalData()
-    {
-        cmdFactory.TurnGlobalData(gameContainer.globalManager, this).Execute();
+        void UpdateGlobalData()
+        {
+            cmdFactory.TurnGlobalData(gameContainer).Execute();
+        }
     }
 }

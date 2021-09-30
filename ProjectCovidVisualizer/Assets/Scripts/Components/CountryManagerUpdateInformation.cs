@@ -4,28 +4,31 @@ using UnityEngine;
 using ViewModel;
 using UniRx;
 using System;
-using Infrastructure;
+using Commands;
 
-public class CountryManagerUpdateInformation : MonoBehaviour
+namespace Components
 {
-    public GameContainer gameContainer;
-    public GameCmdFactory cmdFactory;
-    
-    void Start()
+    public class CountryManagerUpdateInformation : MonoBehaviour
     {
-        gameContainer.OnUpdate
-            .Subscribe(OnUpdate)
-            .AddTo(this);
-    }
+        public GameContainer gameContainer;
+        public GameCmdFactory cmdFactory;
+        
+        void Start()
+        {
+            gameContainer.OnUpdate
+                .Subscribe(OnUpdate)
+                .AddTo(this);
+        }
 
-    private void OnUpdate(bool update)
-    {
-        UpdateCountryData();
-    }
+        private void OnUpdate(bool update)
+        {
+            UpdateCountryData();
+        }
 
-    void UpdateCountryData()
-    {
-        foreach(CountryData data in gameContainer.countryManager.countryDataChildren)
-            cmdFactory.TurnCountryData(data).Execute();
+        void UpdateCountryData()
+        {
+            foreach(StateData data in gameContainer.countryManager.statesData)
+                cmdFactory.TurnCountryData(data).Execute();
+        }
     }
 }

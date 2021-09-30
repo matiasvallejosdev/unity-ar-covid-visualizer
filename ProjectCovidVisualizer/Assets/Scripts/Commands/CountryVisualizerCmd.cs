@@ -5,21 +5,25 @@ using ViewModel;
 using Infrastructure;
 using UniRx;
 
-public class CountryVisualizerCmd : ICommand
+namespace Commands
 {
-    private CountryData countryData;
-    private ICountryTurnGateway gateway;
-
-    public CountryVisualizerCmd(CountryData countryData, ICountryTurnGateway gateway)
+    public class CountryVisualizerCmd : ICommand
     {
-        this.countryData = countryData;
-        this.gateway = gateway;
+        private StateData countryData;
+        private IStatesGateway gateway;
+
+        public CountryVisualizerCmd(StateData countryData, IStatesGateway gateway)
+        {
+            this.countryData = countryData;
+            this.gateway = gateway;
+        }
+
+        public void Execute()
+        {
+            int[] ids = {};
+            gateway.StateTurnData(ids)
+                //.Do(x => countryData.OnInformation.OnNext(x))
+                .Subscribe();
+        } 
     }
-
-    public void Execute()
-    {
-        gateway.StateTurnData(countryData.countryId)
-            //.Do(x => countryData.OnInformation.OnNext(x))
-            .Subscribe();
-    } 
 }

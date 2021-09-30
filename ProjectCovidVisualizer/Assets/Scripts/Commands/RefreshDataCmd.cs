@@ -4,18 +4,21 @@ using UnityEngine;
 using ViewModel;
 using Lean.Touch;
 
-public class RefreshDataCmd : ICommand
-{
-    private GameContainer gameContainer;
-
-    public RefreshDataCmd(GameContainer gameContainer)
+namespace Commands
+{    
+    public class RefreshDataCmd : ICommand
     {
-        this.gameContainer = gameContainer;
-    }
+        private GameContainer gameContainer;
 
-    public void Execute()
-    {
-        Debug.Log("Execute refresh data");
-        gameContainer.OnUpdate.OnNext(true);
+        public RefreshDataCmd(GameContainer gameContainer)
+        {
+            this.gameContainer = gameContainer;
+        }
+
+        public void Execute()
+        {
+            Debug.Log("Execute refresh data");
+            gameContainer.OnUpdate.OnNext(true);
+        }
     }
 }

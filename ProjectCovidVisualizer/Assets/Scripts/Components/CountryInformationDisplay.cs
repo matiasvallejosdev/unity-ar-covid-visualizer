@@ -14,7 +14,7 @@ namespace Components
         public TextMeshProUGUI positivesLabel;
         public TextMeshProUGUI testedLabel;
 
-        public CountryData countryData;
+        public StateData countryData;
 
         void Start()
         {

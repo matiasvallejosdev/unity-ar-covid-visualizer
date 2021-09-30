@@ -4,23 +4,27 @@ using Infrastructure;
 using UnityEngine;
 using ViewModel;
 using UniRx;
+using Commands;
 
-public class CountryInformationUpdate : MonoBehaviour
+namespace Components
 {
-    public CountryData countryData;
-    public GameCmdFactory cmdFactory;
-
-    void Start()
+    public class CountryInformationUpdate : MonoBehaviour
     {
-       countryData.OnInformation
-            .Subscribe(InformationDisplay)
-            .AddTo(this);
-    }
+        public StateData countryData;
+        public GameCmdFactory cmdFactory;
 
-    private void InformationDisplay(StateInformation info)
-    {
-        countryData.infoDeaths.Value = info.deaths;
-        countryData.infoPositives.Value = info.positives;
-        countryData.infoTested.Value = info.tested;
+        void Start()
+        {
+        /*countryData.OnInformation
+                .Subscribe(InformationDisplay)
+                .AddTo(this);*/
+        }
+
+        /*private void InformationDisplay(StateInformation info)
+        {
+            countryData.infoDeaths.Value = info.deaths;
+            countryData.infoPositives.Value = info.positives;
+            countryData.infoTested.Value = info.tested;
+        }*/
     }
 }

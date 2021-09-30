@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViewModel;
 
-public class CountryLookAtCamera : MonoBehaviour
+namespace Components
 {
-    void Start()
+    public class CountryLookAtCamera : MonoBehaviour
     {
-        this.gameObject.transform.eulerAngles = new Vector3(
-            this.gameObject.transform.eulerAngles.x,
-            this.gameObject.transform.eulerAngles.y + 180,
-            this.gameObject.transform.eulerAngles.z);
+        void Start()
+        {
+            this.gameObject.transform.eulerAngles = new Vector3(
+                this.gameObject.transform.eulerAngles.x,
+                this.gameObject.transform.eulerAngles.y + 180,
+                this.gameObject.transform.eulerAngles.z);
+        }
     }
 }

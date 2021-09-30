@@ -5,29 +5,32 @@ using UniRx;
 using TMPro;
 using ViewModel;
 
-public class CountryNameDisplay : MonoBehaviour
+namespace Components
 {
-    public TextMeshProUGUI nameLabel;
-    public TextMeshProUGUI nickLabel;
-    public CountryData countryData;
-
-    void Start()
+    public class CountryNameDisplay : MonoBehaviour
     {
-        countryData.countryName
-            .Subscribe(UpdateName)
-            .AddTo(this);
+        public TextMeshProUGUI nameLabel;
+        public TextMeshProUGUI nickLabel;
+        public StateData countryData;
 
-        countryData.countryNick
-            .Subscribe(UpdateNick)
-            .AddTo(this);
-    }
+        void Start()
+        {
+            countryData.countryName
+                .Subscribe(UpdateName)
+                .AddTo(this);
 
-    void UpdateName(string name)
-    {
-        nameLabel.text = countryData.countryName.Value;
-    }
-    void UpdateNick(string name)
-    {
-        nickLabel.text = countryData.countryNick.Value;
+            countryData.countryNick
+                .Subscribe(UpdateNick)
+                .AddTo(this);
+        }
+
+        void UpdateName(string name)
+        {
+            nameLabel.text = countryData.countryName.Value;
+        }
+        void UpdateNick(string name)
+        {
+            nickLabel.text = countryData.countryNick.Value;
+        }
     }
 }

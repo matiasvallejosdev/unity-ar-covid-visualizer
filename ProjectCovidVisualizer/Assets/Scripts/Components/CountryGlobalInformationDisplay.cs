@@ -7,41 +7,44 @@ using ViewModel;
 using System;
 using Utilities;
 
-public class CountryGlobalInformationDisplay : MonoBehaviour
+namespace Components
 {
-    public CountryGlobalData countryGlobalData;
-    public TextMeshProUGUI deathLabel, testedLabel, casesLabel;
-    public TextMeshProUGUI countryLabel;
-    public TextMeshProUGUI fontHttpLabel;
+    public class CountryGlobalInformationDisplay : MonoBehaviour
+    {
+        public GameContainer gameContainer;
+        public TextMeshProUGUI deathLabel, testedLabel, casesLabel;
+        public TextMeshProUGUI countryLabel;
+        public TextMeshProUGUI fontHttpLabel;
 
-    void Start()
-    {
-        countryLabel.text = countryGlobalData.nameCountry;
-        fontHttpLabel.text = "Fuente: " + countryGlobalData.fontHttp;
+        void Start()
+        {
+            countryLabel.text = gameContainer.globalManager.countryGlobalData.nameCountry;
+            fontHttpLabel.text = "Fuente: " + gameContainer.globalManager.countryGlobalData.fontHttp;
 
-        countryGlobalData.deaths
-            .Subscribe(OnChangeDeaths)
-            .AddTo(this);
-        
-        countryGlobalData.positives
-            .Subscribe(OnChangeCases)
-            .AddTo(this);
-        
-        countryGlobalData.tested
-            .Subscribe(OnChangeTested)
-            .AddTo(this);
-    }
+            gameContainer.globalManager.countryGlobalData.deaths
+                .Subscribe(OnChangeDeaths)
+                .AddTo(this);
+            
+            gameContainer.globalManager.countryGlobalData.positives
+                .Subscribe(OnChangeCases)
+                .AddTo(this);
+            
+            gameContainer.globalManager.countryGlobalData.recovered
+                .Subscribe(OnChangeTested)
+                .AddTo(this);
+        }
 
-    private void OnChangeTested(int tested)
-    {
-        testedLabel.text = "Recovered: " + Utility.GetNumberFormat(tested);
-    }
-    private void OnChangeCases(int cases)
-    {
-        casesLabel.text = "Cases: " + Utility.GetNumberFormat(cases);
-    }
-    private void OnChangeDeaths(int deaths)
-    {
-        deathLabel.text = "Deaths: " + Utility.GetNumberFormat(deaths);
+        private void OnChangeTested(int tested)
+        {
+            testedLabel.text = "Recovered: " + Utility.GetNumberFormat(tested);
+        }
+        private void OnChangeCases(int cases)
+        {
+            casesLabel.text = "Cases: " + Utility.GetNumberFormat(cases);
+        }
+        private void OnChangeDeaths(int deaths)
+        {
+            deathLabel.text = "Deaths: " + Utility.GetNumberFormat(deaths);
+        }
     }
 }

@@ -3,51 +3,54 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PerfomConsoleCmd : ICommand
-{
-    private readonly string input;
-    private readonly string prefix;
-    private readonly IEnumerable<IConsoleCommand> commands;
-
-    public PerfomConsoleCmd(string input, string prefix, IEnumerable<IConsoleCommand> commands)
+namespace Commands
+{    
+    public class PerfomConsoleCmd : ICommand
     {
-        this.input = input;
-        this.prefix = prefix;
-        this.commands = commands;
-    }
-   
-    public void ProcessCommand(string inputValue)
-    {
-        if(!inputValue.StartsWith(prefix)){return;}
-        
-        inputValue = inputValue.Remove(0, prefix.Length);
+        private readonly string input;
+        private readonly string prefix;
+        private readonly IEnumerable<IConsoleCommand> commands;
 
-        string[] inputSplit = inputValue.Split(' ');
-
-        string commandInput = inputSplit[0];
-        string[] args = inputSplit.Skip(1).ToArray();
-
-        ProcessCommand(commandInput, args);
-    }
-
-    public void ProcessCommand(string commandInput, string[] args)
-    {
-        foreach(var command in commands)
+        public PerfomConsoleCmd(string input, string prefix, IEnumerable<IConsoleCommand> commands)
         {
-            if(!commandInput.Equals(command.CommandWord, System.StringComparison.OrdinalIgnoreCase))
-            {
-                continue;
-            }
+            this.input = input;
+            this.prefix = prefix;
+            this.commands = commands;
+        }
+    
+        public void ProcessCommand(string inputValue)
+        {
+            if(!inputValue.StartsWith(prefix)){return;}
+            
+            inputValue = inputValue.Remove(0, prefix.Length);
 
-            if(command.Process(args))
+            string[] inputSplit = inputValue.Split(' ');
+
+            string commandInput = inputSplit[0];
+            string[] args = inputSplit.Skip(1).ToArray();
+
+            ProcessCommand(commandInput, args);
+        }
+
+        public void ProcessCommand(string commandInput, string[] args)
+        {
+            foreach(var command in commands)
             {
-                return;
+                if(!commandInput.Equals(command.CommandWord, System.StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                if(command.Process(args))
+                {
+                    return;
+                }
             }
         }
-    }
 
-    public void Execute()
-    {
-        ProcessCommand(input);
+        public void Execute()
+        {
+            ProcessCommand(input);
+        }
     }
 }

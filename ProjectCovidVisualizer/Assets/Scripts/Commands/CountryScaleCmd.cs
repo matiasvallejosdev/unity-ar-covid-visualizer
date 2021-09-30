@@ -5,24 +5,27 @@ using ViewModel;
 using Lean.Touch;
 using System;
 
-public class GameScaleCmd : ICommand
+namespace Commands
 {
-    private int scaleFactor;
-    private GameContainer gameContainer;
-
-    public GameScaleCmd(GameContainer gameContainer, int scaleFactor)
+    public class GameScaleCmd : ICommand
     {
-        this.gameContainer = gameContainer;
-        this.scaleFactor = scaleFactor;
-    }
+        private int scaleFactor;
+        private GameContainer gameContainer;
 
-    public void Execute()
-    {
-        var scale = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
-        if(scale == null)
-            return;
+        public GameScaleCmd(GameContainer gameContainer, int scaleFactor)
+        {
+            this.gameContainer = gameContainer;
+            this.scaleFactor = scaleFactor;
+        }
 
-        // Scale country
-        scale.transform.localScale += new Vector3(scaleFactor, scaleFactor, scaleFactor) * 1/6;
+        public void Execute()
+        {
+            var scale = GameObject.FindGameObjectWithTag(gameContainer.countryManager.countryPrefab.tag);
+            if(scale == null)
+                return;
+
+            // Scale country
+            scale.transform.localScale += new Vector3(scaleFactor, scaleFactor, scaleFactor) * 1/6;
+        }
     }
 }

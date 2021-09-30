@@ -4,36 +4,39 @@ using UnityEngine;
 using ViewModel;
 using UniRx;
 using System;
-using Infrastructure;
+using Commands;
 
-public class CountryManagerController : MonoBehaviour
+namespace Components
 {
-    public GameContainer gameContainer;
-    public GameCmdFactory cmdFactory;   
-
-    void Start()
-    {               
-        gameContainer.isCountryManagerOnScene
-            .Subscribe(OnCountryIsOnScene)
-            .AddTo(this);
-    }
-
-    private void OnCountryIsOnScene(bool isOnScene)
+    public class CountryManagerController : MonoBehaviour
     {
-        if(!isOnScene)
-           return;
-        
-        cmdFactory.TurnRefreshData(gameContainer).Execute();
-    }
-    void OnDisable()
-    {
-        if(gameContainer == null)
+        public GameContainer gameContainer;
+        public GameCmdFactory cmdFactory;   
+
+        void Start()
+        {               
+            gameContainer.isCountryManagerOnScene
+                .Subscribe(OnCountryIsOnScene)
+                .AddTo(this);
+        }
+
+        private void OnCountryIsOnScene(bool isOnScene)
+        {
+            if(!isOnScene)
             return;
             
-        gameContainer.isCountryManagerOnScene.Value = false;
+            cmdFactory.TurnRefreshData(gameContainer).Execute();
+        }
+        void OnDisable()
+        {
+            if(gameContainer == null)
+                return;
+                
+            gameContainer.isCountryManagerOnScene.Value = false;
+        }
+        void OnEnable()
+        {
+            gameContainer.isCountryManagerOnScene.Value = true;
+        }   
     }
-    void OnEnable()
-    {
-        gameContainer.isCountryManagerOnScene.Value = true;
-    }   
 }
