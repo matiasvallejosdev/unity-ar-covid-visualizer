@@ -15,7 +15,11 @@ namespace Commands
             return new GlobalVisualizerCmd(gameContainer, new GlobalGateway());
         }
         // Country Update Data
+<<<<<<< HEAD
         public CountryVisualizerCmd TurnStateData(StateData countryData)
+=======
+        public CountryVisualizerCmd TurnCountryData(StateData countryData)
+>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0
         {
             return new CountryVisualizerCmd(countryData, new StatesArgentinaGateway());
         }
@@ -38,5 +42,13 @@ namespace Commands
         {
             return new PerfomConsoleCmd(input, prefix, commands);
         }
+<<<<<<< HEAD
+=======
+        // Refresh data
+        public RefreshDataCmd TurnRefreshData(GameContainer gameContainer)
+        {
+            return new RefreshDataCmd(gameContainer);
+        }
+>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0
     }
 }

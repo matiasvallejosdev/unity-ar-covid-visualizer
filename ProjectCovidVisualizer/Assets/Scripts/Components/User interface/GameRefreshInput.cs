@@ -14,7 +14,11 @@ namespace Components
 
         public void OnClickRefresh()
         {
+<<<<<<< HEAD
             cmdFactory.TurnGlobalData(gameContainer).Execute();
+=======
+            cmdFactory.TurnRefreshData(gameContainer).Execute();
+>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0
         }
     }
 }

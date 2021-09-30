@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:ProjectCovidVisualizer/Assets/Scripts/Infrastructure/Interfaces/IStatesGateway.cs.meta
 guid: c8f95aa1632b49e41ab95c6f673ff61d
+========
+guid: dc26c3c0a73bc074fb2e8309d39b9bf1
+>>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0:ProjectCovidVisualizer/Assets/Scripts/Components/CountryNameDisplay.cs.meta
+=======
+guid: c8f95aa1632b49e41ab95c6f673ff61d
+>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

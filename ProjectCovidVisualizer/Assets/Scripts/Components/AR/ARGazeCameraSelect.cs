@@ -43,7 +43,11 @@ namespace Components
             if(Physics.Raycast(_mainCamera.transform.position, _mainCamera.transform.forward, out hit, 1000, _layer))
             {
                 Debug.DrawRay(_mainCamera.transform.position, _mainCamera.transform.forward, Color.green); 
+<<<<<<< HEAD
                 StateData countryHit = hit.transform.GetComponent<StateHit>().countryData;    
+=======
+                StateData countryHit = hit.transform.GetComponent<CountryHitData>().countryData;    
+>>>>>>> 0cf034cc1f2fa7a52ce54bb5c14e6e2b11c6d0c0
 
                 gameCmdFactory.PerfomFocusCmd(gameContainer, countryHit, true).Execute();         
             }
