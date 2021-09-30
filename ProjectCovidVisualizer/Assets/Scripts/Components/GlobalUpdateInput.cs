@@ -15,9 +15,7 @@ namespace Components
 
         void Start()
         {               
-            gameContainer.OnUpdate
-                .Subscribe(OnUpdate)
-                .AddTo(this);
+            OnUpdate(true);
         }
         private void OnUpdate(bool update)
         {

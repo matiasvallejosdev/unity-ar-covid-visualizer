@@ -30,6 +30,8 @@ namespace Components
             gameContainer.placementPoseValid
                 .Subscribe(OnPlacementValid)
                 .AddTo(this);
+                
+            gameContainer.isCountryManagerOnScene.Value = false;
         }
 
         private void OnCountryScene(bool countryOnScene)
