@@ -9,18 +9,16 @@ using SimpleJSON;
 
 namespace Infrastructure
 {
-    public class GlobalGateway : IGlobalTurnGateway
+    public class GlobalGateway : IGlobalGateway
     {
         private protected string URL_DATA = "https://coronavirus-tracker-api.herokuapp.com/v2/";
-        public GlobalInformation global;
+        public Global globalData {get; set;}
 
-        public IObservable<Unit> GlobalSequentialLoad(GlobalManager globalManager)
+        public IObservable<Unit> GlobalSequentialLoad(GameContainer gameContainer)
         {
-            global = new GlobalInformation();
-            global.worldInformation = new WorldInformation();
-            global.countryGlobalInformation = new CountryGlobalInformation();
+            globalData = new Global(new GlobalCountryInfo(), new GlobalWorldInfo());
 
-            return Observable.FromCoroutine<Unit>(observer => TurnGlobalData(observer, globalManager.countryGlobalData.codeCountry))
+            return Observable.FromCoroutine<Unit>(observer => TurnGlobalData(observer, gameContainer.globalManager.countryGlobalData.codeCountry))
                                             .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA));
         }
 
@@ -41,9 +39,9 @@ namespace Infrastructure
 
             var jSONNode = JSON.Parse(coronavirusInfoRequest.downloadHandler.text);
             var jsoNN = jSONNode["latest"];  
-            global.worldInformation.totalDeaths = jsoNN["deaths"].AsInt;
-            global.worldInformation.totalPositives = jsoNN["confirmed"].AsInt;
-            global.worldInformation.totalRecovered = jsoNN["recovered"].AsInt;
+            globalData.globalWorldInfo.totalDeaths = jsoNN["deaths"].AsInt;
+            globalData.globalWorldInfo.totalPositives = jsoNN["confirmed"].AsInt;
+            globalData.globalWorldInfo.totalRecovered = jsoNN["recovered"].AsInt;
 
             // Country Global Data
             string countryDataURL = URL_DATA + "locations?&country_code=" + countryCode;
@@ -59,9 +57,9 @@ namespace Infrastructure
 
             jSONNode = JSON.Parse(coronavirusInfoRequest.downloadHandler.text);
             jsoNN = jSONNode["latest"];
-            global.countryGlobalInformation.totalDeaths = jsoNN["deaths"].AsInt;
-            global.countryGlobalInformation.totalPositives =  jsoNN["confirmed"].AsInt;
-            global.countryGlobalInformation.totalRecovered = jsoNN["recovered"].AsInt;
+            globalData.globalCountryInfo.totalDeaths = jsoNN["deaths"].AsInt;
+            globalData.globalCountryInfo.totalPositives =  jsoNN["confirmed"].AsInt;
+            globalData.globalCountryInfo.totalRecovered = jsoNN["recovered"].AsInt;
             
             observer.OnNext(Unit.Default); // push Unit or all buffer result.
             observer.OnCompleted();

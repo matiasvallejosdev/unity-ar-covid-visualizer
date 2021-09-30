@@ -3,42 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViewModel;
 
-public class PerfomFocusCmd : ICommand
-{
-    private readonly GameContainer gameContainer;
-    private CountryData countryHit;
-    private readonly bool focusStatus;
-
-    public PerfomFocusCmd(GameContainer gameContainer, CountryData countryHit, bool focusStatus)
+namespace Commands
+{    
+    public class PerfomFocusCmd : ICommand
     {
-        this.gameContainer = gameContainer;
-        this.countryHit = countryHit;
-        this.focusStatus = focusStatus;
-    }
+        private readonly GameContainer gameContainer;
+        private StateData countryHit;
+        private readonly bool focusStatus;
 
-    public void Execute()
-    {
-        if(!focusStatus)
+        public PerfomFocusCmd(GameContainer gameContainer, StateData countryHit, bool focusStatus)
         {
-            if(gameContainer.countryManager.currentCountrySelected != null)
-            {
-                gameContainer.countryManager.currentCountrySelected.countryFocus.Value = false;
-                Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentCountrySelected.countryName);    
-            }
-            gameContainer.countryManager.currentCountrySelected = null;  
-            return;
-        } 
+            this.gameContainer = gameContainer;
+            this.countryHit = countryHit;
+            this.focusStatus = focusStatus;
+        }
 
-        if(gameContainer.countryManager.currentCountrySelected != countryHit)
+        public void Execute()
         {
-            if(gameContainer.countryManager.currentCountrySelected != null)
+            if(!focusStatus)
             {
-                gameContainer.countryManager.currentCountrySelected.countryFocus.Value = false;
-                Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentCountrySelected.countryName);    
+                if(gameContainer.countryManager.currentStateSelected != null)
+                {
+                    gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
+                    //Debug.Log("[PerfomFocusCmd] Execute command unselect");    
+                }
+                gameContainer.countryManager.currentStateSelected = null;  
+                return;
+            } 
+
+            if(gameContainer.countryManager.currentStateSelected != countryHit)
+            {
+                if(gameContainer.countryManager.currentStateSelected != null)
+                {
+                    gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
+                    //Debug.Log("[PerfomFocusCmd] Execute command unselect");    
+                }
+                //Debug.Log("[PerfomFocusCmd] Execute command select");    
+                countryHit.countryFocus.Value = focusStatus;       
+                gameContainer.countryManager.currentStateSelected = countryHit;   
             }
-            Debug.Log("Execute command: select is " + countryHit.countryName);
-            countryHit.countryFocus.Value = focusStatus;       
-            gameContainer.countryManager.currentCountrySelected = countryHit;   
         }
     }
 }

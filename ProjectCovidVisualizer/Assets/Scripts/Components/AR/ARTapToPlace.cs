@@ -30,7 +30,7 @@ namespace Components
 
         void Start()    
         {
-            ARControlManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx);
+            ARInputManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx);
             //placementIndicator = Instantiate(placementIndicator, new Vector3(0,0,0), placementIndicator.transform.rotation);
 
             gameContainer.placementPoseValid.Value = playDevice == PLAY_DEVICE.Editor ? true : false;

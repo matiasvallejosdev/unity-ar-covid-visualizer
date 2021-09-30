@@ -8,8 +8,8 @@ namespace ViewModel
     [CreateAssetMenu(fileName = "New Game Container", menuName = "Data/Game Container")]
     public class GameContainer : ScriptableObject
     {
-        public CountryManager countryManager;
-        public GlobalManager globalManager;
+        public GlobalHandler globalManager;
+        public CountryHandler countryManager;
         public BoolReactiveProperty placementPoseValid = new BoolReactiveProperty();
         public BoolReactiveProperty isCountryManagerOnScene;
         public ISubject<bool> OnUpdate = new Subject<bool>();

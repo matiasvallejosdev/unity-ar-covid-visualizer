@@ -7,27 +7,30 @@ using UniRx.Triggers;
 using UniRx;
 using System;
 
-public class GlobalDateInformationDisplay : MonoBehaviour
+namespace Components
 {
-    public CountryGlobalData countryGlobalData;
-    public TextMeshProUGUI countryLabel, fontHttpLabel;
-    public TextMeshProUGUI dateNowLabel, timeNowLabel;
-    
-    void Start()
+    public class GlobalDateInformationDisplay : MonoBehaviour
     {
-        countryLabel.text = countryGlobalData.nameCountry;
-        dateNowLabel.text = DateTime.Now.ToShortDateString();
-        fontHttpLabel.text = "Fuente: " + countryGlobalData.fontHttp;
+        public GameContainer gameContainer;
+        public TextMeshProUGUI countryLabel, fontHttpLabel;
+        public TextMeshProUGUI dateNowLabel, timeNowLabel;
         
-        this.gameObject.AddComponent<ObservableUpdateTrigger>()
-            .LateUpdateAsObservable()
-            .SampleFrame(60)
-            .Subscribe(x => OnLateUpdate())
-            .AddTo(this);
-    }
+        void Start()
+        {
+            countryLabel.text = gameContainer.globalManager.countryGlobalData.nameCountry;
+            dateNowLabel.text = DateTime.Now.ToShortDateString();
+            fontHttpLabel.text = "Fuente: " + gameContainer.globalManager.countryGlobalData.fontHttp;
+            
+            this.gameObject.AddComponent<ObservableUpdateTrigger>()
+                .LateUpdateAsObservable()
+                .SampleFrame(60)
+                .Subscribe(x => OnLateUpdate())
+                .AddTo(this);
+        }
 
-    void OnLateUpdate()
-    {
-        timeNowLabel.text = DateTime.Now.ToShortTimeString().ToString();
+        void OnLateUpdate()
+        {
+            timeNowLabel.text = DateTime.Now.ToShortTimeString().ToString();
+        }
     }
 }
