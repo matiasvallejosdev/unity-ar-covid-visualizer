@@ -21,12 +21,17 @@ namespace Components
                 .Subscribe(ExecuteAnimation)
                 .AddTo(this);
         }
-        private void ExecuteAnimation(bool obj)
+        private void ExecuteAnimation(bool isOn)
         {
+            
             foreach(Rigidbody r in rigidbodyCountry)
             {
-                r.isKinematic = false;
-                r.AddForce(Vector3.up * random.Next(20,150), ForceMode.Impulse);
+                r.isKinematic = !isOn;
+
+                if(isOn)
+                {
+                    r.AddForce(Vector3.up * random.Next(500,650), ForceMode.Force);
+                }
             }
         }
     }

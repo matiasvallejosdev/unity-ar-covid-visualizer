@@ -5,7 +5,7 @@ using ViewModel;
 
 namespace Components
 {
-    public class CountryHitData : MonoBehaviour
+    public class StateHit : MonoBehaviour
     {
         [Header("Data")]
         public StateData countryData;    

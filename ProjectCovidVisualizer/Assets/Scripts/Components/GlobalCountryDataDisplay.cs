@@ -9,7 +9,7 @@ using Utilities;
 
 namespace Components
 {
-    public class CountryGlobalInformationDisplay : MonoBehaviour
+    public class GlobalCountryDataDisplay : MonoBehaviour
     {
         public GameContainer gameContainer;
         public TextMeshProUGUI deathLabel, testedLabel, casesLabel;

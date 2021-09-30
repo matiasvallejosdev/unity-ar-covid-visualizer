@@ -15,7 +15,7 @@ namespace Commands
             return new GlobalVisualizerCmd(gameContainer, new GlobalGateway());
         }
         // Country Update Data
-        public CountryVisualizerCmd TurnCountryData(StateData countryData)
+        public CountryVisualizerCmd TurnStateData(StateData countryData)
         {
             return new CountryVisualizerCmd(countryData, new StatesArgentinaGateway());
         }
@@ -37,11 +37,6 @@ namespace Commands
         public PerfomConsoleCmd PerfomConsole(string input, string prefix, IEnumerable<IConsoleCommand> commands)
         {
             return new PerfomConsoleCmd(input, prefix, commands);
-        }
-        // Refresh data
-        public RefreshDataCmd TurnRefreshData(GameContainer gameContainer)
-        {
-            return new RefreshDataCmd(gameContainer);
         }
     }
 }

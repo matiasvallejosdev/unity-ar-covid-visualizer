@@ -8,7 +8,7 @@ using Commands;
 
 namespace Components
 {
-    public class GlobalManagerUpdateInformation : MonoBehaviour
+    public class StateUpdateInput : MonoBehaviour
     {
         public GameContainer gameContainer;
         public GameCmdFactory cmdFactory;
@@ -22,12 +22,13 @@ namespace Components
 
         private void OnUpdate(bool update)
         {
-            UpdateGlobalData();
+            UpdateCountryData();
         }
 
-        void UpdateGlobalData()
+        void UpdateCountryData()
         {
-            cmdFactory.TurnGlobalData(gameContainer).Execute();
+            foreach(StateData data in gameContainer.countryManager.statesData)
+                cmdFactory.TurnStateData(data).Execute();
         }
     }
 }

@@ -8,25 +8,22 @@ using Commands;
 
 namespace Components
 {
-    public class CountryManagerController : MonoBehaviour
+    public class GlobalUpdateInput : MonoBehaviour
     {
         public GameContainer gameContainer;
         public GameCmdFactory cmdFactory;   
 
         void Start()
         {               
-            gameContainer.isCountryManagerOnScene
-                .Subscribe(OnCountryIsOnScene)
+            gameContainer.OnUpdate
+                .Subscribe(OnUpdate)
                 .AddTo(this);
         }
-
-        private void OnCountryIsOnScene(bool isOnScene)
+        private void OnUpdate(bool update)
         {
-            if(!isOnScene)
-            return;
-            
-            cmdFactory.TurnRefreshData(gameContainer).Execute();
+            cmdFactory.TurnGlobalData(gameContainer).Execute();
         }
+
         void OnDisable()
         {
             if(gameContainer == null)

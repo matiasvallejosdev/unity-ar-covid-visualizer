@@ -17,4 +17,4 @@ MonoBehaviour:
   placementPoseValid:
     value: 1
   isCountryManagerOnScene:
-    value: 0
+    value: 1

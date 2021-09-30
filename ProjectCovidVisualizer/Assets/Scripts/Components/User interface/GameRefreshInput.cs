@@ -14,7 +14,7 @@ namespace Components
 
         public void OnClickRefresh()
         {
-            cmdFactory.TurnRefreshData(gameContainer).Execute();
+            cmdFactory.TurnGlobalData(gameContainer).Execute();
         }
     }
 }

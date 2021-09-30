@@ -7,30 +7,30 @@ using ViewModel;
 
 namespace Components
 {
-    public class CountryNameDisplay : MonoBehaviour
+    public class StateNameDisplay : MonoBehaviour
     {
         public TextMeshProUGUI nameLabel;
         public TextMeshProUGUI nickLabel;
-        public StateData countryData;
+        public StateData stateData;
 
         void Start()
         {
-            countryData.countryName
+            stateData.countryName
                 .Subscribe(UpdateName)
                 .AddTo(this);
 
-            countryData.countryNick
+            stateData.countryNick
                 .Subscribe(UpdateNick)
                 .AddTo(this);
         }
 
         void UpdateName(string name)
         {
-            nameLabel.text = countryData.countryName.Value;
+            nameLabel.text = stateData.countryName.Value;
         }
         void UpdateNick(string name)
         {
-            nickLabel.text = countryData.countryNick.Value;
+            nickLabel.text = stateData.countryNick.Value;
         }
     }
 }

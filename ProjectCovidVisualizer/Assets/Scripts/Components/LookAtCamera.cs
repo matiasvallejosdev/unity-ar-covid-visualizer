@@ -5,7 +5,7 @@ using ViewModel;
 
 namespace Components
 {
-    public class CountryLookAtCamera : MonoBehaviour
+    public class LookAtCamera : MonoBehaviour
     {
         void Start()
         {

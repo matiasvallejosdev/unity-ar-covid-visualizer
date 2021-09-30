@@ -193,7 +193,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
-  unselectIntelligent: 0
+  unselectIntelligent: 1
 --- !u!1 &40919614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223974226}
   m_LocalRotation: {x: 0.3071075, y: 0, z: 0, w: 0.9516749}
-  m_LocalPosition: {x: 0, y: 1.5799999, z: -2.01}
+  m_LocalPosition: {x: 0, y: 9.04, z: -10.2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 40919621}

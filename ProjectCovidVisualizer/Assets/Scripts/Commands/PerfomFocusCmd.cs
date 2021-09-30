@@ -25,7 +25,7 @@ namespace Commands
                 if(gameContainer.countryManager.currentStateSelected != null)
                 {
                     gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
-                    Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentStateSelected.countryName);    
+                    //Debug.Log("[PerfomFocusCmd] Execute command unselect");    
                 }
                 gameContainer.countryManager.currentStateSelected = null;  
                 return;
@@ -36,9 +36,9 @@ namespace Commands
                 if(gameContainer.countryManager.currentStateSelected != null)
                 {
                     gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
-                    Debug.Log("Execute command: unselect is " + gameContainer.countryManager.currentStateSelected.countryName);    
+                    //Debug.Log("[PerfomFocusCmd] Execute command unselect");    
                 }
-                Debug.Log("Execute command: select is " + countryHit.countryName);
+                //Debug.Log("[PerfomFocusCmd] Execute command select");    
                 countryHit.countryFocus.Value = focusStatus;       
                 gameContainer.countryManager.currentStateSelected = countryHit;   
             }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5594931104677349381}
   - component: {fileID: 4460657285957461030}
   m_Layer: 0
-  m_Name: SectionInformation
+  m_Name: State Information Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593ded612101f3e439cb42c5e4d9f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countryData: {fileID: 0}
-  cmdFactory: {fileID: 0}
+  stateData: {fileID: 0}
+  cmdFactory: {fileID: 11400000, guid: 5679fb39841e41a42ac8f6eb2c9739b6, type: 2}
 --- !u!114 &4460657285957461030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,9 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7ec979d8949f34383abbb0e807b946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countryData: {fileID: 0}
-  countryTransform: {fileID: 0}
-  sectionInformation: {fileID: 0}
+  stateData: {fileID: 0}
+  stateTransform: {fileID: 0}
+  stateSectionInformation: {fileID: 0}
 --- !u!1 &820592983599827448
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,13 +751,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 820592984426957454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb6b9dd7088563d44a536c0c53dc8537, type: 3}
+  m_Script: {fileID: 11500000, guid: 593ded612101f3e439cb42c5e4d9f03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathLabel: {fileID: 820592983599827446}
-  positivesLabel: {fileID: 820592984139720670}
-  testedLabel: {fileID: 820592984301636830}
-  countryData: {fileID: 0}
+  stateData: {fileID: 0}
+  cmdFactory: {fileID: 0}
 --- !u!1 &820592984494356914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1619,7 +1617,6 @@ GameObject:
   - component: {fileID: 8163329731004938684}
   - component: {fileID: 515840866953145575}
   - component: {fileID: 2600555334286669732}
-  - component: {fileID: 6926927947264846540}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1684,18 +1681,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6926927947264846540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807070160687588054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a7f3d2969316848922e1476a74b957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameLabel: {fileID: 2376422648954581630}
-  nickLabel: {fileID: 820592984698895537}
-  countryData: {fileID: 0}
