@@ -14,9 +14,10 @@ namespace Components
         public GameCmdFactory cmdFactory;   
 
         void Start()
-        {               
+        {
             OnUpdate(true);
         }
+        
         private void OnUpdate(bool update)
         {
             cmdFactory.TurnGlobalData(gameContainer).Execute();

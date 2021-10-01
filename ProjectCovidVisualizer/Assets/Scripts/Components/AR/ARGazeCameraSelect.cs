@@ -44,7 +44,6 @@ namespace Components
             {
                 Debug.DrawRay(_mainCamera.transform.position, _mainCamera.transform.forward, Color.green); 
                 StateData countryHit = hit.transform.GetComponent<StateHit>().countryData;    
-
                 gameCmdFactory.PerfomFocusCmd(gameContainer, countryHit, true).Execute();         
             }
             else 

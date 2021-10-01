@@ -14,7 +14,7 @@ namespace Commands
         {
             return new GlobalVisualizerCmd(gameContainer, new GlobalGateway());
         }
-        // Country Update Data
+        // State Update Data
         public CountryVisualizerCmd TurnStateData(StateData countryData)
         {
             return new CountryVisualizerCmd(countryData, new StatesArgentinaGateway());
