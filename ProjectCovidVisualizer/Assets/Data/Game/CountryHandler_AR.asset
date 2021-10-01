@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb87c4a2977914a488cc211287048f61, type: 3}
   m_Name: CountryHandler_AR
   m_EditorClassIdentifier: 
-  countryPrefab: {fileID: 1195747819493674613, guid: ddca69fea6e0d694ba7120df3bcd1845,
+  countryPrefab: {fileID: 1195747819493674613, guid: 3de5a567ab579774f877f5b1bc143a72,
     type: 3}
   statesData:
   - {fileID: 11400000, guid: 8b2d497d023aa454da162d88a80e01ce, type: 2}
