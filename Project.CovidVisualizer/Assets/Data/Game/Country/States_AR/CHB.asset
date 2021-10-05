@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: CHB
   m_EditorClassIdentifier: 
   countryId: 6
-  countryNick:
+  stateNick:
     value: CHB
-  countryName:
+  stateName:
     value: Chubut
-  type: 1
-  infoDeaths:
-    value: 1179
-  infoPositives:
-    value: 67721
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

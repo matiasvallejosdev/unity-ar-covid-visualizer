@@ -11,10 +11,12 @@ namespace Components
     {
         public GameCmdFactory factoryCmd;
         public GameContainer gameContainer;
+        public float scaleFactor;
         
-        public void OnClick(int scaleFactor)
+        public void OnClick(bool isUp)
         {
-            factoryCmd.CountryContainerScale(gameContainer, scaleFactor).Execute();
+            float normalizedScaleFactor = isUp ? scaleFactor : scaleFactor * -1; 
+            factoryCmd.CountryContainerScale(gameContainer, normalizedScaleFactor).Execute();
         }
     }
 }

@@ -13,8 +13,8 @@ namespace Components
         public StateData stateData;
         
         [Header("References")]
-        [SerializeField] private Transform stateTransform;
-        [SerializeField] private Transform stateSectionInformation;
+        public Transform stateTransform;
+        public Transform stateDataTransform;
         
         [Header("Parameters")]
         [SerializeField] private const float speed = 5f;
@@ -28,11 +28,11 @@ namespace Components
         {
             _directionMovement = stateTransform.localPosition;
 
-            _maxScaleSection = stateSectionInformation.localScale;
+            _maxScaleSection = stateDataTransform.localScale;
             _desiredScaleSection = Vector3.zero;
-            stateData.countryFocus.Value = false;
+            stateData.OnFocus.Value = false;
             
-            stateData.countryFocus
+            stateData.OnFocus
                 .Subscribe(OnSelectedChange)
                 .AddTo(this);
             
@@ -55,7 +55,7 @@ namespace Components
         {     
             stateTransform.localPosition = Vector3.Lerp(stateTransform.localPosition, _directionMovement, Time.deltaTime * speed);
             
-            stateSectionInformation.localScale = Vector3.Lerp(stateSectionInformation.localScale, _desiredScaleSection, 
+            stateDataTransform.localScale = Vector3.Lerp(stateDataTransform.localScale, _desiredScaleSection, 
                                                         Time.deltaTime * speed);
         }
     }

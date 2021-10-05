@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: ETR
   m_EditorClassIdentifier: 
   countryId: 14
-  countryNick:
+  stateNick:
     value: ETR
-  countryName:
-    value: Entre Rios
-  type: 1
-  infoDeaths:
-    value: 1581
-  infoPositives:
-    value: 100385
-  infoTested:
+  stateName:
+    value: Entre rios
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

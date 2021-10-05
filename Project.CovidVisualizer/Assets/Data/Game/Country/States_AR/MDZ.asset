@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: MDZ
   m_EditorClassIdentifier: 
   countryId: 2
-  countryNick:
+  stateNick:
     value: MDZ
-  countryName:
+  stateName:
     value: Mendoza
-  type: 1
-  infoDeaths:
-    value: 2974
-  infoPositives:
-    value: 132016
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

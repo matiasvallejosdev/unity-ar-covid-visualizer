@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: CTM
   m_EditorClassIdentifier: 
   countryId: 14
-  countryNick:
+  stateNick:
     value: CTM
-  countryName:
+  stateName:
     value: Catamarca
-  type: 1
-  infoDeaths:
-    value: 256
-  infoPositives:
-    value: 30058
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

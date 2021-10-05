@@ -8,10 +8,10 @@ namespace Commands
 {
     public class GameRotateCmd : ICommand
     {
-        private int rotateFactor;
+        private float rotateFactor;
         private GameContainer gameContainer;
 
-        public GameRotateCmd(GameContainer gameContainer, int rotateFactor)
+        public GameRotateCmd(GameContainer gameContainer, float rotateFactor)
         {
             this.gameContainer = gameContainer;
             this.rotateFactor = rotateFactor;

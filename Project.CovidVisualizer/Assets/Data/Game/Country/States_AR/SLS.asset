@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SLS
   m_EditorClassIdentifier: 
   countryId: 10
-  countryNick:
+  stateNick:
     value: SLS
-  countryName:
-    value: San Luis
-  type: 1
-  infoDeaths:
-    value: 860
-  infoPositives:
-    value: 60602
-  infoTested:
+  stateName:
+    value: San luis
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SCC
   m_EditorClassIdentifier: 
   countryId: 5
-  countryNick:
+  stateNick:
     value: SCC
-  countryName:
+  stateName:
     value: Santa Cruz
-  type: 1
-  infoDeaths:
-    value: 835
-  infoPositives:
-    value: 54030
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

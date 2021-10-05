@@ -10,16 +10,15 @@ namespace ViewModel
     public class StateData : ScriptableObject
     {
         public int countryId;
-        public StringReactiveProperty countryNick;
-        public StringReactiveProperty countryName;
+        public StringReactiveProperty stateNick;
+        public StringReactiveProperty stateName;
         
         [Space]
-        public IntReactiveProperty infoDeaths;
-        public IntReactiveProperty infoPositives;
-        public IntReactiveProperty infoTested;
+        public IntReactiveProperty stateDeaths;
+        public IntReactiveProperty statePositives;
+        public IntReactiveProperty stateRecovered;
         
         [Space]
-        public BoolReactiveProperty countryFocus;
-        public ISubject<bool> OnRefresh = new Subject<bool>();
+        public BoolReactiveProperty OnFocus;
     }
 }

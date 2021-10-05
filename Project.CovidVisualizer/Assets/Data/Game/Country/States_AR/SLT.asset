@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SLT
   m_EditorClassIdentifier: 
   countryId: 19
-  countryNick:
+  stateNick:
     value: SLT
-  countryName:
+  stateName:
     value: Salta
-  type: 1
-  infoDeaths:
-    value: 1588
-  infoPositives:
-    value: 54435
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

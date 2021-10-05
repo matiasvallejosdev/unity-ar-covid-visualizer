@@ -9,10 +9,10 @@ namespace Commands
 {
     public class GameScaleCmd : ICommand
     {
-        private int scaleFactor;
+        private float scaleFactor;
         private GameContainer gameContainer;
 
-        public GameScaleCmd(GameContainer gameContainer, int scaleFactor)
+        public GameScaleCmd(GameContainer gameContainer, float scaleFactor)
         {
             this.gameContainer = gameContainer;
             this.scaleFactor = scaleFactor;

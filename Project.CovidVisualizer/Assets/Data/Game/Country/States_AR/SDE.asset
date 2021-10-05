@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SDE
   m_EditorClassIdentifier: 
   countryId: 16
-  countryNick:
+  stateNick:
     value: SDE
-  countryName:
-    value: Santiago del Estero
-  type: 1
-  infoDeaths:
+  stateName:
+    value: Santiago del estero
+  stateDeaths:
     value: 0
-  infoPositives:
-    value: 52360
-  infoTested:
+  statePositives:
     value: 0
-  countryFocus:
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

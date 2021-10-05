@@ -11,7 +11,7 @@ namespace Components
     {
         public GameContainer gameContainer;
         public Rigidbody[] rigidbodyCountry;
-        [Range(0,3)] public float startDelay;
+        [Range(0,10)] public float startDelay;
         private System.Random random = new System.Random();
 
         void Start()
@@ -23,8 +23,7 @@ namespace Components
         }
 
         private void ExecuteAnimation(bool isOn)
-        {
-            
+        {    
             foreach(Rigidbody r in rigidbodyCountry)
             {
                 r.isKinematic = !isOn;

@@ -24,7 +24,7 @@ namespace Commands
             {
                 if(gameContainer.countryManager.currentStateSelected != null)
                 {
-                    gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
+                    gameContainer.countryManager.currentStateSelected.OnFocus.Value = false;
                 }
                 gameContainer.countryManager.currentStateSelected = null;  
                 return;
@@ -34,9 +34,9 @@ namespace Commands
             {
                 if(gameContainer.countryManager.currentStateSelected != null)
                 {
-                    gameContainer.countryManager.currentStateSelected.countryFocus.Value = false;
+                    gameContainer.countryManager.currentStateSelected.OnFocus.Value = false;
                 } 
-                countryHit.countryFocus.Value = focusStatus;       
+                countryHit.OnFocus.Value = focusStatus;       
                 gameContainer.countryManager.currentStateSelected = countryHit;   
             }
         }

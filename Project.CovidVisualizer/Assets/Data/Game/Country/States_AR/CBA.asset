@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: CBA
   m_EditorClassIdentifier: 
   countryId: 12
-  countryNick:
+  stateNick:
     value: CBA
-  countryName:
+  stateName:
     value: Cordoba
-  type: 1
-  infoDeaths:
-    value: 9644
-  infoPositives:
-    value: 446227
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

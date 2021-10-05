@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SJA
   m_EditorClassIdentifier: 
   countryId: 13
-  countryNick:
+  stateNick:
     value: SJA
-  countryName:
+  stateName:
     value: San Juan
-  type: 1
-  infoDeaths:
-    value: 753
-  infoPositives:
-    value: 44958
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

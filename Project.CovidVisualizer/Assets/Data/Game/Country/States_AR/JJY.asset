@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: JJY
   m_EditorClassIdentifier: 
   countryId: 20
-  countryNick:
+  stateNick:
     value: JJY
-  countryName:
+  stateName:
     value: Jujuy
-  type: 1
-  infoDeaths:
-    value: 1111
-  infoPositives:
-    value: 32397
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

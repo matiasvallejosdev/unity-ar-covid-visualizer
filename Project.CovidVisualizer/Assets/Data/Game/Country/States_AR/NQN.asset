@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: NQN
   m_EditorClassIdentifier: 
   countryId: 8
-  countryNick:
+  stateNick:
     value: NQN
-  countryName:
+  stateName:
     value: Neuquen
-  type: 1
-  infoDeaths:
-    value: 1567
-  infoPositives:
-    value: 98039
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

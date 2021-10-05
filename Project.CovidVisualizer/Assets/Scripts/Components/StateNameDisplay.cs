@@ -15,22 +15,22 @@ namespace Components
 
         void Start()
         {
-            stateData.countryName
+            stateData.stateName
                 .Subscribe(UpdateName)
                 .AddTo(this);
 
-            stateData.countryNick
+            stateData.stateNick
                 .Subscribe(UpdateNick)
                 .AddTo(this);
         }
 
         void UpdateName(string name)
         {
-            nameLabel.text = stateData.countryName.Value;
+            nameLabel.text = stateData.stateName.Value;
         }
         void UpdateNick(string name)
         {
-            nickLabel.text = stateData.countryNick.Value;
+            nickLabel.text = stateData.stateNick.Value;
         }
     }
 }

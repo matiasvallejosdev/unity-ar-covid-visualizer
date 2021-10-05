@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: TFG
   m_EditorClassIdentifier: 
   countryId: 4
-  countryNick:
+  stateNick:
     value: TFG
-  countryName:
+  stateName:
     value: Tierra del fuego
-  type: 1
-  infoDeaths:
-    value: 432
-  infoPositives:
-    value: 29179
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

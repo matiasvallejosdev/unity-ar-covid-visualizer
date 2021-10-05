@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: SFE
   m_EditorClassIdentifier: 
   countryId: 3
-  countryNick:
+  stateNick:
     value: SFE
-  countryName:
+  stateName:
     value: Santa Fe
-  type: 1
-  infoDeaths:
-    value: 6188
-  infoPositives:
-    value: 383275
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

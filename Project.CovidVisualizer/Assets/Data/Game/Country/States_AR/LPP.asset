@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: LPP
   m_EditorClassIdentifier: 
   countryId: 9
-  countryNick:
+  stateNick:
     value: LPP
-  countryName:
-    value: La Pampa
-  type: 1
-  infoDeaths:
-    value: 671
-  infoPositives:
-    value: 48266
-  infoTested:
+  stateName:
+    value: La Plata
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0

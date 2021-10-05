@@ -20,11 +20,11 @@ namespace Commands
             return new CountryVisualizerCmd(countryData, new StatesArgentinaGateway());
         }
         // Ui Container Rotate&Scale
-        public GameScaleCmd CountryContainerScale(GameContainer gameContainer, int scaleFactor)
+        public GameScaleCmd CountryContainerScale(GameContainer gameContainer, float scaleFactor)
         {
             return new GameScaleCmd(gameContainer, scaleFactor);
         }  
-        public GameRotateCmd CountryContainerRotate(GameContainer gameContainer, int rotateFactor)
+        public GameRotateCmd CountryContainerRotate(GameContainer gameContainer, float rotateFactor)
         {
             return new GameRotateCmd(gameContainer, rotateFactor);
         }

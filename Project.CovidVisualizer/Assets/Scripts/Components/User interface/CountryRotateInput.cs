@@ -11,10 +11,12 @@ namespace Components
     {
         public GameCmdFactory factoryCmd;
         public GameContainer gameContainer;
+        public float rotateFactor;
         
-        public void OnClick(int rotateFactor)
+        public void OnClick(bool isRight)
         {
-            factoryCmd.CountryContainerRotate(gameContainer, rotateFactor).Execute();
+            float rotateFactorNormalized = isRight ? rotateFactor : rotateFactor * -1;
+            factoryCmd.CountryContainerRotate(gameContainer, rotateFactorNormalized).Execute();
         }
     }
 }

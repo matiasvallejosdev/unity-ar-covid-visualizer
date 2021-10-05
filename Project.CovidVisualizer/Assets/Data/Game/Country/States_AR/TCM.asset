@@ -13,16 +13,15 @@ MonoBehaviour:
   m_Name: TCM
   m_EditorClassIdentifier: 
   countryId: 17
-  countryNick:
+  stateNick:
     value: TCM
-  countryName:
+  stateName:
     value: Tucuman
-  type: 1
-  infoDeaths:
-    value: 2126
-  infoPositives:
-    value: 143994
-  infoTested:
+  stateDeaths:
     value: 0
-  countryFocus:
+  statePositives:
+    value: 0
+  stateRecovered:
+    value: 0
+  OnFocus:
     value: 0
