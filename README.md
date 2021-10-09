@@ -1,31 +1,29 @@
-<h1 align="center"> Covid Interactive Visualizer </h1>
+<h1 align="center"> Covid Visualizer </h1>
   
-<div align="center">
+  <div align="center">
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/matiasvallejosdev/AR-Covid-Interactive-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer)
-[![GitHub top language](https://img.shields.io/github/languages/top/matiasvallejosdev/AR-Covid-Interactive-Visualizer?color=1081c2)](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/search?l=c%23)
-[![GitHub Watchers](https://img.shields.io/github/watchers/matiasvallejosdev/AR-Covid-Interactive-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/watchers)
-[![GitHub Repo stars](https://img.shields.io/github/stars/matiasvallejosdev/AR-Covid-Interactive-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/matiasvallejosdev/AR-Covid-Interactive-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/network/members)
-<br />
-[![Unity Badge](http://img.shields.io/badge/-Unity3D_2020.3.5f1-000?logo=unity&link=https://unity.com/)](https://unity.com/)
-[![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
+  [![GitHub release (latest by date)](https://img.shields.io/github/v/release/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive)
+  [![GitHub top language](https://img.shields.io/github/languages/top/matiasvallejosdev/AR-Covid-Visualizer?color=1081c2)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/search?l=c%23)
+  [![GitHub Watchers](https://img.shields.io/github/watchers/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/watchers)
+  [![GitHub Repo stars](https://img.shields.io/github/stars/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/stargazers)
+  [![GitHub Forks](https://img.shields.io/github/forks/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/network/members)
+  <br />
+  [![Unity Badge](http://img.shields.io/badge/-Unity3D_2020.3.5f1-000?logo=unity&link=https://unity.com/)](https://unity.com/)
+  [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
 
-</div>
+  </div>
+  
   <p align="center"> <br />
-Development of a mobile application to visualize covid19 data using AR Foundation (Arkit / Arcore). <br /> Integration with API Rest to obtain the data in real time. Integration of Universal Render Pipeline and Post-Processing graphics.
-<br />The OOP and SOLID principles are highlighted, and a scalable MVVM architecture with the UniRx reactive library.<br /><br />
-    <a href="https://youtu.be/BuaH3zmLtNs" target="_blank">View Demo in Youtube</a> <br />
- <p align="center">
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://s6.gifyu.com/images/ezgif.com-gif-makercc9e5a15b78ce54c.gif" alt="Demo Video" style="max-width:100%;">
-  </a>
- </p>
+This repository contains a viewer of the covid 19 data developed in augmented reality using ARFoundation (Arkit - Arcore) in Unity. Its objective is the integration of an API to obtain the information and process it to display it in an interactive format. <br /><br />
+    <a href="https://youtu.be/Q-14FaPrD-A" target="_blank">View Demo in Youtube</a> <br />
+      <p align="center">
+      <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
+      <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Gif%20(1).gif?raw=true" alt="Demo Video" width="250">
+    </a>
+  </p>
     
   </p>
 </p>
-
-<br />
 
 ## Table of Contents
 
@@ -38,10 +36,6 @@ Development of a mobile application to visualize covid19 data using AR Foundatio
   - [Prerequisites](#prerequisites)
   - [Useful Links](#useful-links)
 - [Screenshoot](#screenshoot)
-- [Release](#release)
-- [Future Release](#future-release)
-- [Trouble Shooting](#trouble-shooting)
-- [Known issues](#known-issues)
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
@@ -50,7 +44,6 @@ Development of a mobile application to visualize covid19 data using AR Foundatio
 ## Requirements
 
 * Unity3d 2020.1.5f1
-* Visual Studio Code 1.2.3
 * UniRx 7.1.0
 * Universal Render Pipeline 10.4.0
 * ARFoundation 4.0.12
@@ -62,88 +55,57 @@ Development of a mobile application to visualize covid19 data using AR Foundatio
 ## Installation
 　1. Clone a repository or download it as zip.
 ```
-    git clone https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer
+    git clone https://github.com/matiasvallejosdev/ar-covid-visualizer
 ```
 　2. Importing dependences<br />
-　　(You can use ARFoundation(ARkit, ARcore)) <br />
+```
+　　You can use project requeriments to start!
+```
 
 ## Arquitecture
 ### Introduction 
 The architecture used is **MVVM** (model-view-view-model) adapted for unity.
-
-The purpose of this architecture is to bring code reusability, simplicity, resilience and interdicipline cooperation to de game development process.
-
 ### Diagram
 This is a picture of the architecture and the execution flow.
 
-![Diagram](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/ArquitectureDiagram.jpg?raw=true)
+![Diagram](https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/ArquitectureDiagram.jpg?raw=true)
 
 It should be noted that a fundamental part is fulfilled by the observers who are granted in this case by the UniRx reactive library, which can access its documentation in the git repository and is open-source.
-
 ### Prerequisites
 
 This example assume you have knowlege of Unity 3d, data oriented programming and reactive programing.
 
 ### Useful Links
 
-I use as tool Unirx library. [Download UniRx](https://assetstore.unity.com/packages/tools/integration/unirx-reactive-extensions-for-unity-17276)
+[Download UniRx](https://assetstore.unity.com/packages/tools/integration/unirx-reactive-extensions-for-unity-17276)
 
-[More information about this arquitecture](https://www.youtube.com/watch?v=nvPjmSseOdY&ab_channel=Etermax)
+[Arquitecture overview](https://www.youtube.com/watch?v=nvPjmSseOdY&ab_channel=Etermax)
 
 ## Screenshoot
 Game Screenshoot on Android Device.
 <p>
- <p align="center">
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_06.png?raw=true" alt="Demo Video" style="max-width:15%;">
-  </a>
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_08.png?raw=true" alt="Demo Video" style="max-width:15%;">
-  </a>
- </p>
-  <p align="center">
-   <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_12.png?raw=true" alt="Demo Video" style="max-width:15%;">
-  </a>
-  <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
-  <img src="https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/blob/main/Documentation/Images/screenshoot_13.png?raw=true" alt="Demo Video" style="max-width:15%;">
-
-  </a>
- </p>
-</p>
-
-## Release
-| Version | New Features | Date (AAAA-MM-dd) |
-|:---:|---|:---:|
-| v1.0.0 | [Initial features with only Argentina country](https://github.com/matiasvallejosdev/AR-Covid-Interactive-Visualizer/releases/tag/v1.0.0) | 2021.06.14 |
-
-
-## Future Release
-* New API for Argentina Provinces 
-* World Data Interactive Visualizer
-
-
-
-## Trouble Shooting
-* If an error such as ""
-<br />
-　　example:
-<br />
-
-```
-So far no errors
-```
-  <br />
-　　solutions: 
-  <br />
-
-    .**
-
-
-## Known issues
-
-* The states CountryGateway.cs for Argentina be desactivated beacause doesn't have an valid API.
-
+  <p>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(1).png?raw=true" width="200">
+    </a>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(2).png?raw=true" width="200">
+    </a>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(3).png?raw=true" width="200">
+    </a>
+  </p>
+  <p>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(4).png?raw=true" width="200">
+    </a>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(5).png?raw=true" width="200">
+    </a>
+    <a rel="nofollow">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Screenshoot%20(6).png?raw=true" width="200">
+    </a>
+  </p>
 
 ## Contributing
 
