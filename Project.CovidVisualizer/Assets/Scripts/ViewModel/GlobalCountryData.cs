@@ -13,13 +13,16 @@ namespace ViewModel
         public int idCountry;
         public string codeCountry;
         public string nameCountry;
-        public string fontHttp;
+        public string fontHttpGlobal;
+        public string fontHttpVaccines;
 
         [Header("Reactive")]
-        public IntReactiveProperty deaths;
-        public IntReactiveProperty positives;
-        public IntReactiveProperty recovered;
+        public IntReactiveProperty deathsCountry;
+        public IntReactiveProperty positivesCountry;
+        public IntReactiveProperty recoveredCountry;
 
-        public ISubject<bool> OnUpdate = new Subject<bool>();
+        public LongReactiveProperty vaccineOneDosisCountry;
+        public LongReactiveProperty vaccineTwoDosisCountry;
+        public FloatReactiveProperty vaccinationRateCountry;
     }
 }

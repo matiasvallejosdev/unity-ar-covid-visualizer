@@ -10,6 +10,6 @@ namespace ViewModel
     public class GlobalHandler : ScriptableObject
     {
         public GlobalWorldData worldData;
-        public GlobalCountryData countryGlobalData;
+        public GlobalCountryData countryData;
     }
 }

@@ -16,11 +16,11 @@ MonoBehaviour:
   stateNick:
     value: LPP
   stateName:
-    value: La Plata
+    value: La Pampa
   stateDeaths:
-    value: 0
+    value: 889
   statePositives:
-    value: 0
+    value: 67650
   stateRecovered:
     value: 0
   OnFocus:

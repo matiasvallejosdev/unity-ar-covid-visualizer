@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Tierra del fuego
   stateDeaths:
-    value: 0
+    value: 479
   statePositives:
-    value: 0
+    value: 31614
   stateRecovered:
     value: 0
   OnFocus:

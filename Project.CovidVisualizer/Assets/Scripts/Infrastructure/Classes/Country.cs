@@ -6,11 +6,11 @@ namespace Infrastructure
 {
     public class Country
     {
-        public CountryStatesInfo countryStatesInfo {get; set;}
+        public States statesData {get; set;}
 
-        public Country(CountryStatesInfo countryStatesInfo)
+        public Country(States countryStatesInfo)
         {
-            this.countryStatesInfo = countryStatesInfo;
+            this.statesData = countryStatesInfo;
         }
     }
 }

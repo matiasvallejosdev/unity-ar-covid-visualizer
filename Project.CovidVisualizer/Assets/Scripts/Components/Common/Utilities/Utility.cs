@@ -6,7 +6,7 @@ namespace Utilities
 {
     public static class Utility
     {
-        public static string GetNumberFormat(int value, string format = "en-US")
+        public static string GetNumberFormat(long value, string format = "en-US")
         {
             // Gets a NumberFormatInfo associated with the en-US culture.
             NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;

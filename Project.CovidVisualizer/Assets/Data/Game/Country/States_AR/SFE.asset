@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Santa Fe
   stateDeaths:
-    value: 0
+    value: 8570
   statePositives:
-    value: 0
+    value: 469000
   stateRecovered:
     value: 0
   OnFocus:

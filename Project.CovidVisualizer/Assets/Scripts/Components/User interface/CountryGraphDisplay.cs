@@ -19,22 +19,27 @@ namespace Components
 
         void Start() 
         {
-            gameContainer.globalManager.countryGlobalData.OnUpdate
-                .Subscribe(OnDataRecieved)
+            gameContainer.OnDataReceiver
+                .Subscribe(OnDataUpdate)
                 .AddTo(this);
         }
 
-        void OnDataRecieved(bool isUpdate) 
+        void OnDataUpdate(bool u) 
         {
-            if(isUpdate)
-                StartCoroutine(MakeBarAnimation(
-                    gameContainer.globalManager.countryGlobalData.deaths.Value, 
-                    gameContainer.globalManager.countryGlobalData.positives.Value, 
-                    gameContainer.globalManager.countryGlobalData.recovered.Value));
+            StartCoroutine(MakeBarAnimation(
+                gameContainer.globalManager.countryData.deathsCountry.Value, 
+                gameContainer.globalManager.countryData.positivesCountry.Value, 
+                gameContainer.globalManager.countryData.recoveredCountry.Value));
         }
 
         IEnumerator MakeBarAnimation(int death, int positives, int recovered) 
         {
+            float maxNum = 10;
+            float scale = ExtensionMethods.Remap(10, 0, maxNum, 0, 10);
+            recoverBar.SetScale(scale);
+            positiveBar.SetScale(scale);
+            deathBar.SetScale(scale);
+
             yield return new WaitForSeconds(WaitTime);
             
             if(positives <= 0)
@@ -42,7 +47,8 @@ namespace Components
                 Debug.Log("(CountryGraphDisplay) Global information is null or zero");
                 yield break;
             }
-            float maxNum = positives;
+
+            maxNum = positives;
             
             float recoveredScale = ExtensionMethods.Remap(recovered, 0, maxNum, 0, 10);
             recoverBar.SetScale(recoveredScale);

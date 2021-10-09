@@ -12,12 +12,12 @@ namespace Commands
         // Global Update Data
         public GlobalVisualizerCmd TurnGlobalData(GameContainer gameContainer)
         {
-            return new GlobalVisualizerCmd(gameContainer, new GlobalGateway());
+            return new GlobalVisualizerCmd(gameContainer, new GlobalGateway(), new GlobalVaccineGateway());
         }
         // State Update Data
-        public CountryVisualizerCmd TurnStateData(StateData countryData)
+        public CountryVisualizerCmd TurnStateData(GameContainer gameContainer, StateData[] statesData)
         {
-            return new CountryVisualizerCmd(countryData, new StatesArgentinaGateway());
+            return new CountryVisualizerCmd(gameContainer, statesData, new StatesArgentinaGateway());
         }
         // Ui Container Rotate&Scale
         public GameScaleCmd CountryContainerScale(GameContainer gameContainer, float scaleFactor)

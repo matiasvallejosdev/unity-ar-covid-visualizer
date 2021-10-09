@@ -10,11 +10,16 @@ namespace ViewModel
     public class GlobalWorldData : ScriptableObject
     {
         [Header("Properties")]
-        public string fontHttp;
+        public string fontHttpGlobal;
+        public string fontHttpVaccines;
         
         [Header("Reactive")]
         public IntReactiveProperty recoveredGlobal;
         public IntReactiveProperty deathsGlobal;
-        public IntReactiveProperty positivesGlobal;       
+        public IntReactiveProperty positivesGlobal; 
+
+        public LongReactiveProperty vaccineOneDosisWorld;
+        public LongReactiveProperty vaccineTwoDosisWorld;
+        public FloatReactiveProperty vaccinationRateWorld;      
     }   
 }

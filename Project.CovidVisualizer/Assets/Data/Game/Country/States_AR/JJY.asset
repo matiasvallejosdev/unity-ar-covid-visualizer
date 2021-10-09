@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Jujuy
   stateDeaths:
-    value: 0
+    value: 1532
   statePositives:
-    value: 0
+    value: 48056
   stateRecovered:
     value: 0
   OnFocus:

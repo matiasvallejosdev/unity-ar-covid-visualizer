@@ -38,4 +38,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54a636e9da6791f4a914af8b027bba35, type: 2}
   - {fileID: 11400000, guid: c6a6ff3814bf43b459d5f54ffd5551dd, type: 2}
   - {fileID: 11400000, guid: c58815c89b20a3f45ab99133a1795d76, type: 2}
-  currentStateSelected: {fileID: 0}
+  currentStateSelected: {fileID: 11400000, guid: 8de3cc547bee37e45bdeebc945b72a44,
+    type: 2}

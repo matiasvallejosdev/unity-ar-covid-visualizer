@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd7e4a4424ec59468c7493cb95767d3, type: 3}
   m_Name: GlobaldWorldData
   m_EditorClassIdentifier: 
-  fontHttp: https://coronavirus-tracker-api.com/
+  fontHttpGlobal: https://coronavirus-tracker-api.herokuapp.com/
+  fontHttpVaccines: https://coronavirus-vaccines-api.herokuapp.com/
   recoveredGlobal:
     value: 0
   deathsGlobal:
     value: 0
   positivesGlobal:
+    value: 0
+  vaccineOneDosisWorld:
+    value: 0
+  vaccineTwoDosisWorld:
+    value: 0
+  vaccinationRateWorld:
     value: 0

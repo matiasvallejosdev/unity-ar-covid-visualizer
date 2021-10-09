@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Buenos Aires
   stateDeaths:
-    value: 0
+    value: 54826
   statePositives:
-    value: 0
+    value: 2000000
   stateRecovered:
     value: 0
   OnFocus:

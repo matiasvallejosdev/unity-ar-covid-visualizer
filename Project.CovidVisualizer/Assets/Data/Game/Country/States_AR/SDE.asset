@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Santiago del estero
   stateDeaths:
-    value: 0
+    value: 1070
   statePositives:
-    value: 0
+    value: 79986
   stateRecovered:
     value: 0
   OnFocus:

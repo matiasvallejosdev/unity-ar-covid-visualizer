@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Cordoba
   stateDeaths:
-    value: 0
+    value: 16102
   statePositives:
-    value: 0
+    value: 517000
   stateRecovered:
     value: 0
   OnFocus:

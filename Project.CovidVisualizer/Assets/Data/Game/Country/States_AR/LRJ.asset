@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: La Rioja
   stateDeaths:
-    value: 0
+    value: 1086
   statePositives:
-    value: 0
+    value: 35131
   stateRecovered:
     value: 0
   OnFocus:

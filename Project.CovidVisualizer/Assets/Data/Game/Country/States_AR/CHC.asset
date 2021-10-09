@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Chaco
   stateDeaths:
-    value: 0
+    value: 2277
   statePositives:
-    value: 0
+    value: 100000
   stateRecovered:
     value: 0
   OnFocus:

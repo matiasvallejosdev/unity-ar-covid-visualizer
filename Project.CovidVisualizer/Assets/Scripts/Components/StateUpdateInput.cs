@@ -22,13 +22,7 @@ namespace Components
 
         private void OnUpdate(bool update)
         {
-            UpdateCountryData();
-        }
-
-        void UpdateCountryData()
-        {
-            foreach(StateData data in gameContainer.countryManager.statesData)
-                cmdFactory.TurnStateData(data).Execute();
+            cmdFactory.TurnStateData(gameContainer, gameContainer.countryManager.statesData).Execute();
         }
     }
 }

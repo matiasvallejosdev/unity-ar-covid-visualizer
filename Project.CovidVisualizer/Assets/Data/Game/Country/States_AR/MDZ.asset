@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Mendoza
   stateDeaths:
-    value: 0
+    value: 4589
   statePositives:
-    value: 0
+    value: 165000
   stateRecovered:
     value: 0
   OnFocus:

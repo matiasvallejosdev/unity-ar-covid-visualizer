@@ -18,18 +18,18 @@ namespace Components
 
         void Start()
         {
-            countryLabel.text = gameContainer.globalManager.countryGlobalData.nameCountry;
-            fontHttpLabel.text = "Fuente: " + gameContainer.globalManager.countryGlobalData.fontHttp;
+            countryLabel.text = gameContainer.globalManager.countryData.nameCountry;
+            fontHttpLabel.text = "Fuente: " + gameContainer.globalManager.countryData.fontHttpGlobal;
 
-            gameContainer.globalManager.countryGlobalData.deaths
+            gameContainer.globalManager.countryData.deathsCountry
                 .Subscribe(OnChangeDeaths)
                 .AddTo(this);
             
-            gameContainer.globalManager.countryGlobalData.positives
+            gameContainer.globalManager.countryData.positivesCountry
                 .Subscribe(OnChangeCases)
                 .AddTo(this);
             
-            gameContainer.globalManager.countryGlobalData.recovered
+            gameContainer.globalManager.countryData.recoveredCountry
                 .Subscribe(OnChangeTested)
                 .AddTo(this);
         }

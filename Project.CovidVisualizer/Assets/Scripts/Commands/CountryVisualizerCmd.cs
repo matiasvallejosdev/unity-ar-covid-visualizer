@@ -9,21 +9,22 @@ namespace Commands
 {
     public class CountryVisualizerCmd : ICommand
     {
-        private StateData countryData;
-        private IStatesGateway gateway;
+        private readonly GameContainer gameContainer;
+        private StateData[] statesData;
+        private IStatesGateway statesGateway;
 
-        public CountryVisualizerCmd(StateData countryData, IStatesGateway gateway)
+        public CountryVisualizerCmd(GameContainer gameContainer, StateData[] statesData, IStatesGateway gateway)
         {
-            this.countryData = countryData;
-            this.gateway = gateway;
+            this.gameContainer = gameContainer;
+            this.statesData = statesData;
+            this.statesGateway = gateway;
         }
 
         public void Execute()
         {
-            int[] ids = {};
-            gateway.StateTurnData(ids)
-                //.Do(x => countryData.OnInformation.OnNext(x))
+            statesGateway.StateSequentialLoad(statesData)
+                .Do(_ => Debug.Log("Sequential states load completed"))
                 .Subscribe();
-        } 
+        }
     }
 }

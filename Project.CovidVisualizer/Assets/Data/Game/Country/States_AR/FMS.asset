@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Formosa
   stateDeaths:
-    value: 0
+    value: 1216
   statePositives:
-    value: 0
+    value: 63868
   stateRecovered:
     value: 0
   OnFocus:

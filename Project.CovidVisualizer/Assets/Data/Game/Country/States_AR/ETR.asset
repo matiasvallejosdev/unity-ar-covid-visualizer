@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Entre rios
   stateDeaths:
-    value: 0
+    value: 2420
   statePositives:
-    value: 0
+    value: 138000
   stateRecovered:
     value: 0
   OnFocus:

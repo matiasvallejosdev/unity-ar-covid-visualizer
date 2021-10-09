@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using UnityEngine.Networking;
+using ViewModel;
 
 namespace Infrastructure
 {
@@ -12,32 +13,22 @@ namespace Infrastructure
         private protected string URL_DATA = "http://www.coronavirus.api/";
         public Country country { get; set; }
 
-        IObservable<Unit> IStatesGateway.StateTurnData(int[] idStates)
+        public IObservable<Unit> StateSequentialLoad(StateData[] stateData)
         {
-            country = new Country(new CountryStatesInfo());
-
-            //c.deaths = r.Next(0,10000000);
-            //c.tested = r.Next(0,10000000);
-            //c.positives = r.Next(0,10000000);
+            country = new Country(new States());
             
-            return Observable.FromCoroutine<Unit>(observer => TurnStateData(observer, idStates))
+            return Observable.FromCoroutine<Unit>(observer => TurnStateData(observer, stateData))
                                             .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA));
         }
 
-        IEnumerator TurnStateData(IObserver<Unit> observer, int[] idStates)
+        IEnumerator TurnStateData(IObserver<Unit> observer, StateData[] stateData)
         {
             // ToYieldInstruction can await observbale
             // States Argentina Data
-            string worldDataURL = URL_DATA + "latest";
-            UnityWebRequest coronavirusInfoRequest = UnityWebRequest.Get(worldDataURL);
-
-            yield return coronavirusInfoRequest.SendWebRequest();
-
-            if(coronavirusInfoRequest.result == UnityWebRequest.Result.ConnectionError || coronavirusInfoRequest.result == UnityWebRequest.Result.ProtocolError)
-            {
-                //Debug.LogError("(GlobalWorldInformation)UnityWebRequest: " + coronavirusInfoRequest.error);
-                yield break;
-            }
+            yield return new WaitForSeconds(1);
+            
+            observer.OnNext(Unit.Default); // push Unit or all buffer result.
+            observer.OnCompleted();
         }
 
     }

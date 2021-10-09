@@ -12,6 +12,7 @@ namespace ViewModel
         public CountryHandler countryManager;
         public BoolReactiveProperty placementPoseValid = new BoolReactiveProperty();
         public BoolReactiveProperty isCountryManagerOnScene;
+        public ISubject<bool> OnDataReceiver = new Subject<bool>();
         public ISubject<bool> OnUpdate = new Subject<bool>();
     }
 }

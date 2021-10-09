@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Santa Cruz
   stateDeaths:
-    value: 0
+    value: 987
   statePositives:
-    value: 0
+    value: 61666
   stateRecovered:
     value: 0
   OnFocus:

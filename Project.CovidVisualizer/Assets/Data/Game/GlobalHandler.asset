@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GlobalHandler
   m_EditorClassIdentifier: 
   worldData: {fileID: 11400000, guid: de944cb3926f08748b010310883b67fb, type: 2}
-  countryGlobalData: {fileID: 11400000, guid: ddf9134c558fa9e4b82f651b739a90fd, type: 2}
+  countryData: {fileID: 11400000, guid: ddf9134c558fa9e4b82f651b739a90fd, type: 2}

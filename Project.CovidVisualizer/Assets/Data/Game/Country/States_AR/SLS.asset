@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: San luis
   stateDeaths:
-    value: 0
+    value: 1413
   statePositives:
-    value: 0
+    value: 91316
   stateRecovered:
     value: 0
   OnFocus:

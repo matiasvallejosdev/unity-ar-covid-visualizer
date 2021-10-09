@@ -15,10 +15,17 @@ MonoBehaviour:
   idCountry: 1
   codeCountry: AR
   nameCountry: Argentina
-  fontHttp: https://coronavirus-tracker-api.com/
-  deaths:
+  fontHttpGlobal: https://coronavirus-tracker-api.herokuapp.com/
+  fontHttpVaccines: https://coronavirus-vaccines-api.herokuapp.com/
+  deathsCountry:
     value: 0
-  positives:
+  positivesCountry:
     value: 0
-  recovered:
+  recoveredCountry:
+    value: 0
+  vaccineOneDosisCountry:
+    value: 0
+  vaccineTwoDosisCountry:
+    value: 0
+  vaccinationRateCountry:
     value: 0

@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: San Juan
   stateDeaths:
-    value: 0
+    value: 4598
   statePositives:
-    value: 0
+    value: 165000
   stateRecovered:
     value: 0
   OnFocus:

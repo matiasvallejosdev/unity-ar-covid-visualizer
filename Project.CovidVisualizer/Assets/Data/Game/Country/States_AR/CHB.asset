@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Chubut
   stateDeaths:
-    value: 0
+    value: 1520
   statePositives:
-    value: 0
+    value: 89084
   stateRecovered:
     value: 0
   OnFocus:

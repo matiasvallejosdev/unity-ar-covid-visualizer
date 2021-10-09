@@ -18,8 +18,8 @@ namespace Infrastructure
         {
             globalData = new Global(new GlobalCountryInfo(), new GlobalWorldInfo());
 
-            return Observable.FromCoroutine<Unit>(observer => TurnGlobalData(observer, gameContainer.globalManager.countryGlobalData.codeCountry))
-                                            .Do(_ => Debug.Log("Get global world data and global country data in " + URL_DATA));
+            return Observable.FromCoroutine<Unit>(observer => TurnGlobalData(observer, gameContainer.globalManager.countryData.codeCountry))
+                                            .Do(_ => Debug.Log("Get global data in " + URL_DATA));
         }
 
         IEnumerator TurnGlobalData(IObserver<Unit> observer, string countryCode)

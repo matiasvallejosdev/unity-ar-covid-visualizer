@@ -10,31 +10,52 @@ namespace Commands
     public class GlobalVisualizerCmd : ICommand
     {
         private IGlobalGateway globalGateway;
+        private readonly IGlobalVaccineGateway globalVaccineGateway;
         private readonly GameContainer gameContainer;
 
-        public GlobalVisualizerCmd(GameContainer gameContainer, IGlobalGateway globalGateway)
+        public GlobalVisualizerCmd(GameContainer gameContainer, IGlobalGateway globalGateway, IGlobalVaccineGateway globalVaccineGateway)
         {
             this.gameContainer = gameContainer;
             this.globalGateway = globalGateway;
+            this.globalVaccineGateway = globalVaccineGateway;
         }
 
         public void Execute()
         {
+            // Get data world and country
             globalGateway.GlobalSequentialLoad(gameContainer)
-                .Do(_ => Debug.Log("Sequential load completed"))
-                .Do(_ => OnDataReceiver(gameContainer, globalGateway.globalData)) // Update data
-                .Do(_ => gameContainer.globalManager.countryGlobalData.OnUpdate.OnNext(true))
+                .Do(_ => Debug.Log("Sequential global load completed!"))
+                .Do(_ => OnDataGlobalReceiver(gameContainer.globalManager.countryData, gameContainer.globalManager.worldData, globalGateway.globalData)) // Update data
                 .Subscribe();
+            
+            // Get data world and country vaccines
+            globalVaccineGateway.GlobalSequentialLoad(gameContainer)
+                .Do(_ => Debug.Log("Sequential global vaccines load completed"))
+                .Do(_ => OnDataGlobalVaccineReceiver(gameContainer.globalManager.countryData, gameContainer.globalManager.worldData, globalVaccineGateway.globalVaccineData)) // Update data
+                .Subscribe();
+            
+            gameContainer.OnDataReceiver.OnNext(true);
         }
 
-        private void OnDataReceiver(GameContainer gameContainer, Global globalInformation)
+        private void OnDataGlobalReceiver(GlobalCountryData countryData, GlobalWorldData worldData, Global globalInformation)
         {       
-            gameContainer.globalManager.countryGlobalData.positives.Value = globalInformation.globalCountryInfo.totalPositives;
-            gameContainer.globalManager.countryGlobalData.recovered.Value = globalInformation.globalCountryInfo.totalRecovered;
-            gameContainer.globalManager.countryGlobalData.deaths.Value = globalInformation.globalCountryInfo.totalDeaths;   
-            gameContainer.globalManager.worldData.positivesGlobal.Value = globalInformation.globalWorldInfo.totalPositives;
-            gameContainer.globalManager.worldData.recoveredGlobal.Value = globalInformation.globalWorldInfo.totalRecovered;
-            gameContainer.globalManager.worldData.deathsGlobal.Value = globalInformation.globalWorldInfo.totalDeaths;
+            countryData.positivesCountry.Value = globalInformation.globalCountryInfo.totalPositives;
+            countryData.recoveredCountry.Value = globalInformation.globalCountryInfo.totalRecovered;
+            countryData.deathsCountry.Value = globalInformation.globalCountryInfo.totalDeaths;
+               
+            worldData.positivesGlobal.Value = globalInformation.globalWorldInfo.totalPositives;
+            worldData.recoveredGlobal.Value = globalInformation.globalWorldInfo.totalRecovered;
+            worldData.deathsGlobal.Value = globalInformation.globalWorldInfo.totalDeaths;
+        }
+        private void OnDataGlobalVaccineReceiver(GlobalCountryData countryData, GlobalWorldData worldData, GlobalVaccine globalInformation)
+        {       
+            countryData.vaccinationRateCountry.Value = globalInformation.countryPercentagePopulation;
+            countryData.vaccineOneDosisCountry.Value = globalInformation.countryTotalOneDosis;
+            countryData.vaccineTwoDosisCountry.Value = globalInformation.countryTotalTwoDosis;
+
+            worldData.vaccinationRateWorld.Value = globalInformation.worldPercentagePopulation;
+            worldData.vaccineOneDosisWorld.Value = globalInformation.worldTotalOneDosis;
+            worldData.vaccineTwoDosisWorld.Value = globalInformation.worldTotalTwoDosis;
         }
     }
 }

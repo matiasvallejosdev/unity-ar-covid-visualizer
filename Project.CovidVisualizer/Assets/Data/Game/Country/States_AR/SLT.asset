@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Salta
   stateDeaths:
-    value: 0
+    value: 2618
   statePositives:
-    value: 0
+    value: 85315
   stateRecovered:
     value: 0
   OnFocus:

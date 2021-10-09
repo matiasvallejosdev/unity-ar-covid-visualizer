@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Rio Negro
   stateDeaths:
-    value: 0
+    value: 2386
   statePositives:
-    value: 0
+    value: 100000
   stateRecovered:
     value: 0
   OnFocus:

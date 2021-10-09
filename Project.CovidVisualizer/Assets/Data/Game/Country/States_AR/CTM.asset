@@ -18,9 +18,9 @@ MonoBehaviour:
   stateName:
     value: Catamarca
   stateDeaths:
-    value: 0
+    value: 691
   statePositives:
-    value: 0
+    value: 57179
   stateRecovered:
     value: 0
   OnFocus:
