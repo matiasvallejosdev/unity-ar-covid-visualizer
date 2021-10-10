@@ -17,7 +17,7 @@
 This repository contains a viewer of the covid 19 data developed in augmented reality using ARFoundation (Arkit - Arcore) in Unity. Its objective is the integration of an API to obtain the information and process it to display it in an interactive format. <br /><br />
     <a href="https://youtu.be/Q-14FaPrD-A" target="_blank">View Demo in Youtube</a> <br />
       <p align="center">
-      <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
+      <a href="https://youtu.be/Q-14FaPrD-A" rel="nofollow">
       <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Images/Gif%20(1).gif?raw=true" alt="Demo Video" width="250">
     </a>
   </p>
