@@ -10,7 +10,7 @@
   <br />
   [![Unity Badge](http://img.shields.io/badge/-Unity3D_2020.3.5f1-000?logo=unity&link=https://unity.com/)](https://unity.com/)
   [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
-
+  [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
   </div>
   
   <p align="center"> <br />
@@ -117,7 +117,14 @@ Game Screenshoot on Android Device.
 　5.　Open a Pull Request. <br />
 
 ## License
-* Open-Source
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
 ## Credits
 
