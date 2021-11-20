@@ -14,7 +14,7 @@
   </div>
   
   <p align="center"> <br />
-This repository contains a viewer of the covid 19 data developed in augmented reality using ARFoundation (Arkit - Arcore) in Unity. Its objective is the integration of an API to obtain the information and process it to display it in an interactive format. <br /><br />
+This repository contains an interactive viewer of the covid-19 data in Argentina. Developed in Unity as an augmented reality experience. You can place a map and look according to each state. When you approach a state, you will be able to see more details about your current situation. <br /><br />
     <a href="https://youtu.be/Q-14FaPrD-A" target="_blank">View Demo in Youtube</a> <br />
       <p align="center">
       <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
@@ -36,6 +36,7 @@ This repository contains a viewer of the covid 19 data developed in augmented re
   - [Prerequisites](#prerequisites)
   - [Useful Links](#useful-links)
 - [Screenshoot](#screenshoot)
+- [Data Source](#data-source)
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
@@ -106,6 +107,13 @@ Game Screenshoot on Android Device.
     <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(6).png?raw=true" width="200">
     </a>
   </p>
+  
+## Data Source
+
+We are using the API from this project: https://github.com/ExpDev07/coronavirus-tracker-api and https://coronavirus-vaccines-api.herokuapp.com/v2/
+
+It uses the data by Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).
+The data is updated every hour.
 
 ## Contributing
 
