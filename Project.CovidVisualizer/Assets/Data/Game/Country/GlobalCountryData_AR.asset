@@ -18,14 +18,14 @@ MonoBehaviour:
   fontHttpGlobal: https://coronavirus-tracker-api.herokuapp.com/
   fontHttpVaccines: https://coronavirus-vaccines-api.herokuapp.com/
   deathsCountry:
-    value: 0
+    value: 116382
   positivesCountry:
-    value: 0
+    value: 5315989
   recoveredCountry:
     value: 0
   vaccineOneDosisCountry:
-    value: 0
+    value: 53000000
   vaccineTwoDosisCountry:
-    value: 0
+    value: 23400000
   vaccinationRateCountry:
-    value: 0
+    value: 51.5

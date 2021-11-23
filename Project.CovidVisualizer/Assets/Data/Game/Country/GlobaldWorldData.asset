@@ -17,12 +17,12 @@ MonoBehaviour:
   recoveredGlobal:
     value: 0
   deathsGlobal:
-    value: 0
+    value: 5158099
   positivesGlobal:
-    value: 0
+    value: 258275860
   vaccineOneDosisWorld:
-    value: 0
+    value: 6440000000
   vaccineTwoDosisWorld:
-    value: 0
+    value: 2730000000
   vaccinationRateWorld:
-    value: 0
+    value: 35

@@ -44,7 +44,7 @@ namespace Components
             
             if(positives <= 0)
             {
-                Debug.Log("(CountryGraphDisplay) Global information is null or zero");
+                Debug.Log("[CountryGraphDisplay] Global information is null or zero");
                 yield break;
             }
 

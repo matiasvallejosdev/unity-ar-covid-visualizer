@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 18580508}
   - component: {fileID: 18580507}
   m_Layer: 0
-  m_Name: AR Player EventSystem
+  m_Name: AR Player System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 8
-  unselectIntelligent: 0
+  unselectIntelligent: 1
 --- !u!1 &40919614
 GameObject:
   m_ObjectHideFlags: 0
