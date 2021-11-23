@@ -2,6 +2,7 @@
   
   <div align="center">
 
+  [![GitHub release](https://img.shields.io/github/v/release/matiasvallejosdev/ar-covid-visualizer)](https://github.com/matiasvallejosdev/ar-covid-visualizer/releases)
   [![GitHub release (latest by date)](https://img.shields.io/github/release-date/matiasvallejosdev/ar-covid-visualizer?style=plastic)](https://github.com/matiasvallejosdev/ar-covid-visualizer/releases)
   [![GitHub top language](https://img.shields.io/github/languages/top/matiasvallejosdev/ar-covid-visualizer?color=1081c2)](https://github.com/matiasvallejosdev/ar-covid-visualizer/search?l=c%23)
   [![GitHub Watchers](https://img.shields.io/github/watchers/matiasvallejosdev/ar-covid-visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/ar-covid-visualizer/watchers)
