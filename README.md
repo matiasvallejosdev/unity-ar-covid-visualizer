@@ -2,11 +2,11 @@
   
   <div align="center">
 
-  [![GitHub release (latest by date)](https://img.shields.io/github/v/release/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive)
-  [![GitHub top language](https://img.shields.io/github/languages/top/matiasvallejosdev/AR-Covid-Visualizer?color=1081c2)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/search?l=c%23)
-  [![GitHub Watchers](https://img.shields.io/github/watchers/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/watchers)
-  [![GitHub Repo stars](https://img.shields.io/github/stars/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/stargazers)
-  [![GitHub Forks](https://img.shields.io/github/forks/matiasvallejosdev/AR-Covid-Visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/AR-Covid-Interactive/network/members)
+  [![GitHub release (latest by date)](https://img.shields.io/github/release-date/matiasvallejosdev/ar-covid-visualizer?style=plastic)](https://github.com/matiasvallejosdev/ar-covid-visualizer/releases)
+  [![GitHub top language](https://img.shields.io/github/languages/top/matiasvallejosdev/ar-covid-visualizer?color=1081c2)](https://github.com/matiasvallejosdev/ar-covid-visualizer/search?l=c%23)
+  [![GitHub Watchers](https://img.shields.io/github/watchers/matiasvallejosdev/ar-covid-visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/ar-covid-visualizer/watchers)
+  [![GitHub Repo stars](https://img.shields.io/github/stars/matiasvallejosdev/ar-covid-visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/ar-covid-visualizer/stargazers)
+  [![GitHub Forks](https://img.shields.io/github/forks/matiasvallejosdev/ar-covid-visualizer?color=4cc51e)](https://github.com/matiasvallejosdev/ar-covid-visualizer/network/members)
   <br />
   [![Unity Badge](http://img.shields.io/badge/-Unity3D_2020.3.5f1-000?logo=unity&link=https://unity.com/)](https://unity.com/)
   [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/)
