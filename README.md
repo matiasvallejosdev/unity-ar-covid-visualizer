@@ -18,7 +18,7 @@
 This repository contains an interactive viewer of the covid-19 data in Argentina. Developed in Unity as an augmented reality experience. You can place a map and look according to each state. When you approach a state, you will be able to see more details about your current situation. <br /><br />
     <a href="https://youtu.be/Q-14FaPrD-A" target="_blank">View Demo in Youtube</a> <br />
       <p align="center">
-      <a href="https://youtu.be/BuaH3zmLtNs" rel="nofollow">
+      <a href="https://www.youtube.com/watch?v=Q-14FaPrD-A&ab_channel=MatiasA.Vallejos" rel="nofollow">
       <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Gif%20(1).gif?raw=true" alt="Demo Video" width="250">
     </a>
   </p>
