@@ -73,13 +73,10 @@ This is a picture of the architecture and the execution flow.
 ![Diagram](https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/ArquitectureDiagram.jpg?raw=true)
 
 It should be noted that a fundamental part is fulfilled by the observers who are granted in this case by the UniRx reactive library, which can access its documentation in the git repository and is open-source.
-### Prerequisites
-
-This example assume you have knowlege of Unity 3d, data oriented programming and reactive programing.
 
 ### Useful Links
 
-[Download UniRx](https://assetstore.unity.com/packages/tools/integration/unirx-reactive-extensions-for-unity-17276)
+[UniRx](https://assetstore.unity.com/packages/tools/integration/unirx-reactive-extensions-for-unity-17276)
 
 [Arquitecture overview](https://www.youtube.com/watch?v=nvPjmSseOdY&ab_channel=Etermax)
 
