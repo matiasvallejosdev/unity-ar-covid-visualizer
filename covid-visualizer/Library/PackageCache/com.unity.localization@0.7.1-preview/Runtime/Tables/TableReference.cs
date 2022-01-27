@@ -1,0 +1,493 @@
+using System;
+using UnityEngine.Serialization;
+
+namespace UnityEngine.Localization.Tables
+{
+    /// <summary>
+    /// It is possible to reference a table via either the table collection name of the table collection name guid.
+    /// The TableReference provides a flexible way to reference via either of these methods and also includes editor functionality.
+    /// </summary>
+    [Serializable]
+    public struct TableReference : ISerializationCallbackReceiver, IEquatable<TableReference>
+    {
+        /// <summary>
+        /// The type of reference.
+        /// </summary>
+        public enum Type
+        {
+            /// <summary>
+            /// No table is referenced.
+            /// </summary>
+            Empty,
+
+            /// <summary>
+            /// A table is referenced by its table collection name guid.
+            /// </summary>
+            Guid,
+
+            /// <summary>
+            /// A table is referenced by its name.
+            /// </summary>
+            Name
+        }
+
+        [SerializeField]
+        [FormerlySerializedAs("m_TableName")]
+        string m_TableCollectionName;
+
+        bool m_Valid;
+
+        const string k_GuidTag = "GUID:";
+
+        /// <summary>
+        /// The type of reference.
+        /// </summary>
+        public Type ReferenceType { get; private set; }
+
+        /// <summary>
+        /// The table collection name guid when <see cref="ReferenceType"/> is <see cref="Type.Guid"/>.
+        /// </summary>
+        public Guid TableCollectionNameGuid { get; private set; }
+
+        /// <summary>
+        /// The table collection name when <see cref="ReferenceType"/> is <see cref="Type.String"/>.
+        /// </summary>
+        public string TableCollectionName
+        {
+            get
+            {
+                if (ReferenceType == Type.Name)
+                    return m_TableCollectionName;
+                return null;
+            }
+            private set => m_TableCollectionName = value;
+        }
+
+        #pragma warning disable CA2225 // CA2225: Operator overloads have named alternates
+
+        /// <summary>
+        /// Convert a table collection name into a <see cref="TableReference"/>.
+        /// </summary>
+        /// <param name="tableCollectionName">The name of the table.</param>
+        public static implicit operator TableReference(string tableCollectionName)
+        {
+            return new TableReference() { TableCollectionName = tableCollectionName, ReferenceType = Type.Name };
+        }
+
+        /// <summary>
+        /// Convert a table collection name guid into a <see cref="TableReference"/>.
+        /// </summary>
+        /// <param name="tableCollectionNameGuid">The table collection name guid.</param>
+        public static implicit operator TableReference(Guid tableCollectionNameGuid)
+        {
+            return new TableReference() { TableCollectionNameGuid = tableCollectionNameGuid, ReferenceType = Type.Guid };
+        }
+
+        /// <summary>
+        /// Returns <see cref="TableCollectionName"/>.
+        /// </summary>
+        /// <param name="tableReference"></param>
+        /// <returns></returns>
+        public static implicit operator string(TableReference tableReference)
+        {
+            return tableReference.TableCollectionName;
+        }
+
+        /// <summary>
+        /// Returns <see cref="TableCollectionNameGuid"/>.
+        /// </summary>
+        /// <param name="tableReference"></param>
+        /// <returns></returns>
+        public static implicit operator Guid(TableReference tableReference)
+        {
+            return tableReference.TableCollectionNameGuid;
+        }
+
+        #pragma warning restore CA2225
+
+        internal void Validate()
+        {
+            if (m_Valid)
+                return;
+
+            switch (ReferenceType)
+            {
+                case Type.Empty:
+                    throw new ArgumentException("Empty Table Reference. Must contain a Guid or Table Collection Name");
+
+                case Type.Guid:
+                    if (TableCollectionNameGuid == Guid.Empty)
+                        throw new ArgumentException("Must use a valid Table Collection Name Guid, can not be Empty.");
+                    break;
+                case Type.Name:
+                    if (string.IsNullOrWhiteSpace(TableCollectionName))
+                        throw new ArgumentException($"Table Collection Name can not be null or empty.");
+                    break;
+            }
+            m_Valid = true;
+        }
+
+        internal string GetSerializedString()
+        {
+            if (ReferenceType == Type.Guid)
+                return $"{k_GuidTag}{StringFromGuid(TableCollectionNameGuid)}";
+            return TableCollectionName;
+        }
+
+        /// <summary>
+        /// Returns a string representation.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if (ReferenceType == Type.Guid)
+                return $"{nameof(TableReference)}({TableCollectionNameGuid})";
+            if (ReferenceType == Type.Name)
+                return $"{nameof(TableReference)}({TableCollectionName})";
+            return $"{nameof(TableReference)}(Empty)";
+        }
+
+        /// <summary>
+        /// Compare the TableReference to another TableReference.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is null)
+                return false;
+            return obj is TableReference ter && Equals(ter);
+        }
+
+        /// <summary>
+        /// Returns the hash code of <see cref="TableCollectionNameGuid"/> or <see cref="TableCollectionName"/>.
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            if (ReferenceType == Type.Guid)
+                return TableCollectionNameGuid.GetHashCode();
+            if (ReferenceType == Type.Name)
+                return TableCollectionName.GetHashCode();
+            return base.GetHashCode();
+        }
+
+        /// <summary>
+        /// Compare 2 TableReferences.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(TableReference other)
+        {
+            if (ReferenceType != other.ReferenceType)
+                return false;
+
+            if (ReferenceType == Type.Guid)
+            {
+                return TableCollectionNameGuid == other.TableCollectionNameGuid;
+            }
+            if (ReferenceType == Type.Name)
+            {
+                return TableCollectionName == other.TableCollectionName;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Parse a string that contains uses the <see cref="k_GuidTag"/> tag.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        internal static Guid GuidFromString(string value)
+        {
+            return Guid.Parse(value.Substring(k_GuidTag.Length, value.Length - k_GuidTag.Length));
+        }
+
+        /// <summary>
+        /// Returns a string version of the GUID which works with Addressables, it uses the "N" format(32 digits).
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        internal static string StringFromGuid(Guid value)
+        {
+            return value.ToString("N");
+        }
+
+        /// <summary>
+        /// Converts a string into a a <see cref="TableReference"/>.
+        /// </summary>
+        /// <param name="value">The string to convert. The string can either be a table collection name or a GUID identified by prepending the <see cref="k_GuidTag"/> tag.</param>
+        /// <returns></returns>
+        internal static TableReference TableReferenceFromString(string value)
+        {
+            if (IsGuid(value))
+                return GuidFromString(value);
+            return value;
+        }
+
+        /// <summary>
+        /// Is the string identified as a <see cref="Guid"/> string.
+        /// Strings that start with <see cref="k_GuidTag"/> are considered a Guid.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        internal static bool IsGuid(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return false;
+            return value.StartsWith(k_GuidTag, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// Converts the reference into a serializable string.
+        /// </summary>
+        public void OnBeforeSerialize()
+        {
+            m_TableCollectionName = GetSerializedString();
+        }
+
+        /// <summary>
+        /// Converts the serializable string into the correct reference type.
+        /// </summary>
+        public void OnAfterDeserialize()
+        {
+            if (string.IsNullOrEmpty(m_TableCollectionName))
+            {
+                ReferenceType = Type.Empty;
+            }
+            else if (IsGuid(m_TableCollectionName))
+            {
+                TableCollectionNameGuid = GuidFromString(m_TableCollectionName);
+                ReferenceType = Type.Guid;
+                m_TableCollectionName = null; // Clear the name.
+            }
+            else
+            {
+                ReferenceType = Type.Name;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Allows for referencing a table entry via key or key id.
+    /// </summary>
+    [Serializable]
+    public struct TableEntryReference : ISerializationCallbackReceiver, IEquatable<TableEntryReference>
+    {
+        /// <summary>
+        /// The type of reference.
+        /// </summary>
+        public enum Type
+        {
+            /// <summary>
+            /// No table entry is referenced.
+            /// </summary>
+            Empty,
+
+            /// <summary>
+            /// The key name is referenced.
+            /// </summary>
+            Name,
+
+            /// <summary>
+            /// The Key Id is referenced
+            /// </summary>
+            Id
+        }
+
+        [SerializeField]
+        uint m_KeyId;
+
+        [SerializeField]
+        string m_Key;
+
+        bool m_Valid;
+
+        /// <summary>
+        /// The type of reference.
+        /// </summary>
+        public Type ReferenceType { get; private set; }
+
+        /// <summary>
+        /// The Key Id when <see cref="ReferenceType"/> is <see cref="Type.Id"/>.
+        /// </summary>
+        public uint KeyId { get => m_KeyId; private set => m_KeyId = value; }
+
+        /// <summary>
+        /// The key name when <see cref="ReferenceType"/> is <see cref="Type.Name"/>.
+        /// </summary>
+        public string Key { get => m_Key; private set => m_Key = value; }
+
+        #pragma warning disable CA2225 // CA2225: Operator overloads have named alternates
+
+        /// <summary>
+        /// Converts a string name into a reference.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static implicit operator TableEntryReference(string key)
+        {
+            if (!string.IsNullOrWhiteSpace(key))
+                return new TableEntryReference() { Key = key, ReferenceType = Type.Name };
+            return new TableEntryReference(); // Empty
+        }
+
+        /// <summary>
+        /// Converts a key id into a reference.
+        /// </summary>
+        /// <param name="keyId"></param>
+        /// <returns></returns>
+        public static implicit operator TableEntryReference(uint keyId)
+        {
+            if (keyId != SharedTableData.EmptyId)
+                return new TableEntryReference() { KeyId = keyId, ReferenceType = Type.Id };
+            return new TableEntryReference(); // Empty
+        }
+
+        /// <summary>
+        /// Returns <see cref="Key"/>.
+        /// </summary>
+        /// <param name="tableEntryReference"></param>
+        /// <returns></returns>
+        public static implicit operator string(TableEntryReference tableEntryReference)
+        {
+            return tableEntryReference.Key;
+        }
+
+        /// <summary>
+        /// Returns <see cref="KeyId"/>
+        /// </summary>
+        /// <param name="tableEntryReference"></param>
+        /// <returns></returns>
+        public static implicit operator uint(TableEntryReference tableEntryReference)
+        {
+            return tableEntryReference.KeyId;
+        }
+
+        #pragma warning restore CA2225
+
+        internal void Validate()
+        {
+            if (m_Valid)
+                return;
+
+            switch (ReferenceType)
+            {
+                case Type.Empty:
+                    throw new ArgumentException("Empty Table Entry Reference. Must contain a Name or Key Id");
+
+                case Type.Name:
+                    if (string.IsNullOrWhiteSpace(Key))
+                        throw new ArgumentException("Must use a valid Key, can not be null or Empty.");
+                    break;
+                case Type.Id:
+                    if (KeyId == SharedTableData.EmptyId)
+                        throw new ArgumentException("Key Id can not be empty.");
+                    break;
+            }
+            m_Valid = true;
+        }
+
+        /// <summary>
+        /// Returns the key name.
+        /// If <see cref="ReferenceType"/> is <see cref="Type.Name"/> then <see cref="Key"/> will be returned.
+        /// If <see cref="ReferenceType"/> is <see cref="Type.Id"/> then <paramref name="sharedData"/> will be used to extract the name.
+        /// </summary>
+        /// <param name="sharedData">The <see cref="SharedTableData"/> to use if the key name is not stored in the reference or null if it could not br resolbved.</param>
+        /// <returns></returns>
+        public string ResolveKeyName(SharedTableData sharedData)
+        {
+            if (ReferenceType == Type.Name)
+                return Key;
+            if (ReferenceType == Type.Id)
+                return sharedData != null ? sharedData.GetKey(KeyId) : $"Key Id {KeyId}";
+            return null;
+        }
+
+        /// <summary>
+        /// Returns a string representation.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            switch (ReferenceType)
+            {
+                case Type.Name:
+                    return $"{nameof(TableEntryReference)}({Key})";
+                case Type.Id:
+                    return $"{nameof(TableEntryReference)}({KeyId})";
+            }
+            return $"{nameof(TableEntryReference)}(Empty)";
+        }
+
+        /// <summary>
+        /// Compare the TableEntryReference to another TableEntryReference.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj is null)
+                return false;
+            return obj is TableEntryReference ter && Equals(ter);
+        }
+
+        /// <summary>
+        /// Compare the TableEntryReference to another TableEntryReference.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(TableEntryReference other)
+        {
+            if (ReferenceType != other.ReferenceType)
+                return false;
+
+            if (ReferenceType == Type.Name)
+            {
+                return Key == other.Key;
+            }
+            if (ReferenceType == Type.Id)
+            {
+                return KeyId == other.KeyId;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Returns the hash code of <see cref="Key"/> or <see cref="KeyId"/>.
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            if (ReferenceType == Type.Name)
+            {
+                return Key.GetHashCode();
+            }
+            if (ReferenceType == Type.Id)
+            {
+                return KeyId.GetHashCode();
+            }
+            return base.GetHashCode();
+        }
+
+        /// <summary>
+        /// Does nothing but is required for <see cref="OnAfterDeserialize"/>.
+        /// </summary>
+        public void OnBeforeSerialize()
+        {
+        }
+
+        /// <summary>
+        /// Determines the <see cref="ReferenceType"/>.
+        /// </summary>
+        public void OnAfterDeserialize()
+        {
+            if (KeyId != SharedTableData.EmptyId)
+                ReferenceType = Type.Id;
+            else if (string.IsNullOrEmpty(m_Key))
+                ReferenceType = Type.Empty;
+            else
+                ReferenceType = Type.Name;
+        }
+    }
+}

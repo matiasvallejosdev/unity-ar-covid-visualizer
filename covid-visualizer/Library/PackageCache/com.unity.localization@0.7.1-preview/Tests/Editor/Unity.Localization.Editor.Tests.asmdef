@@ -1,0 +1,33 @@
+{
+    "name": "Unity.Localization.Editor.Tests",
+    "references": [
+        "Unity.Localization.Editor",
+        "Unity.Localization",
+        "Unity.Addressables.Editor",
+        "Unity.ugui",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.Localization.Runtime.Tests"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.ugui",
+            "expression": "1.0.0",
+            "define": "PACKAGE_UGUI"
+        }
+    ],
+    "noEngineReferences": false
+}

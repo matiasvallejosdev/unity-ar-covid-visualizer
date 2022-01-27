@@ -1,0 +1,9 @@
+{
+  "Exceptions": [
+    {
+      "ValidationTest": "Restricted File Type Validation",
+      "ExceptionError": "/Editor/csc.rsp cannot be included in a package.",
+      "PackageVersion": "4.2.0-pre.9"
+    }
+  ]
+}
