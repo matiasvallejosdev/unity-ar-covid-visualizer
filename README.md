@@ -19,7 +19,7 @@ This repository contains an interactive viewer of the covid-19 data in Argentina
     <a href="https://youtu.be/Q-14FaPrD-A" target="_blank">View Demo in Youtube</a> <br />
       <p align="center">
       <a href="https://www.youtube.com/watch?v=Q-14FaPrD-A&ab_channel=MatiasA.Vallejos" rel="nofollow">
-      <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Gif%20(1).gif?raw=true" alt="Demo Video" width="250">
+      <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Gif%20(1).gif?raw=true" alt="Demo Video" width="250">
     </a>
   </p>
     
@@ -34,7 +34,6 @@ This repository contains an interactive viewer of the covid-19 data in Argentina
 - [Arquitecture](#arquitecture)
   - [Introduction](#introduction)
   - [Diagram](#diagram)
-  - [Prerequisites](#prerequisites)
   - [Useful Links](#useful-links)
 - [Screenshoot](#screenshoot)
 - [Data Source](#data-source)
@@ -70,7 +69,7 @@ The architecture used is **MVVM** (model-view-view-model) adapted for unity.
 ### Diagram
 This is a picture of the architecture and the execution flow.
 
-![Diagram](https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/ArquitectureDiagram.jpg?raw=true)
+![Diagram](https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/ArquitectureDiagram.jpg?raw=true)
 
 It should be noted that a fundamental part is fulfilled by the observers who are granted in this case by the UniRx reactive library, which can access its documentation in the git repository and is open-source.
 
@@ -85,24 +84,24 @@ Game Screenshoot on Android Device.
 <p>
   <p>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(1).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(1).png?raw=true" width="200">
     </a>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(2).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(2).png?raw=true" width="200">
     </a>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(3).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(3).png?raw=true" width="200">
     </a>
   </p>
   <p>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(4).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(4).png?raw=true" width="200">
     </a>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(5).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(5).png?raw=true" width="200">
     </a>
     <a rel="nofollow">
-    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/Project.Docs/Screenshoot%20(6).png?raw=true" width="200">
+    <img src="https://github.com/matiasvallejosdev/ar-covid-visualizer/blob/main/docs/Screenshoot%20(6).png?raw=true" width="200">
     </a>
   </p>
   
