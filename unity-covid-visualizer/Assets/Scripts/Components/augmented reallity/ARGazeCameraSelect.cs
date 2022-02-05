@@ -15,19 +15,14 @@ namespace Components
     {
         public GameContainer gameContainer;
         public GameCmdFactory gameCmdFactory;
-
-
-        [Header("AR References")]
-        [SerializeField] Camera _mainCamera;
-        [SerializeField] ARRaycastManager _arOriginRaycast;
-        [SerializeField] private LayerMask _layer;
-
-        [Header("Config")]
+        public LayerMask layerInteraction;
         public bool unselectIntelligent;
+
+        private Camera _arCamera;
 
         void Start()
         {
-            // Unselect previous references
+            _arCamera = Camera.main;
             gameCmdFactory.PerfomFocusCmd(gameContainer, gameContainer.countryManager.currentStateSelected, false).Execute();         
         }
         
@@ -40,9 +35,9 @@ namespace Components
         {
             RaycastHit hit;
 
-            if(Physics.Raycast(_mainCamera.transform.position, _mainCamera.transform.forward, out hit, 1000, _layer))
+            if(Physics.Raycast(_arCamera.transform.position, _arCamera.transform.forward, out hit, 1000, layerInteraction))
             {
-                Debug.DrawRay(_mainCamera.transform.position, _mainCamera.transform.forward, Color.green); 
+                Debug.DrawRay(_arCamera.transform.position, _arCamera.transform.forward, Color.green); 
                 StateData countryHit = hit.transform.GetComponent<StateHit>().countryData;    
                 gameCmdFactory.PerfomFocusCmd(gameContainer, countryHit, true).Execute();         
             }

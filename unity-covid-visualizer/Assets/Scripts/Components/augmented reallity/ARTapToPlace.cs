@@ -12,37 +12,29 @@ namespace Components
 {    
     public class ARTapToPlace : MonoBehaviour
     {
-        [Header("Container")]
-        public GameObject parentFather;
         public GameContainer gameContainer;
-
-        [Header("AR References")]
-        public GameObject placeAnchor;
-        //public GameObject placementIndicator;
-        public Camera arCamera;
+        public GameObject parentContainer;
         public ARRaycastManager arOriginRaycast;
 
-        [Header("Settings")]
-        public PLAY_DEVICE playDevice;
-
-        private Pose placementPose;
-        private bool isActiveCountryManager = false;
+        private PLAY_DEVICE _playDevice;
+        private Pose _placementPose;
+        private Camera arCamera;
 
         void Start()    
         {
-            ARInputManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx);
-            //placementIndicator = Instantiate(placementIndicator, new Vector3(0,0,0), placementIndicator.transform.rotation);
+            arCamera = Camera.main;
+            ARInputManager.Instance.Controls.Player.ToggleWorld.performed += ctx => Touch(ctx); // Input
 
-            gameContainer.placementPoseValid.Value = playDevice == PLAY_DEVICE.Editor ? true : false;
+            if (Application.isEditor)
+            {
+                _playDevice = PLAY_DEVICE.Editor;
+            } 
+            else
+            {
+                _playDevice = PLAY_DEVICE.Mobile;
+            }
 
-            gameContainer.isCountryManagerOnScene
-                .Subscribe(OnManagerStatusChange)
-                .AddTo(this);
-        }
-
-        private void OnManagerStatusChange(bool isManagerActive)
-        {
-            isActiveCountryManager = isManagerActive;      
+            gameContainer.placementPoseValid.Value = _playDevice == PLAY_DEVICE.Editor ? true : false;
         }
         
         void Touch(CallbackContext context)
@@ -53,20 +45,19 @@ namespace Components
 
         public void PutCountry()
         {
-            if(gameContainer.placementPoseValid.Value && !isActiveCountryManager)
+            if(gameContainer.placementPoseValid.Value && !gameContainer.isCountryManagerOnScene.Value)
             {
-                GameObject objectPlaced = Instantiate(gameContainer.countryManager.countryPrefab, placementPose.position, placementPose.rotation);
-                objectPlaced.transform.SetParent(parentFather.transform);
+                GameObject objectPlaced = Instantiate(gameContainer.countryManager.countryPrefab, _placementPose.position, _placementPose.rotation);
+                objectPlaced.transform.SetParent(parentContainer.transform);
             }
         }
 
         void Update()
         {
-            if(isActiveCountryManager || playDevice == PLAY_DEVICE.Editor)
+            if(gameContainer.isCountryManagerOnScene.Value || _playDevice == PLAY_DEVICE.Editor)
                 return;
             
             UpdatePlacementPose();
-            //UpdatePlacementIndicator();
         }
 
         private void UpdatePlacementPose()
@@ -78,11 +69,11 @@ namespace Components
             gameContainer.placementPoseValid.Value = hits.Count > 0;
             if (gameContainer.placementPoseValid.Value) 
             {
-                placementPose = hits[0].pose;
+                _placementPose = hits[0].pose;
 
                 var cameraForward = arCamera.transform.forward;
                 var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-                placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+                _placementPose.rotation = Quaternion.LookRotation(cameraBearing);
             }
         }
     }

@@ -192,12 +192,9 @@ namespace Tests.Editor.Scenes
         {
             var component = Object.FindObjectOfType<ARTapToPlace>();
 
-            Assert.NotNull(component.parentFather);
+            Assert.NotNull(component.parentContainer);
             Assert.NotNull(component.gameContainer);
-            Assert.NotNull(component.placeAnchor);
-            Assert.NotNull(component.arCamera);
             Assert.NotNull(component.arOriginRaycast);
-            Assert.NotNull(component.playDevice);
         }
         public void ar_gaze_camera_select()
         {

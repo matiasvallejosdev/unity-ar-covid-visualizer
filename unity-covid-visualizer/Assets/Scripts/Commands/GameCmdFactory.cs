@@ -33,10 +33,5 @@ namespace Commands
         {
             return new PerfomFocusCmd(gameContainer, countryHit, focusStatus);
         }
-        // Console
-        public PerfomConsoleCmd PerfomConsole(string input, string prefix, IEnumerable<IConsoleCommand> commands)
-        {
-            return new PerfomConsoleCmd(input, prefix, commands);
-        }
     }
 }

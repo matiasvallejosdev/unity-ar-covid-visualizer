@@ -39,10 +39,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 577.6
+    x: 576.8
     y: 0
-    width: 277.60004
-    height: 408.8
+    width: 278.2
+    height: 409
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 18}
@@ -71,10 +71,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 740
-  m_MinSize: {x: 704, y: 492}
-  m_MaxSize: {x: 16004, y: 14042}
+  m_MinSize: {x: 878, y: 492}
+  m_MaxSize: {x: 16003, y: 14042}
   vertical: 0
-  controlID: 46
+  controlID: 140
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -85,23 +85,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: TestRunnerWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 855.2
+    x: 855
     y: 0
-    width: 680.8
+    width: 681
     height: 740
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
   - {fileID: 13}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 264.8
-    height: 408.8
+    width: 284.8
+    height: 409
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
@@ -144,9 +144,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 408.8
-    width: 855.2
-    height: 331.2
+    y: 409
+    width: 855
+    height: 331
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 14}
@@ -177,7 +177,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 790
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -248,12 +248,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 855.2
+    width: 855
     height: 740
-  m_MinSize: {x: 604, y: 492}
-  m_MaxSize: {x: 12004, y: 14042}
+  m_MinSize: {x: 602, y: 492}
+  m_MaxSize: {x: 12002, y: 14042}
   vertical: 1
-  controlID: 47
+  controlID: 141
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -274,12 +274,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 855.2
-    height: 408.8
-  m_MinSize: {x: 604, y: 221}
-  m_MaxSize: {x: 12004, y: 4021}
+    width: 855
+    height: 409
+  m_MinSize: {x: 602, y: 221}
+  m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 48
+  controlID: 142
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,12 +295,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 264.8
+    x: 284.8
     y: 0
-    width: 312.8
-    height: 408.8
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+    width: 292
+    height: 409
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -328,11 +328,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 855.2
     y: 104
-    width: 679.8
+    width: 680
     height: 719
   m_ViewDataDictionary: {fileID: 0}
   m_Spl:
-    ID: 364
+    ID: 200
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
@@ -416,7 +416,7 @@ MonoBehaviour:
       name: Covid Visualizer
       fullName: Covid Visualizer
       resultStatus: 4
-      duration: 0.3413611
+      duration: 0.2411725
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -432,7 +432,7 @@ MonoBehaviour:
       name: EditMode.dll
       fullName: C:/Users/matia/Desktop/Matias A. Vallejos/Github/Github.Personal/unity-ar-covid-visualizer/unity-covid-visualizer/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 4
-      duration: 0.3090406
+      duration: 0.2072307
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -448,7 +448,7 @@ MonoBehaviour:
       name: Tests
       fullName: Tests
       resultStatus: 4
-      duration: 0.3076224
+      duration: 0.2066811
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -464,7 +464,7 @@ MonoBehaviour:
       name: Editor
       fullName: Tests.Editor
       resultStatus: 4
-      duration: 0.3071657
+      duration: 0.2035406
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -480,7 +480,7 @@ MonoBehaviour:
       name: Commands
       fullName: Tests.Editor.Commands
       resultStatus: 4
-      duration: 0.0898591
+      duration: 0.0288112
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -496,7 +496,7 @@ MonoBehaviour:
       name: CountryRotateCmdShould
       fullName: Tests.Editor.Commands.CountryRotateCmdShould
       resultStatus: 1
-      duration: 0.0314527
+      duration: 0.0044031
       messages: 
       output: 
       stacktrace: 
@@ -512,7 +512,7 @@ MonoBehaviour:
       name: country_rotate_left
       fullName: Tests.Editor.Commands.CountryRotateCmdShould.country_rotate_left
       resultStatus: 1
-      duration: 0.0167975
+      duration: 0.0009813
       messages: 
       output: 
       stacktrace: 
@@ -529,7 +529,7 @@ MonoBehaviour:
       name: country_rotate_right
       fullName: Tests.Editor.Commands.CountryRotateCmdShould.country_rotate_right
       resultStatus: 1
-      duration: 0.0007918
+      duration: 0.0002853
       messages: 
       output: 
       stacktrace: 
@@ -546,7 +546,7 @@ MonoBehaviour:
       name: CountryScaleCmdShould
       fullName: Tests.Editor.Commands.CountryScaleCmdShould
       resultStatus: 1
-      duration: 0.0282593
+      duration: 0.0102157
       messages: 
       output: 
       stacktrace: 
@@ -562,7 +562,7 @@ MonoBehaviour:
       name: country_scale_negative
       fullName: Tests.Editor.Commands.CountryScaleCmdShould.country_scale_negative
       resultStatus: 1
-      duration: 0.0014144
+      duration: 0.0004613
       messages: 
       output: 
       stacktrace: 
@@ -579,7 +579,7 @@ MonoBehaviour:
       name: country_scale_positive
       fullName: Tests.Editor.Commands.CountryScaleCmdShould.country_scale_positive
       resultStatus: 1
-      duration: 0.000737
+      duration: 0.0002805
       messages: 
       output: 
       stacktrace: 
@@ -596,7 +596,7 @@ MonoBehaviour:
       name: CountryVisualizerCmdShould
       fullName: Tests.Editor.Commands.CountryVisualizerCmdShould
       resultStatus: 4
-      duration: 0.0100686
+      duration: 0.0074145
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -607,12 +607,12 @@ MonoBehaviour:
       categories: []
       parentId: 1030
       parentUniqueId: EditMode.dll/Tests/Editor/[EditMode][Tests.Editor.Commands][suite]
-    - id: 1098
+    - id: 1172
       uniqueId: EditMode.dll/Tests/Editor/Commands/CountryVisualizerCmdShould/[EditMode][Tests.Editor.Commands.CountryVisualizerCmdShould.country_scale_positive]
       name: country_scale_positive
       fullName: Tests.Editor.Commands.CountryVisualizerCmdShould.country_scale_positive
       resultStatus: 4
-      duration: 0.0004212
+      duration: 0.0000055
       messages: Ignore States
       output: 
       stacktrace: 
@@ -622,14 +622,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1097
+      parentId: 1171
       parentUniqueId: EditMode.dll/Tests/Editor/Commands/[EditMode][Tests.Editor.Commands.CountryVisualizerCmdShould][suite]
     - id: 1025
       uniqueId: EditMode.dll/Tests/Editor/Commands/[EditMode][Tests.Editor.Commands.PerfomFocusCmdShould][suite]
       name: PerfomFocusCmdShould
       fullName: Tests.Editor.Commands.PerfomFocusCmdShould
       resultStatus: 1
-      duration: 0.0145939
+      duration: 0.0048027
       messages: 
       output: 
       stacktrace: 
@@ -645,7 +645,7 @@ MonoBehaviour:
       name: current_state_select
       fullName: Tests.Editor.Commands.PerfomFocusCmdShould.current_state_select
       resultStatus: 1
-      duration: 0.007306
+      duration: 0.0011897
       messages: 
       output: 
       stacktrace: 
@@ -662,7 +662,7 @@ MonoBehaviour:
       name: current_state_standby
       fullName: Tests.Editor.Commands.PerfomFocusCmdShould.current_state_standby
       resultStatus: 1
-      duration: 0.0027254
+      duration: 0.0004525
       messages: 
       output: 
       stacktrace: 
@@ -679,7 +679,7 @@ MonoBehaviour:
       name: current_state_unselect
       fullName: Tests.Editor.Commands.PerfomFocusCmdShould.current_state_unselect
       resultStatus: 1
-      duration: 0.0006251
+      duration: 0.0003655
       messages: 
       output: 
       stacktrace: 
@@ -696,7 +696,7 @@ MonoBehaviour:
       name: Scenes
       fullName: Tests.Editor.Scenes
       resultStatus: 4
-      duration: 0.2130337
+      duration: 0.1725204
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -712,7 +712,7 @@ MonoBehaviour:
       name: ARG_CountryStatsShould
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould
       resultStatus: 4
-      duration: 0.2056944
+      duration: 0.1633993
       messages: One or more child tests were ignored
       output: 
       stacktrace: 
@@ -728,7 +728,7 @@ MonoBehaviour:
       name: country_animation
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_animation
       resultStatus: 1
-      duration: 0.0019164
+      duration: 0.0008272
       messages: 
       output: 
       stacktrace: 
@@ -745,7 +745,7 @@ MonoBehaviour:
       name: country_graph_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_graph_display
       resultStatus: 1
-      duration: 0.0067661
+      duration: 0.0010286
       messages: 
       output: 
       stacktrace: 
@@ -762,7 +762,7 @@ MonoBehaviour:
       name: country_rotate_input
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_rotate_input
       resultStatus: 1
-      duration: 0.0009076
+      duration: 0.0003624
       messages: 
       output: 
       stacktrace: 
@@ -779,7 +779,7 @@ MonoBehaviour:
       name: country_scale_input
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_scale_input
       resultStatus: 1
-      duration: 0.0005691
+      duration: 0.0003543
       messages: 
       output: 
       stacktrace: 
@@ -796,7 +796,7 @@ MonoBehaviour:
       name: country_static_animation
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_static_animation
       resultStatus: 1
-      duration: 0.0009376
+      duration: 0.0003475
       messages: 
       output: 
       stacktrace: 
@@ -813,7 +813,7 @@ MonoBehaviour:
       name: country_ui_anchor_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.country_ui_anchor_display
       resultStatus: 1
-      duration: 0.0019876
+      duration: 0.000718
       messages: 
       output: 
       stacktrace: 
@@ -830,7 +830,7 @@ MonoBehaviour:
       name: current_time_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.current_time_display
       resultStatus: 1
-      duration: 0.0112943
+      duration: 0.0011172
       messages: 
       output: 
       stacktrace: 
@@ -847,7 +847,7 @@ MonoBehaviour:
       name: game_refresh_input
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.game_refresh_input
       resultStatus: 1
-      duration: 0.0060445
+      duration: 0.0002293
       messages: 
       output: 
       stacktrace: 
@@ -864,7 +864,7 @@ MonoBehaviour:
       name: global_country_data_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.global_country_data_display
       resultStatus: 1
-      duration: 0.0007503
+      duration: 0.0003806
       messages: 
       output: 
       stacktrace: 
@@ -881,7 +881,7 @@ MonoBehaviour:
       name: global_country_vaccine_data_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.global_country_vaccine_data_display
       resultStatus: 1
-      duration: 0.0005815
+      duration: 0.0003656
       messages: 
       output: 
       stacktrace: 
@@ -898,7 +898,7 @@ MonoBehaviour:
       name: global_update_input
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.global_update_input
       resultStatus: 1
-      duration: 0.0005017
+      duration: 0.0003364
       messages: 
       output: 
       stacktrace: 
@@ -915,7 +915,7 @@ MonoBehaviour:
       name: global_world_data_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.global_world_data_display
       resultStatus: 1
-      duration: 0.0006091
+      duration: 0.0003512
       messages: 
       output: 
       stacktrace: 
@@ -932,7 +932,7 @@ MonoBehaviour:
       name: global_world_vaccine_data_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.global_world_vaccine_data_display
       resultStatus: 1
-      duration: 0.000724
+      duration: 0.0003498
       messages: 
       output: 
       stacktrace: 
@@ -944,12 +944,12 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/Tests/Editor/Scenes/[EditMode][Tests.Editor.Scenes.ARG_CountryStatsShould][suite]
-    - id: 1083
+    - id: 1157
       uniqueId: EditMode.dll/Tests/Editor/Scenes/ARG_CountryStatsShould/[EditMode][Tests.Editor.Scenes.ARG_CountryStatsShould.state_animation_display]
       name: state_animation_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.state_animation_display
       resultStatus: 4
-      duration: 0.0000052
+      duration: 0.0000014
       messages: Need refactoring
       output: 
       stacktrace: 
@@ -959,14 +959,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Uncategorized
-      parentId: 1075
+      parentId: 1149
       parentUniqueId: EditMode.dll/Tests/Editor/Scenes/[EditMode][Tests.Editor.Scenes.ARG_CountryStatsShould][suite]
     - id: 1008
       uniqueId: EditMode.dll/Tests/Editor/Scenes/ARG_CountryStatsShould/[EditMode][Tests.Editor.Scenes.ARG_CountryStatsShould.ui_place_anchor_animation_display]
       name: ui_place_anchor_animation_display
       fullName: Tests.Editor.Scenes.ARG_CountryStatsShould.ui_place_anchor_animation_display
       resultStatus: 1
-      duration: 0.0024301
+      duration: 0.0004487
       messages: 
       output: 
       stacktrace: 
@@ -978,7 +978,7 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/Tests/Editor/Scenes/[EditMode][Tests.Editor.Scenes.ARG_CountryStatsShould][suite]
-    m_ResultText: current_state_unselect (0.001s)
+    m_ResultText: current_state_unselect (0.000s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -1033,8 +1033,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 512.8
-    width: 854.2
-    height: 310.2
+    width: 854
+    height: 310
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -1049,22 +1049,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Commands/global
+    - Assets/Prefabs/country
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Commands/global
+  - Assets/Prefabs/country
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\matia\Desktop\Matias A. Vallejos\Github\Github.Personal\unity-ar-covid-visualizer\unity-covid-visualizer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 221.79999}
-    m_SelectedIDs: 3a700000
-    m_LastClickedID: 28730
-    m_ExpandedIDs: 00000000fc6b0000fe6b0000006c0000026c0000046c0000066c00000a6c00000c6c00000e6c0000106c0000126c0000146c0000166c0000186c00001a6c0000266c0000286c00002c6c0000306c0000446c0000646c0000f06d0000ca6e000000ca9a3b
+    scrollPos: {x: 0, y: 130}
+    m_SelectedIDs: 506c0000
+    m_LastClickedID: 27728
+    m_ExpandedIDs: 000000000c6c00000e6c0000106c0000126c0000146c0000166c0000186c00001a6c00001c6c00001e6c0000206c0000226c0000246c0000266c0000286c00002c6c00002e6c0000326c00005a6c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1092,7 +1092,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fc6b0000fe6b0000006c0000026c0000046c0000066c0000086c00000a6c00000c6c00000e6c0000106c0000126c0000146c0000166c0000186c00001a6c0000
+    m_ExpandedIDs: 000000000c6c00000e6c0000106c0000126c0000146c0000166c0000186c00001a6c00001c6c00001e6c0000206c0000226c0000246c0000266c0000286c00002a6c00002c6c00002e6c0000306c0000326c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1171,7 +1171,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 855.2
     y: 104
-    width: 679.8
+    width: 680
     height: 719
   m_ViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []
@@ -1209,29 +1209,29 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 104
-    width: 263.8
-    height: 387.8
+    width: 283.8
+    height: 388
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3a700000
+      m_SelectedIDs: 506c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 7a68f8ff1869f8ff127ff8ffa27ff8ff9880f8ff2484f8ff2a86f8ff6888f8ffa28af8ff408df8ff348ef8ff6e90f8ffac91f8ffa292f8ff9893f8ff1896f8ff44acf8ffbeacf8ff2ec2f8ff9ac2f8fff015f9ff2e29f9ff9a29f9ffa63ff9ff1240f9ff0c5af9ff805af9ffa86ff9ff1470f9ff1e8bf9ff6e8bf9ffa2a0f9fff2a0f9fff6a3f9ff08b9f9ff4eb9f9ffe0baf9ffdcbbf9ff7abef9ffa2bff9ff9ec0f9ff18d6f9ff5ed6f9ffc8d7f9ff06daf9ff48eef9ff8eeef9ffa617faffe42afaff022bfaffca47faff0648faffe05cfaff1c5dfaff9a72faffd672faff328afaff6e8afaffc89ffaff04a0faffd2b5faff0eb6faffdccafaff18cbfaff00dffaff3cdffaff24f3faff60f3faffee08fbff2a09fbffee1efbff2a1ffbff8c34fbffc834fbff2c4afbff684afbff0e5efbff4a5efbffcc60fbffee73fbff2a74fbff3288fbff6e88fbff7c9cfbffc09cfbff06b2fbff42b2fbffacc6fbffe8c6fbff4021fcff4034fcff7c34fcff5448fcff9048fcff6e5cfcffaa5cfcff7675fcff7288fcffae88fcff7e9cfcffba9cfcff28bffcff64bffcff1ad4fcff56d4fcff86e8fcffc2e8fcff86fdfcffc2fdfcff6013fdff9c13fdff4227fdff7e27fdff583cfdff8e3cfdff0e50fdff4c50fdfffa63fdff3664fdffdc77fdff1878fdffbe8bfdfffa8bfdffc89ffdff04a0fdffe6b3fdff22b4fdffb2cafdffbacafdffbecafdff92ccfdff30d2fdfff0d3fdff1cd5fdff16e8fdff5ae8fdfff4fdfdff30fefdff6c15feffa815feff4e29feff8a29feff583dfeff943dfeff0454feff4054feff1268feff5668feff047cfeff407cfeff0a90feff4690feffeca3feff28a4feff74b9feffb2b9fefff6cefeff34cffeff24e5feff60e5feff30fafeff6cfafeff4e0fffff8a0fffffa224ffffde24ffffc627ffffca3affff063bfffff04fffff2c50ffffb865fffff465fffff26bfffff27effff2e7fffffbe81ffffba94fffffe94ffff04b2ffff0eb2ffff4ab2ffff4cfbffff3283000056830000e08c0000f4f10000
+      m_ExpandedIDs: 9e13ffff10cfffff4ee2ffffe4e2ffff10e5ffff4af8ffffe2f8ffff4cfbffffd670000036710000d4710000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Argentina
+        m_OriginalName: Argentina
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -84734
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 4
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -1262,10 +1262,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 264.80002
+    x: 284.80002
     y: 104
-    width: 310.8
-    height: 387.8
+    width: 290
+    height: 388
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
@@ -1278,9 +1278,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.85518783, y: 1.1744398, z: -2.3887906}
+    m_Target: {x: -0.19315529, y: 0.48893726, z: -2.3431554}
     speed: 2
-    m_Value: {x: -0.85518783, y: 1.1744398, z: -2.3887906}
+    m_Value: {x: -0.19315529, y: 0.48893726, z: -2.3431554}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1327,13 +1327,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.297216, y: -0.39040756, z: 0.13475132, w: -0.86095065}
+    m_Target: {x: -0.043689057, y: -0.9467682, z: 0.14540035, w: -0.28415886}
     speed: 2
-    m_Value: {x: -0.29719383, y: -0.39037842, z: 0.13474126, w: -0.8608864}
+    m_Value: {x: -0.04368543, y: -0.94668955, z: 0.14538826, w: -0.28413525}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 2.158755
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 2.158755
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1379,10 +1379,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 577.60004
+    x: 576.8
     y: 104
-    width: 275.60004
-    height: 387.8
+    width: 276.2
+    height: 388
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewNames: []
   m_SerializedViewValues: []
@@ -1426,23 +1426,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 275.60004
-      height: 366.8
-    m_Scale: {x: 0.573125, y: 0.573125}
-    m_Translation: {x: 137.80002, y: 183.4}
+      width: 276.2
+      height: 367
+    m_Scale: {x: 0.5734375, y: 0.5734375}
+    m_Translation: {x: 138.1, y: 183.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -240.43623
+      x: -240.82834
       y: -320
-      width: 480.87247
+      width: 481.65668
       height: 640
     m_MinimalGUI: 1
-  m_defaultScale: 0.573125
-  m_LastWindowPixelSize: {x: 344.50006, y: 484.75}
+  m_defaultScale: 0.5734375
+  m_LastWindowPixelSize: {x: 345.25, y: 485}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000000000000
@@ -1471,8 +1471,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 512.8
-    width: 854.2
-    height: 310.2
+    width: 854
+    height: 310
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &20
 MonoBehaviour:
